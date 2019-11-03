@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 export default class Splash extends React.Component {
   constructor(props) {
     super(props);
@@ -20,31 +21,53 @@ export default class Splash extends React.Component {
     
     return (
         <div className="splash">
-            <nav className="nav-bar">
-                <div className="nav-left">
-                    <div className="nav-link">
-                        <Link to="/" className="nav-link">Discord</Link>
-                    </div>
-                    <div className="nav-link">
-                        <a href="https://github.com/jashieh" target="_blank" >Github</a>
-                    </div>
-                    <div className="nav-link">
-                        <a href="https://www.linkedin.com/in/shieh-justin/" target="_blank" className="nav-link">LinkedIn</a>
-                    </div>
-                </div>
-                <div className="nav-right">
-                    {display}
-                </div>
-            </nav>
+            <div className="home-video">
+                <video autoPlay={true} loop muted={true} className="splash-video">
+                    <source src="/home4.mp4" type="video/mp4"/>
+                </video>
+            </div>
 
-            <div className="splash-title">
-                <header className="splash-content-header">
-                    It's time to ditch Skype and TeamSpeak.
-                </header>
-                <br/>
-                <p className="splash-content-p">
-                    Voice chat for virgin engineers
-                </p>
+            <div className="home-content">
+                <nav className="nav-bar">
+                    <div className="nav-left">
+                        <div className="nav-link">
+                            <Link to="/" className="nav-link">Discord</Link>
+                        </div>
+                        <div className="nav-link">
+                            <a href="https://github.com/jashieh" target="_blank" >Github</a>
+                        </div>
+                        <div className="nav-link">
+                            <a href="https://www.linkedin.com/in/shieh-justin/" 
+                                target="_blank" 
+                                className="nav-link">LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    <div className="nav-right">
+                        {display}
+                    </div>
+                </nav>
+
+                <div className="splash-title">
+                    <header className="splash-content-header">
+                        It's time to ditch Skype and TeamSpeak.
+                    </header>
+                    <br/>
+                    <p className="splash-content-p">
+                        Voice chat for virgin engineers
+                    </p>
+                </div>
+
+                <div className="splash-buttons">
+                    <div className="splash-button-item">
+                        <button className="splash-left-button">Download</button>
+                    </div>
+                    <div className="splash-button-item">
+                        <button className="splash-right-button">
+                            Open Discord in your browser
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     );

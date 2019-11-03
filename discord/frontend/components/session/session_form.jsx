@@ -30,26 +30,47 @@ class SessionForm extends React.Component {
         let submitText = "";
         let headerText = "";
         let headerText2 = "";
+        let registerBox = null;
 
         if (this.props.formType === 'signup') {
-            emailInput = <div>
-                            <label>EMAIL
+            emailInput = <div className="login-field">
+                            <label className="login-input-label">EMAIL</label>
                                 <input type="text"
                                     value={this.state.email}
                                     onChange={this.update('email')}
-                                    className="login-signup-input"
+                                    className="login-input"
                                 />
-                            </label>
                         </div>
             submitText = "Continue";
+            headerText = "Create an account";
+            registerBox = <div className="register-box">
+                <Link to="/login" className="signup-link">Already have an account?</Link>
+            </div>
         } else {
             headerText = "Welcome back!";
-            headerText2 = "We're so excited to see you again!"
+            headerText2 = "We're so excited to see you again!";
             submitText = "Login";
+            registerBox = <div className="register-box">
+                <div className="register-text">Need an Account?</div>
+                <Link to="/signup" className="signup-link">Register</Link>
+            </div>
         }
 
         return(
             <div className="login-signup-page">
+                  <div className="home-video">
+                    <video autoPlay={true} loop muted={true} className="login-video">
+                        <source src="/home.mp4" type="video/mp4"/>
+                    </video>
+                </div>
+
+                <div className="login-content">
+                    <div className="login-header-container">
+
+                    <div className="return-to-splash">
+                        <Link to="/" className="splash-link">Discord</Link>
+                    </div>
+                    </div>
                 <div className="login-box">
                     <form onSubmit={this.handleSubmit} className="login-signup-form">
                             <div className="form-header">
@@ -62,6 +83,7 @@ class SessionForm extends React.Component {
                                 </div>
                             </div>
                             { emailInput }
+                            <br/>
                         <div className="login-field">
                             <label className="login-input-label">USERNAME</label>
                             <br/>
@@ -71,6 +93,7 @@ class SessionForm extends React.Component {
                                 className="login-input"
                             />
                         </div>
+                        <br/>
                         <div className="login-field">
                             <label className="login-input-label">PASSWORD</label>
                             <br/>
@@ -80,10 +103,13 @@ class SessionForm extends React.Component {
                                 className="login-input"
                             />
                         </div>
+                        <br/>
                         <div className="login-button">
                             <input className="session-submit" type="submit" value={submitText}/>
                         </div>
+                        { registerBox }
                     </form>
+                </div>
                 </div>
           </div>
         );
