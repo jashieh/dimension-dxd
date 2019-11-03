@@ -1,9 +1,10 @@
 .splash {
-    width: 100vw;
-    height: 100vh;
+    // width: 100vw;
+    // height: 100vh;
     background-color: darkslategrey;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
 }
 
 
@@ -11,12 +12,19 @@
     z-index: 1;
 }
 
+.home-video {
+    
+}
+
 .splash-video {
     position: fixed;
-    // right: 0;
-    // bottom: 0;
-    // min-width: 100%; 
-    // min-height: 100%;
+}
+
+.splash-video-other {
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
 }
 
 .nav-bar {
