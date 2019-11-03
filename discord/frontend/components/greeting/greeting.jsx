@@ -13,7 +13,7 @@ export default class Greeting extends React.Component {
         <button onClick={this.props.logout}>Log Out</button>
       </div>
     ) : (
-      <div className="login-signup">
+      <div className="login-signup-links">
         <Link to="/signup">Sign Up</Link>
         <Link to="/login">Login</Link>
       </div>
@@ -22,6 +22,9 @@ export default class Greeting extends React.Component {
     return (
       <header className="nav-bar">
         <div>
+            <Link to="/" className="home-link">
+                <h1>Discord</h1>
+            </Link>
           {display}
         </div>
       </header>

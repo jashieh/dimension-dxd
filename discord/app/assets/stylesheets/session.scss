@@ -1,0 +1,45 @@
+.login-signup-page {
+    width: 100vw;
+    height: 100vw;
+    background-color: darkslategrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box {
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-signup-form {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.login-input-label {
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: grey;
+}
+
+.login-input {
+    background-color: white;
+}
+
+.login-button {
+    align-self: center;
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-header-title {
+    font-size: 26px;
+    color: white;
+}
