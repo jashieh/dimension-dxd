@@ -1,0 +1,94 @@
+.server-content {
+    display: flex; 
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: #292826;
+}
+
+.server-nav-container {
+    background-color: grey;
+    width: 100px;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.server-nav-container::-webkit-scrollbar { 
+    display: none; 
+}
+
+.server-nav-ul {
+    width: 100px;
+}
+
+.server-nav-li {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.server-nav-button {
+    background-color: green;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.add-server-options-modal {
+    align-self: center;
+    z-index: 998;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    background: rgba(0, 0, 0, .3);
+}
+
+.modal-box {
+    z-index: 999;
+    position: absolute;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 20px;
+    width: 540px;
+    height: 420px;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.add-server-options-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-server-options-actions {
+    display: flex;
+    flex-direction: row;
+}
+
+.server-form-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.server-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.server-form-header {
+
+}
+
+.server-form-input {
+    border-bottom: 1px solid grey;
+}

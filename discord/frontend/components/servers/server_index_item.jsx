@@ -4,8 +4,10 @@ export default class ServerIndexItem extends React.Component {
 
     render() {
         return(
-            <li>
-                
+            <li className="server-nav-li">
+                <button className="server-nav-button">
+                    {this.props.server.server_name}
+                </button>
             </li>
         );
     }

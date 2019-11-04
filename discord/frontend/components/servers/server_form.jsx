@@ -7,6 +7,7 @@ export default class ServerForm extends React.Component {
 
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        console.log(this.props);
     }
 
     update(e) {
@@ -14,7 +15,6 @@ export default class ServerForm extends React.Component {
     }
 
     handleSubmit(e) {
-        console.log(this.state);
         e.preventDefault();
         this.props.createServer(this.state);
     }
@@ -22,13 +22,15 @@ export default class ServerForm extends React.Component {
     render() {
         return(
             <div className="server-form-container">
-                <div className="">
-                    <form onSubmit={this.handleSubmit}>
-                        <label>SERVER NAME</label>
-                        <input onChange={this.update} type="text"/>
-                        <input type="submit" value="Create"/>
+                    <form className="server-form">
+                        <label className="server-form-header">SERVER NAME</label>
+                        <input onChange={this.update} type="text" 
+                            className="server-form-input"/>
+                        <div>
+                            <button>Back</button>
+                            <input onClick={this.handleSubmit} type="submit" value="Create"/>
+                        </div>
                     </form>
-                </div>
             </div>
         );
     }

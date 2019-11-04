@@ -10,8 +10,8 @@ export default class AddServerOptions extends React.Component {
     }
 
     handleClick(type) {
-        console.log(this.state)
         if(type === 'create') {
+            console.log('create')
             return e => this.setState({ 
                 currentForm: <ServerForm createServer={this.props.createServer} 
             /> });
@@ -24,7 +24,8 @@ export default class AddServerOptions extends React.Component {
         let currPage = null;
         if(this.state.currentForm === null) {
             currPage = 
-            (<div className="add-server-options-inner">
+            (<div className="modal-box">
+                    <div className="add-server-options-inner">
                     <header className="add-server-options-header">
                         OH, ANOTHER SERVER HUH?
                     </header>
@@ -59,10 +60,14 @@ export default class AddServerOptions extends React.Component {
                                 Join a server
                             </button>
                         </div>  
-                    </div>     
+                    </div>  
+                    </div>   
                 </div>);
         } else {
-            currPage = this.state.currentForm;
+            currPage = 
+            (<div className="modal-box">
+                { this.state.currentForm }
+            </div>)
         }
         return(
             <div className="add-server-options-modal">

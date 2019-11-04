@@ -13,7 +13,7 @@ export default class Splash extends React.Component {
 
     adjustVideoSize() {
         let vid = $(".splash-video");
-        if( this.state.currentBackground !== "/home4.mp4") {
+        if(backgrounds[0] !== "/home4.mp4") {
             vid.addClass("splash-video-other");
         } else {
             vid.removeClass("splash-video-other");
@@ -27,7 +27,6 @@ export default class Splash extends React.Component {
     changeTheme(e) {
         backgrounds.push( backgrounds.shift());
         this.adjustVideoSize();
-
         this.setState({ currentBackground: backgrounds[0] });
     }
 
@@ -35,7 +34,6 @@ export default class Splash extends React.Component {
     render() {
     const display = this.props.currentUser ? (
       <div className="nav-link">
-        <Link to="/servers">Open</Link>
         <button onClick={this.props.logout}>Log Out</button>
       </div>
     ) : (
@@ -91,9 +89,9 @@ export default class Splash extends React.Component {
                         </button>
                     </div>
                     <div className="splash-button-item">
-                        <button className="splash-right-button">
+                        <Link to="/servers" className="splash-right-button">
                             Open Discord in your browser
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
