@@ -1,0 +1,16 @@
+.home {
+    display: flex; 
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: #292826;
+}
+
+.home-elements-container {
+    width: 100%;
+    display: flex;
+    background-image: url("/ubw.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

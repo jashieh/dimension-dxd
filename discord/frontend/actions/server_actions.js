@@ -18,3 +18,6 @@ export const fetchAllServers = () => dispatch => (APIUtil.fetchAllServers()
 
 export const createServer = (server) => dispatch => (APIUtil.createServer(server)
     .then(server => dispatch(receiveServer(server))));
+
+export const fetchServer = (serverId) => dispatch => (APIUtil.fetchServer(serverId)
+    .then(server => (dispatch(receiveServer(server)))));

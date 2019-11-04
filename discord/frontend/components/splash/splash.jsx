@@ -89,7 +89,7 @@ export default class Splash extends React.Component {
                         </button>
                     </div>
                     <div className="splash-button-item">
-                        <Link to="/servers" className="splash-right-button">
+                        <Link to="/home" className="splash-right-button">
                             Open Discord in your browser
                         </Link>
                     </div>

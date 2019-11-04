@@ -20,7 +20,6 @@ export default class ServerIndex extends React.Component {
         let modalBox = $(".modal-box");
 
         let escEvent = (e) => {
-            console.log("test");
             if(e.key === "Escape" || e.type ==="click") {
                 doc.off("keydown", escEvent);
                 modalBox.off("click", clickEvent);
@@ -58,16 +57,16 @@ export default class ServerIndex extends React.Component {
         }
         
         return(
-            <div className="server-content">
+            // <div className="server-content">
                 <nav className="server-nav-container">
                     <ul className="server-nav-ul">
                         <li className="server-nav-li">
                             <Link to="/" className="server-nav-button">Return to splash</Link>
                         </li>
                         <li className="server-nav-li">
-                            <button className="server-nav-button">
+                            <Link to="/home" className="server-nav-button">
                                 Home
-                            </button>
+                            </Link>
                         </li>
                         { display }
                         <li className="server-nav-li">
@@ -77,9 +76,9 @@ export default class ServerIndex extends React.Component {
                             </button>
                         </li>
                     </ul>
+                    { this.state.modal }
                 </nav>
-                { this.state.modal }
-            </div>
+            // </div>
         );
     }
 }

@@ -13,8 +13,9 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import SplashContainer from "./splash/splash_container";
-import ServerContainer from "./servers/server_index_container";
-import AddServerOptions from "./servers/add_server_options";
+// import ServerContainer from "./servers/server_index_container";
+// import ServerShowContainer from "./servers/server_show_container";
+import Home from "./home/home";
 
 
 const App = () => (
@@ -23,8 +24,9 @@ const App = () => (
     <Route exact path="/" component={SplashContainer} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
-    <ProtectedRoute exact path="/servers" component={ServerContainer} />
-    {/* <Route exact path="/servers" component={AddServerOptions} /> */}
+    <ProtectedRoute path="/home" component={Home} />
+    {/* <ProtectedRoute path="/servers" component={ServerContainer} />
+    <ProtectedRoute path="/servers/:serverId" component={ServerShowContainer} /> */}
   </div>
 );
 

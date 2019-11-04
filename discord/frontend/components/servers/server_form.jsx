@@ -7,7 +7,6 @@ export default class ServerForm extends React.Component {
 
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        console.log(this.props);
     }
 
     update(e) {
@@ -27,7 +26,7 @@ export default class ServerForm extends React.Component {
                         <input onChange={this.update} type="text" 
                             className="server-form-input"/>
                         <div>
-                            <button>Back</button>
+                            <button onClick={this.props.toggleForm}>Back</button>
                             <input onClick={this.handleSubmit} type="submit" value="Create"/>
                         </div>
                     </form>

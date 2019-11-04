@@ -17,6 +17,10 @@ class Api::ServersController < ApplicationController
         end
     end
 
+    def show 
+        @server = current_user.servers.find(params[:id])
+    end
+
 
     private 
     def server_params

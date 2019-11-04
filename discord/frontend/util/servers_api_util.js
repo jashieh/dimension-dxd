@@ -12,3 +12,10 @@ export const createServer = server => {
         data: { server }
     });
 };
+
+export const fetchServer = id => {
+    return $.ajax({
+        url: `api/servers/${id}`,
+        method: 'GET'
+    });
+};

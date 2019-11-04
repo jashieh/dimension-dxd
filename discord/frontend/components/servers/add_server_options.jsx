@@ -7,17 +7,22 @@ export default class AddServerOptions extends React.Component {
         this.state = { currentForm: null };
 
         this.handleClick = this.handleClick.bind(this);
+        this.toggleForm = this.toggleForm.bind(this);
     }
 
     handleClick(type) {
         if(type === 'create') {
-            console.log('create')
             return e => this.setState({ 
                 currentForm: <ServerForm createServer={this.props.createServer} 
+                toggleForm={this.toggleForm}
             /> });
         } else {
 
         }
+    }
+
+    toggleForm() {
+        this.setState({ currentForm: null });
     }
     
     render() {
