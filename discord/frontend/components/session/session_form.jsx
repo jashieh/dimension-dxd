@@ -22,7 +22,7 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.processForm(this.state)
-        .then(() => this.props.history.push("/"));
+        .then(() => this.props.history.push(`/servers`));
     }
 
     render() {
@@ -60,7 +60,7 @@ class SessionForm extends React.Component {
             <div className="login-signup-page">
                   <div className="home-video">
                     <video autoPlay={true} loop muted={true} className="login-video">
-                        <source src="/home.mp4" type="video/mp4"/>
+                        <source src="/home4.mp4" type="video/mp4"/>
                     </video>
                 </div>
 

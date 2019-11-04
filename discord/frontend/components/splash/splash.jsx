@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 const backgrounds = ["/home4.mp4","/home3.mp4",'/home.mp4','/home5.mp4'];
+
 export default class Splash extends React.Component {
     constructor(props) {
         super(props);
@@ -10,14 +11,22 @@ export default class Splash extends React.Component {
         this.changeTheme = this.changeTheme.bind(this);
     }
 
-    changeTheme(e) {
-        backgrounds.push( backgrounds.shift());
+    adjustVideoSize() {
         let vid = $(".splash-video");
-        if( backgrounds[0] !== "/home4.mp4") {
+        if( this.state.currentBackground !== "/home4.mp4") {
             vid.addClass("splash-video-other");
         } else {
             vid.removeClass("splash-video-other");
         }
+    }
+
+    componentDidMount() {
+       this.adjustVideoSize();
+    }
+
+    changeTheme(e) {
+        backgrounds.push( backgrounds.shift());
+        this.adjustVideoSize();
 
         this.setState({ currentBackground: backgrounds[0] });
     }
@@ -26,7 +35,7 @@ export default class Splash extends React.Component {
     render() {
     const display = this.props.currentUser ? (
       <div className="nav-link">
-        <Link to="/">Open</Link>
+        <Link to="/servers">Open</Link>
         <button onClick={this.props.logout}>Log Out</button>
       </div>
     ) : (

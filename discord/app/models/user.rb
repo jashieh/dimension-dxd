@@ -17,6 +17,19 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6 }, allow_nil: true
     
     attr_reader :password
+
+    has_many :server_memberships,
+    foreign_key: :user_id,
+    class_name: :ServerMembership
+    
+    has_many :owned_servers,
+    foreign_key: :admin_id,
+    class_name: :Server
+
+    has_many :servers,
+    through: :server_memberships,
+    source: :server
+
     
     after_initialize :ensure_session_token
     
