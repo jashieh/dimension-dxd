@@ -8,7 +8,7 @@ class Api::ChannelsController < ApplicationController
     def create 
         @channel = Channel.new(channel_params)
 
-        if(current_user.servers.include?(Server.find_by(id: params[:server_id])))
+        if(current_user.servers.find_by(id: params[:server_id]))
             @channel.server_id = params[:server_id]
         end
 
@@ -20,7 +20,7 @@ class Api::ChannelsController < ApplicationController
     end
     
     def show 
-        if(current_user.servers.include?(Server.find_by(id: params[:server_id])))
+        if(current_user.servers.find_by(id: params[:server_id]))
             @channel = Channel.find(params[:id])
             render :show
         else

@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/servers_api_util';
+import { rejects } from 'assert';
 
 export const RECEIVE_ALL_SERVERS = 'RECEIVE_ALL_SERVERS';
 export const RECEIVE_SERVER = 'RECEIVE_SERVER';
@@ -29,7 +30,7 @@ export const fetchServer = (serverId) => dispatch => (APIUtil.fetchServer(server
     .then(server => (dispatch(receiveServer(server)))));
 
 export const joinServer = (inviteURL) => dispatch => (APIUtil.joinServer(inviteURL)
-    .then(server => dispatch(receiveServer(server))));
+    .then(server => dispatch(receiveServer(server)), error => $.Deferred().reject(error)));
 
 export const leaveServer = (serverId) => dispatch => (APIUtil.leaveServer(serverId)
     .then(server => dispatch(removeServerMembership(server))));
