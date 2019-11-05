@@ -35,11 +35,13 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'signup') {
             emailInput = <div className="login-field">
                             <label className="login-input-label">EMAIL</label>
-                                <input type="text"
-                                    value={this.state.email}
-                                    onChange={this.update('email')}
-                                    className="login-input"
-                                />
+                                <div className="login-input-container">
+                                    <input type="text"
+                                        value={this.state.email}
+                                        onChange={this.update('email')}
+                                        className="login-input"
+                                    />
+                                </div>
                         </div>
             submitText = "Continue";
             headerText = "Create an account";
@@ -86,22 +88,24 @@ class SessionForm extends React.Component {
                             <br/>
                         <div className="login-field">
                             <label className="login-input-label">USERNAME</label>
-                            <br/>
-                            <input type="text"
-                                value={this.state.username}
-                                onChange={this.update('username')}
-                                className="login-input"
-                            />
+                            <div className="login-input-container">
+                                <input type="text"
+                                    value={this.state.username}
+                                    onChange={this.update('username')}
+                                    className="login-input"
+                                />
+                            </div>
                         </div>
                         <br/>
                         <div className="login-field">
                             <label className="login-input-label">PASSWORD</label>
-                            <br/>
-                            <input type="text"
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                                className="login-input"
-                            />
+                            <div className="login-input-container">
+                                <input type="text"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                    className="login-input"
+                                />
+                            </div>
                         </div>
                         <br/>
                         <div className="login-button">
