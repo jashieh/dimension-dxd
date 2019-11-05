@@ -13,7 +13,7 @@
 
 class Server < ApplicationRecord
     validates :admin_id, :server_name, :invite_url, presence: true 
-
+    validates :server_name, length: { maximum: 20}
     after_initialize :ensure_invite_url
 
     attr_reader :app_name

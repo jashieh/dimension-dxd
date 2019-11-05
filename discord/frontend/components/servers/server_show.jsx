@@ -3,10 +3,16 @@ import React from 'react';
 export default class ServerShow extends React.Component {
     constructor(props) {
         super(props);
+        
+        this.leaveServer = this.leaveServer.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchServer(this.props.match.params.serverId);
+    }
+
+    leaveServer() {
+        this.props.leaveServer(this.props.match.params.serverId);
     }
 
     render() {
@@ -35,7 +41,10 @@ export default class ServerShow extends React.Component {
                     </ul>
 
                 </div>
+                <button onClick={this.leaveServer}>Leave Server</button>
+                
                 <div className="footer-util-container">
+                <button onClick={this.props.logout}>Logout</button>
                     { }
                 </div>
             </div>

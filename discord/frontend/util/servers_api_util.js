@@ -25,7 +25,14 @@ export const fetchServer = id => {
 
 export const joinServer = inviteURL => {
     return $.ajax({
-        url: `api/servers/server/${inviteURL}`,
+        url: `api/servers/join/${inviteURL}`,
+        method: 'GET',
+    });
+};
+
+export const leaveServer = id => {
+    return $.ajax({
+        url: `api/servers/leave/${id}`,
         method: 'GET',
     });
 };

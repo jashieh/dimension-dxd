@@ -17,7 +17,7 @@ class ServerIndexItem extends React.Component {
                 <button 
                     onClick={this.handleClick}
                     className="server-nav-button">
-                    {this.props.server.server_name}
+                    {this.props.server.server_name[0]}
                 </button>
             </li>
         );

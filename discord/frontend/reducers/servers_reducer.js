@@ -1,4 +1,8 @@
-import { RECEIVE_ALL_SERVERS, RECEIVE_SERVER } from '../actions/server_actions';
+import { 
+    RECEIVE_ALL_SERVERS, 
+    RECEIVE_SERVER,
+    LEAVE_SERVER 
+} from '../actions/server_actions';
 import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
 
 const serversReducer = (state = {}, action) => {
@@ -10,6 +14,11 @@ const serversReducer = (state = {}, action) => {
         case RECEIVE_SERVER: 
             const newServer = { [action.server.id]: action.server};
             return Object.assign({}, state, newServer);
+        case LEAVE_SERVER:
+            const nextState = Object.assign({}, state);
+            nextState[action.serverId] = null;
+            delete nextState[action.serverId];
+            return nextState;
         case LOGOUT_CURRENT_USER:
             return Object.assign({});
         default:
