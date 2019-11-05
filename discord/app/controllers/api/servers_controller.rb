@@ -38,7 +38,6 @@ class Api::ServersController < ApplicationController
         if @server 
             server_membership = ServerMembership.find_by_membership(@server.id, current_user)
             server_membership.destroy;
-            # render :index
             render "api/servers/show"
         else
             render json: ["Server does not exist"], status: 404

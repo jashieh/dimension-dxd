@@ -39464,3 +39464,864 @@ Completed 200 OK in 27ms (Views: 16.8ms | ActiveRecord: 2.6ms)
 Completed 200 OK in 31ms (Views: 7.1ms | ActiveRecord: 3.7ms)
 
 
+Started GET "/api/servers" for ::1 at 2019-11-05 10:53:08 -0800
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/justin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+:
+
+Started GET "/api/servers/45" for ::1 at 2019-11-05 10:53:09 -0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/justin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+:
+
+Started GET "/api/servers/45" for ::1 at 2019-11-05 10:53:12 -0800
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/justin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+:
+
+Started GET "/api/servers" for ::1 at 2019-11-05 10:53:19 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/justin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+:
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (126.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "discord_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (116.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "discord_test"[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-11-05 10:54:49 -0800
+
+PG::ConnectionBad - FATAL:  database "discord_development" does not exist
+:
+
+Started POST "/__better_errors/2d74151dcb1f9a0b/variables" for ::1 at 2019-11-05 10:54:49 -0800
+  [1m[35m (357.5ms)[0m  [1m[35mCREATE DATABASE "discord_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (302.8ms)[0m  [1m[35mCREATE DATABASE "discord_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "server_memberships" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "server_memberships" ("id" bigserial primary key, "user_id" integer NOT NULL, "server_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_server_memberships_on_user_id_and_server_id" ON "server_memberships"  ("user_id", "server_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "servers" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE "servers" ("id" bigserial primary key, "admin_id" integer NOT NULL, "server_name" character varying NOT NULL, "icon_url" character varying, "invite_url" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE  INDEX  "index_servers_on_admin_id" ON "servers"  ("admin_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:36
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:36
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:36
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:36
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191103203736)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191102232527),
+(20191102232823),
+(20191103191237),
+(20191102214811);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-05 18:54:58.383642"], ["updated_at", "2019-11-05 18:54:58.383642"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "server_memberships" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "server_memberships" ("id" bigserial primary key, "user_id" integer NOT NULL, "server_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_server_memberships_on_user_id_and_server_id" ON "server_memberships"  ("user_id", "server_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "servers" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "servers" ("id" bigserial primary key, "admin_id" integer NOT NULL, "server_name" character varying NOT NULL, "icon_url" character varying, "invite_url" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE  INDEX  "index_servers_on_admin_id" ON "servers"  ("admin_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:36
+  [1m[35m (42.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:36
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:36
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:36
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191103203736)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191102232527),
+(20191102232823),
+(20191103191237),
+(20191102214811);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-05 18:54:58.573250"], ["updated_at", "2019-11-05 18:54:58.573250"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-11-05 18:54:58.579353"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-11-05 10:55:00 -0800
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/justin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+:
+
+Started POST "/__better_errors/77019fae8a44a847/variables" for ::1 at 2019-11-05 10:55:01 -0800
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2988686663139197055)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateChannels (20191105184305)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE "channels" ("id" bigserial primary key, "name" character varying NOT NULL, "server_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105184305_create_channels.rb:3
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE  INDEX  "index_channels_on_server_id" ON "channels"  ("server_id")[0m
+  ↳ db/migrate/20191105184305_create_channels.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105184305"]]
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2988686663139197055)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE "discord_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE DATABASE "discord_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (28.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "channels" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (21.3ms)[0m  [1m[35mCREATE TABLE "channels" ("id" bigserial primary key, "name" character varying NOT NULL, "server_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE  INDEX  "index_channels_on_server_id" ON "channels"  ("server_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (5.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "server_memberships" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "server_memberships" ("id" bigserial primary key, "user_id" integer NOT NULL, "server_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_server_memberships_on_user_id_and_server_id" ON "server_memberships"  ("user_id", "server_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (5.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "servers" CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "servers" ("id" bigserial primary key, "admin_id" integer NOT NULL, "server_name" character varying NOT NULL, "icon_url" character varying, "invite_url" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE  INDEX  "index_servers_on_admin_id" ON "servers"  ("admin_id")[0m
+  ↳ db/schema.rb:34
+  [1m[35m (4.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:44
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "channels" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (16.8ms)[0m  [1m[35mCREATE TABLE "channels" ("id" bigserial primary key, "name" character varying NOT NULL, "server_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE  INDEX  "index_channels_on_server_id" ON "channels"  ("server_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (6.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "server_memberships" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "server_memberships" ("id" bigserial primary key, "user_id" integer NOT NULL, "server_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_server_memberships_on_user_id_and_server_id" ON "server_memberships"  ("user_id", "server_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (4.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "servers" CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE "servers" ("id" bigserial primary key, "admin_id" integer NOT NULL, "server_name" character varying NOT NULL, "icon_url" character varying, "invite_url" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE  INDEX  "index_servers_on_admin_id" ON "servers"  ("admin_id")[0m
+  ↳ db/schema.rb:34
+  [1m[35m (4.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:44
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191105184305)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Update (1.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2019-11-05 18:55:17.342978"], ["key", "environment"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-11-05 18:55:17.358403"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-11-05 10:55:21 -0800
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/justin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YiErlLuggfy6ob_pxBLqPg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 1411ms (Views: 1406.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-11-05 10:55:32 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"justin", "email"=>"justin", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "justin"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "justin"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "justin"], ["email", "justin"], ["password_digest", "$2a$12$.tWUytj6ViO0ogwEcbmCuOlK8xubvhhp06p1tHehZOK/qp8toks6u"], ["session_token", "QKe07zDk3t0zdLYAnDCmAw"], ["created_at", "2019-11-05 18:55:32.708894"], ["updated_at", "2019-11-05 18:55:32.708894"]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "justin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "justin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["updated_at", "2019-11-05 18:55:32.729233"], ["id", 1]]
+  ↳ app/models/user.rb:51
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (2.3ms)
+Completed 200 OK in 287ms (Views: 5.3ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/api/servers" for ::1 at 2019-11-05 10:55:32 -0800
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering api/servers/index.json.jbuilder
+  [1m[36mServer Load (0.9ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/servers/index.json.jbuilder:1
+  Rendered api/servers/index.json.jbuilder (29.2ms)
+Completed 200 OK in 68ms (Views: 21.8ms | ActiveRecord: 9.9ms)
+
+
+Started POST "/api/servers" for ::1 at 2019-11-05 10:55:40 -0800
+Processing by Api::ServersController#create as JSON
+  Parameters: {"server"=>{"server_name"=>"server1"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:12
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:12
+  [1m[36mServer Create (0.6ms)[0m  [1m[32mINSERT INTO "servers" ("admin_id", "server_name", "invite_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["admin_id", 1], ["server_name", "server1"], ["invite_url", "discord.com/  zI0ehNjgwmi1lw"], ["created_at", "2019-11-05 18:55:40.981848"], ["updated_at", "2019-11-05 18:55:40.981848"]]
+  ↳ app/controllers/api/servers_controller.rb:12
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/servers_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:13
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:13
+  [1m[36mServer Load (0.6ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" WHERE "servers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:13
+  [1m[36mServerMembership Create (1.3ms)[0m  [1m[32mINSERT INTO "server_memberships" ("user_id", "server_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["server_id", 1], ["created_at", "2019-11-05 18:55:41.006949"], ["updated_at", "2019-11-05 18:55:41.006949"]]
+  ↳ app/controllers/api/servers_controller.rb:13
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/servers_controller.rb:13
+  Rendering api/servers/show.json.jbuilder
+  Rendered api/servers/show.json.jbuilder (0.7ms)
+Completed 200 OK in 50ms (Views: 3.3ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/api/servers/1" for ::1 at 2019-11-05 10:55:41 -0800
+Processing by Api::ServersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mServer Load (1.5ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1 AND "servers"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:21
+  Rendering api/servers/show.json.jbuilder
+  Rendered api/servers/show.json.jbuilder (0.7ms)
+Completed 200 OK in 11ms (Views: 2.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2019-11-05 10:55:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+Completed 200 OK in 81ms (Views: 70.8ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/api/servers" for ::1 at 2019-11-05 10:55:59 -0800
+Processing by Api::ServersController#index as JSON
+Started GET "/api/servers/1" for ::1 at 2019-11-05 10:55:59 -0800
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering api/servers/index.json.jbuilder
+  [1m[36mServer Load (0.7ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1[0m  [["user_id", 1]]
+Processing by Api::ServersController#show as JSON
+  ↳ app/views/api/servers/index.json.jbuilder:1
+  Parameters: {"id"=>"1"}
+  Rendered api/servers/index.json.jbuilder (25.0ms)
+Completed 200 OK in 74ms (Views: 27.5ms | ActiveRecord: 8.3ms)
+
+
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mServer Load (2.9ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1 AND "servers"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:21
+  Rendering api/servers/show.json.jbuilder
+  Rendered api/servers/show.json.jbuilder (0.4ms)
+Completed 200 OK in 28ms (Views: 2.1ms | ActiveRecord: 7.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2988686663139197055)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RenameColChannels (20191105185805)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (22.2ms)[0m  [1m[35mALTER TABLE "channels" DROP COLUMN "name"[0m
+  ↳ db/migrate/20191105185805_rename_col_channels.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "channels" ADD "server_name" character varying[0m
+  ↳ db/migrate/20191105185805_rename_col_channels.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105185805"]]
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2988686663139197055)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-11-05 10:58:45 -0800
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/justin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+Completed 200 OK in 91ms (Views: 77.2ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/api/servers" for ::1 at 2019-11-05 10:58:46 -0800
+Processing by Api::ServersController#index as JSON
+Started GET "/api/servers/1" for ::1 at 2019-11-05 10:58:46 -0800
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Processing by Api::ServersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering api/servers/index.json.jbuilder
+  [1m[36mServer Load (1.4ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1 AND "servers"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:21
+  [1m[36mServer Load (9.9ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/servers/index.json.jbuilder:1
+  Rendered api/servers/index.json.jbuilder (29.8ms)
+Completed 200 OK in 80ms (Views: 19.4ms | ActiveRecord: 15.2ms)
+
+
+  Rendering api/servers/show.json.jbuilder
+  Rendered api/servers/show.json.jbuilder (0.6ms)
+Completed 200 OK in 68ms (Views: 1.8ms | ActiveRecord: 14.8ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2988686663139197055)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RenameColChannels2 (20191105185907)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2988686663139197055)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2988686663139197055)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RenameColChannels2 (20191105185907)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (24.3ms)[0m  [1m[35mALTER TABLE "channels" DROP COLUMN "server_name"[0m
+  ↳ db/migrate/20191105185907_rename_col_channels2.rb:3
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "channels" ADD "channel_name" character varying[0m
+  ↳ db/migrate/20191105185907_rename_col_channels2.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105185907"]]
+  ↳ bin/rails:9
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2988686663139197055)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-11-05 11:00:57 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/justin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+Completed 200 OK in 77ms (Views: 75.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/servers" for ::1 at 2019-11-05 11:00:58 -0800
+Processing by Api::ServersController#index as JSON
+Started GET "/api/servers/1" for ::1 at 2019-11-05 11:00:58 -0800
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Processing by Api::ServersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (28.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering api/servers/index.json.jbuilder
+  [1m[36mServer Load (3.9ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/servers/index.json.jbuilder:1
+  Rendered api/servers/index.json.jbuilder (24.6ms)
+Completed 200 OK in 92ms (Views: 39.3ms | ActiveRecord: 8.6ms)
+
+
+  [1m[36mServer Load (1.6ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1 AND "servers"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:21
+  Rendering api/servers/show.json.jbuilder
+  Rendered api/servers/show.json.jbuilder (1.9ms)
+Completed 200 OK in 97ms (Views: 9.0ms | ActiveRecord: 59.8ms)
+
+
+Started POST "/api/servers" for ::1 at 2019-11-05 11:01:04 -0800
+Processing by Api::ServersController#create as JSON
+  Parameters: {"server"=>{"server_name"=>"eruhrtjkfsjfghkjfsdjgtdfkjgndfkgndkgdfgdsfadgdfsgfdsg"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:12
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/servers_controller.rb:12
+Completed 422 Unprocessable Entity in 33ms (Views: 1.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/servers" for ::1 at 2019-11-05 11:16:59 -0800
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering api/servers/index.json.jbuilder
+  [1m[36mServer Load (0.4ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/servers/index.json.jbuilder:1
+  Rendered api/servers/index.json.jbuilder (10.8ms)
+Completed 200 OK in 31ms (Views: 10.3ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/api/servers" for ::1 at 2019-11-05 11:17:07 -0800
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering api/servers/index.json.jbuilder
+  [1m[36mServer Load (0.7ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/servers/index.json.jbuilder:1
+  Rendered api/servers/index.json.jbuilder (6.7ms)
+Completed 200 OK in 16ms (Views: 11.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/servers" for ::1 at 2019-11-05 11:17:21 -0800
+Started POST "/api/servers" for ::1 at 2019-11-05 11:17:21 -0800
+Processing by Api::ServersController#create as JSON
+  Parameters: {"server"=>{"server_name"=>"eruhrtjkfsjfghkjfsdjgtdfkjgndfkgndkgdfgdsfadgdfsgfdsg"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:12
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:12
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/servers_controller.rb:12
+Completed 422 Unprocessable Entity in 20ms (Views: 0.2ms | ActiveRecord: 2.8ms)
+
+
+Processing by Api::ServersController#create as JSON
+  Parameters: {"server"=>{"server_name"=>"asd"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:12
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:12
+  [1m[36mServer Create (0.8ms)[0m  [1m[32mINSERT INTO "servers" ("admin_id", "server_name", "invite_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["admin_id", 1], ["server_name", "asd"], ["invite_url", "discord.com/JK60I2twpECwJg"], ["created_at", "2019-11-05 19:17:21.137289"], ["updated_at", "2019-11-05 19:17:21.137289"]]
+  ↳ app/controllers/api/servers_controller.rb:12
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/servers_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:13
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:13
+  [1m[36mServer Load (0.4ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" WHERE "servers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:13
+  [1m[36mServerMembership Create (0.4ms)[0m  [1m[32mINSERT INTO "server_memberships" ("user_id", "server_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["server_id", 2], ["created_at", "2019-11-05 19:17:21.162649"], ["updated_at", "2019-11-05 19:17:21.162649"]]
+  ↳ app/controllers/api/servers_controller.rb:13
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/servers_controller.rb:13
+  Rendering api/servers/show.json.jbuilder
+  Rendered api/servers/show.json.jbuilder (0.6ms)
+Completed 200 OK in 41ms (Views: 2.8ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/api/servers/2" for ::1 at 2019-11-05 11:17:21 -0800
+Processing by Api::ServersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mServer Load (0.7ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1 AND "servers"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:21
+  Rendering api/servers/show.json.jbuilder
+  Rendered api/servers/show.json.jbuilder (0.5ms)
+Completed 200 OK in 10ms (Views: 3.2ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-11-05 11:41:21 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SbByLwszpIP2aOYJteVhFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "justin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "justin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "kCrozI_menPfqQ3v74Q6ig"], ["updated_at", "2019-11-05 19:41:22.015967"], ["id", 1]]
+  ↳ app/models/user.rb:51
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (0.8ms)
+Completed 200 OK in 54ms (Views: 2.3ms | ActiveRecord: 23.6ms)
+
+
+Started POST "/api/session" for ::1 at 2019-11-05 11:41:25 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/session" for ::1 at 2019-11-05 11:41:25 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/servers" for ::1 at 2019-11-05 11:41:29 -0800
+Started GET "/api/servers/join/" for ::1 at 2019-11-05 11:41:29 -0800
+Processing by Api::ServersController#create as JSON
+Started POST "/api/session" for ::1 at 2019-11-05 11:41:29 -0800
+  Parameters: {"server"=>{"server_name"=>"eruhrtjkfsjfghkjfsdjgtdfkjgndfkgndkgdfgdsfadgdfsgfdsg"}}
+Filter chain halted as :require_logged_in rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Processing by Api::ServersController#show as JSON
+  Parameters: {"id"=>"join"}
+Filter chain halted as :require_logged_in rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"justin", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "justin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "justin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "justin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "wd0lhCFtaXBbL0OJWX2EKQ"], ["updated_at", "2019-11-05 19:41:30.133342"], ["id", 1]]
+  ↳ app/models/user.rb:51
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/users/show.json.jbuilder (3.4ms)
+Completed 200 OK in 259ms (Views: 6.3ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/api/servers" for ::1 at 2019-11-05 11:41:30 -0800
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "wd0lhCFtaXBbL0OJWX2EKQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering api/servers/index.json.jbuilder
+  [1m[36mServer Load (1.2ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/servers/index.json.jbuilder:1
+  Rendered api/servers/index.json.jbuilder (36.7ms)
+Completed 200 OK in 66ms (Views: 22.2ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/api/servers/2" for ::1 at 2019-11-05 11:43:13 -0800
+Processing by Api::ServersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "wd0lhCFtaXBbL0OJWX2EKQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mServer Load (0.8ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1 AND "servers"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:21
+  Rendering api/servers/show.json.jbuilder
+  Rendered api/servers/show.json.jbuilder (2.1ms)
+Completed 200 OK in 18ms (Views: 7.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/servers/leave/2" for ::1 at 2019-11-05 11:43:17 -0800
+Processing by Api::ServersController#leave as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "wd0lhCFtaXBbL0OJWX2EKQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mServer Load (0.5ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1 AND "servers"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:36
+  [1m[36mServerMembership Load (0.4ms)[0m  [1m[34mSELECT  "server_memberships".* FROM "server_memberships" WHERE "server_memberships"."server_id" = $1 AND "server_memberships"."user_id" = $2 LIMIT $3[0m  [["server_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/server_membership.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:40
+  [1m[36mServerMembership Destroy (0.5ms)[0m  [1m[31mDELETE FROM "server_memberships" WHERE "server_memberships"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:40
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/servers_controller.rb:40
+  Rendering api/servers/show.json.jbuilder
+  Rendered api/servers/show.json.jbuilder (0.5ms)
+Completed 200 OK in 30ms (Views: 8.6ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-05 11:49:03 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "wd0lhCFtaXBbL0OJWX2EKQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+Completed 200 OK in 336ms (Views: 328.9ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/api/servers" for ::1 at 2019-11-05 11:49:03 -0800
+Processing by Api::ServersController#index as JSON
+Started GET "/api/servers/1" for ::1 at 2019-11-05 11:49:03 -0800
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "wd0lhCFtaXBbL0OJWX2EKQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering api/servers/index.json.jbuilder
+  [1m[36mServer Load (1.6ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/servers/index.json.jbuilder:1
+  Rendered api/servers/index.json.jbuilder (28.6ms)
+Completed 200 OK in 71ms (Views: 26.0ms | ActiveRecord: 12.5ms)
+
+
+Processing by Api::ServersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "wd0lhCFtaXBbL0OJWX2EKQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mServer Load (0.7ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1 AND "servers"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:21
+  Rendering api/servers/show.json.jbuilder
+  Rendered api/servers/show.json.jbuilder (1.0ms)
+Completed 200 OK in 13ms (Views: 4.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2019-11-05 12:02:38 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "wd0lhCFtaXBbL0OJWX2EKQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+Completed 200 OK in 393ms (Views: 384.1ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-05 12:02:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "wd0lhCFtaXBbL0OJWX2EKQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+Completed 200 OK in 500ms (Views: 498.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/servers" for ::1 at 2019-11-05 12:02:57 -0800
+Started GET "/api/servers/1" for ::1 at 2019-11-05 12:02:57 -0800
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "wd0lhCFtaXBbL0OJWX2EKQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Processing by Api::ServersController#show as JSON
+  Parameters: {"id"=>"1"}
+  Rendering api/servers/index.json.jbuilder
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "wd0lhCFtaXBbL0OJWX2EKQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mServer Load (0.8ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/servers/index.json.jbuilder:1
+  Rendered api/servers/index.json.jbuilder (30.5ms)
+Completed 200 OK in 103ms (Views: 29.8ms | ActiveRecord: 9.2ms)
+
+
+  [1m[36mServer Load (13.1ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1 AND "servers"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:21
+  Rendering api/servers/show.json.jbuilder
+  Rendered api/servers/show.json.jbuilder (0.7ms)
+Completed 200 OK in 96ms (Views: 3.9ms | ActiveRecord: 66.4ms)
+
+

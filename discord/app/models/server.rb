@@ -16,8 +16,6 @@ class Server < ApplicationRecord
     validates :server_name, length: { maximum: 20}
     after_initialize :ensure_invite_url
 
-    attr_reader :app_name
-
     belongs_to :server_admin,
     foreign_key: :admin_id,
     class_name: :User
@@ -26,6 +24,11 @@ class Server < ApplicationRecord
     foreign_key: :server_id,
     class_name: :ServerMembership,
     dependent: :destroy 
+
+    has_many :channels,
+    foreign_key: :server_id,
+    class_name: :Server,
+    dependent: :destroy
 
     has_many :users,
     through: :server_members,
@@ -37,7 +40,7 @@ class Server < ApplicationRecord
 
     private 
     def ensure_invite_url
-        self.invite_url ||=  "discord.com/  "+ SecureRandom.urlsafe_base64(10)
+        self.invite_url ||=  "discord.com/" + SecureRandom.urlsafe_base64(10)
     end
 
 end
