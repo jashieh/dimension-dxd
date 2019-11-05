@@ -1,0 +1,118 @@
+.server-form-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.server-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.server-form-header {
+    font-size: 18px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.server-form-body {
+    font-size: 18px;
+    padding-bottom: 50px;
+}
+
+.server-form-main {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.server-form-left {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+}
+
+.server-name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.server-form-name {
+    text-align: left;
+    font-size: 20px;
+}
+
+.server-form-input {
+    border-bottom: 1px solid grey;
+    text-align: left;
+}
+
+.server-region-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.server-form-footer {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    justify-content: space-between;
+}
+
+.submit-server-button {
+    background-color: lightblue;
+    width: 96px;
+    height: 38px;
+    padding: 3px 10px 3px 10px;
+    border-radius: 3px;    
+}
+
+.server-form-right {
+    position: absolute;
+    right: 0;
+}
+
+.back-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.back-arrow {
+    margin-bottom: 5px;
+}
+
+.server-name-error-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.server-form-submit-fail {
+    color: red;
+}
+
+.server-form-errors {
+    padding-left: 5px;
+    font-size: 15px;
+    color: red;
+}
+
+.server-form-right {
+    background-color: green;
+}

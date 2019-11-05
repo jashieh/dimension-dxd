@@ -21,3 +21,6 @@ export const createServer = (server) => dispatch => (APIUtil.createServer(server
 
 export const fetchServer = (serverId) => dispatch => (APIUtil.fetchServer(serverId)
     .then(server => (dispatch(receiveServer(server)))));
+
+export const joinServer = (inviteURL) => dispatch => (APIUtil.joinServer(inviteURL)
+    .then(server => dispatch(receiveServer(server))));

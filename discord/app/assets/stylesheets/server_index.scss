@@ -1,0 +1,43 @@
+.server-nav-container {
+    background-color: rgba(169,169,169,0.7);
+    width: 72px;
+    height: 100vh;
+    overflow-y: scroll;
+    z-index: 1;
+}
+
+.server-nav-container::-webkit-scrollbar { 
+    display: none; 
+}
+
+.server-nav-ul {
+    width: 72px;
+}
+
+.server-nav-li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.server-nav-button {
+    background-color: rgba(0,128,0,1);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.server-nav-button:hover {
+    transition: .2s;
+    border-radius: 15px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+
+

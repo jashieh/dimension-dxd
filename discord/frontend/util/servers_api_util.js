@@ -19,3 +19,10 @@ export const fetchServer = id => {
         method: 'GET'
     });
 };
+
+export const joinServer = inviteURL => {
+    return $.ajax({
+        url: `api/servers/server/${inviteURL}`,
+        method: 'GET'
+    });
+};

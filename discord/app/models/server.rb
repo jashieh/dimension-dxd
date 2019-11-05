@@ -16,6 +16,8 @@ class Server < ApplicationRecord
 
     after_initialize :ensure_invite_url
 
+    attr_reader :app_name
+
     belongs_to :server_admin,
     foreign_key: :admin_id,
     class_name: :User
@@ -29,9 +31,13 @@ class Server < ApplicationRecord
     through: :server_members,
     source: :user 
 
+    def self.find_by_url(url)
+        Server.find_by(invite_url: url)
+    end
+
     private 
     def ensure_invite_url
-        self.invite_url ||= SecureRandom.urlsafe_base64(10)
+        self.invite_url ||=  "discord.com/  "+ SecureRandom.urlsafe_base64(10)
     end
 
 end

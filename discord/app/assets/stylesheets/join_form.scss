@@ -1,0 +1,88 @@
+.join-form-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.join-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.join-form-header {
+    font-size: 18px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.join-form-body {
+    font-size: 18px;
+    padding-bottom: 50px;
+    font-size: whitney 
+}
+
+.join-form-instructions {
+    padding-bottom: 20px;
+}
+
+.join-url-example {
+
+}
+
+.join-form-main {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.join-url-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.join-form-input {
+    border-bottom: 1px solid grey;
+    text-align: left;
+}
+
+.join-form-footer {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    justify-content: space-between;
+}
+
+.join-server-button {
+    background-color: lightblue;
+    width: 96px;
+    height: 38px;
+    padding: 3px 10px 3px 10px;
+    border-radius: 3px;    
+}
+
+.join-error-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.join-form-submit-fail {
+    color: red;
+}
+
+.join-form-errors {
+    padding-left: 5px;
+    font-size: 15px;
+    color: red;
+}

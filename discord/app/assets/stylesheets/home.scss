@@ -7,10 +7,12 @@
 }
 
 .home-elements-container {
-    width: 100%;
+    width: 100vw;
+    margin: 0px;
     display: flex;
-    background-image: url("/ubw.jpg");
+    background-image: url("/ubw.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    // background-attachment: fixed;
 }
