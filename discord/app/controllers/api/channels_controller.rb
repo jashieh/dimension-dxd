@@ -2,12 +2,15 @@ class Api::ChannelsController < ApplicationController
     before_action :require_logged_in
 
     def index 
-        @channels = Server.find_by(server_id: params[:server_id]).channels 
+        @channels = Server.find_by(id: params[:server_id]).channels 
     end
     
     def create 
         @channel = Channel.new(channel_params)
-        @channel.server_id = params[:server_id]
+
+        if(current_user.servers.include?(Server.find_by(id: params[:server_id])))
+            @channel.server_id = params[:server_id]
+        end
 
         if @channel.save 
             render :show 
@@ -17,7 +20,13 @@ class Api::ChannelsController < ApplicationController
     end
     
     def show 
-        @channel = Channel.find(params[:id])
+        if(current_user.servers.include?(Server.find_by(id: params[:server_id])))
+            @channel = Channel.find(params[:id])
+            render :show
+        else
+            render json: ["Can't access channels you're not part of"], status: 400
+        end
+
     end
 
     private 

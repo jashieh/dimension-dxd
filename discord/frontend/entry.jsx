@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import {joinServer} from './actions/server_actions';
+import { createChannel, fetchServerChannels } from './actions/channel_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -19,8 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         store = configureStore();
     }
+
     window.store = store;
+
+    // Test stuff remove later
     window.joinServer = joinServer;
+    window.createChannel = createChannel;
+    window.fetchServerChannels = fetchServerChannels;
     window.dispatch = store.dispatch;
 
     ReactDOM.render(<Root store={store}/>, root);

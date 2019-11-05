@@ -1,9 +1,10 @@
 import React from 'react';
+import ChannelIndexContainer from '../channels/channel_index_container';
+
 
 export default class ServerShow extends React.Component {
     constructor(props) {
         super(props);
-        
         this.leaveServer = this.leaveServer.bind(this);
     }
 
@@ -12,7 +13,8 @@ export default class ServerShow extends React.Component {
     }
 
     leaveServer() {
-        this.props.leaveServer(this.props.match.params.serverId);
+        // this.props.leaveServer(this.props.match.params.serverId);
+        this.props.leaveServer(this.props.server.id);
     }
 
     render() {
@@ -21,6 +23,8 @@ export default class ServerShow extends React.Component {
         if (this.props.server) {
             serverName = this.props.server.server_name;
             inviteUrl = this.props.server.invite_url;
+        } else {
+            serverName = "Server does not exist";
         }
 
         return(
@@ -39,6 +43,8 @@ export default class ServerShow extends React.Component {
                     <ul className="voice-channels">
                         <label>VOICE CHANNELS</label>
                     </ul>
+
+                    <ChannelIndexContainer />
 
                 </div>
                 <button onClick={this.leaveServer}>Leave Server</button>
