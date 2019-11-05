@@ -1,3 +1,6 @@
+import React from "react";
+import {Redirect} from 'react-router-dom';
+
 export const fetchAllServers = () => {
     return $.ajax({
         url: '/api/servers',
@@ -23,6 +26,6 @@ export const fetchServer = id => {
 export const joinServer = inviteURL => {
     return $.ajax({
         url: `api/servers/server/${inviteURL}`,
-        method: 'GET'
+        method: 'GET',
     });
 };
