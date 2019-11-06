@@ -1,0 +1,81 @@
+.single-server-show {
+    z-index: 0;
+    width: 240px;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
+    position: relative;
+}
+
+.single-server-header-container {
+    width: 100%;
+    height: 48px;
+    background-color: white;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.single-server-header-name {
+    padding-left: 16px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.channels {
+    padding: 10px;
+    color: #8E9275;
+}
+
+.channels-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.channel-nav-ul {
+    padding-left: 20px;
+}
+
+.footer-util-container {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    height: 52px;
+    display: flex;
+    align-items: center;
+}
+
+.user-icon-container {
+    width: 42px;
+    height: 32px;
+    padding-left: 20px;
+}
+
+.footer-button-container {
+    position: absolute;
+    right: 0;
+    padding: 20px;
+}
+
+.footer-user-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-user-name {
+    font-size: 20px;
+}
+
+.footer-user-id {
+    font-size: 12px;
+}
+
+// .collapse-item {
+//     display: none;
+// }
