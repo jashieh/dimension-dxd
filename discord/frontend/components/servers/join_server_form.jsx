@@ -26,9 +26,8 @@ class JoinServerForm extends React.Component {
             (payload) => {this.props.toggleModal();
                 this.props.history.push(`/home/${payload.server.id}`)
             },
-            (error) => { console.log(error);
-                this.error = "(The invite is invalid or has expired)";
-                    this.forceUpdate();
+            (error) => { this.error = "(The invite is invalid or has expired)";
+                this.forceUpdate();
             },
         );
     }

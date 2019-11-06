@@ -16,7 +16,6 @@ class ChannelForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.props);
         this.props.createChannel(this.props.serverId,this.state).then(
             (payload) => {this.props.closeModal();}
         )
@@ -27,18 +26,22 @@ class ChannelForm extends React.Component {
         return(
             <div className="channel-form-container">
                 <form className="channel-form" onSubmit={this.handleSubmit}>
-                    <div className="channel-form-header">
-                        CREATE NEW CHANNEL
-                    </div>
-                    <div className="channel-form-catagory">
-                        in Catagory /////
-                    </div>
+                    {/* <div className="channel-form-head-container">
+                        <div className="channel-form-head-inner"> */}
+                            <div className="channel-form-header">
+                                CREATE NEW CHANNEL
+                            </div>
+                            <div className="channel-form-catagory">
+                                in Catagory /////
+                            </div>
+                        {/* </div>
+                    </div> */}
                     <div className="channel-form-type-container">
                         <div className="channel-form-type-header">
                             CHANNEL TYPE
                         </div>
                         <div>
-                            TEXT
+                            <input type="checkbox"/>
                         </div>
                         <div>
                             VOICE
