@@ -19,11 +19,10 @@ class ServerShow extends React.Component {
                 this.props.history.push('/home');
         });
         
-        let collapse = document.getElementsByClassName('channel-header');
+        let collapse = document.getElementsByClassName('channels-header');
         for(let i = 0; i < collapse.length; i++) {
             collapse[i].addEventListener('click', function(e) {
-                console.log(this.children);
-                // this.lastElementChild.classList.toggle('collapse-item');
+                this.nextElementSibling.classList.toggle('collapse-item');
             });
         }
     }
@@ -56,10 +55,14 @@ class ServerShow extends React.Component {
                 <div className="channel-list">
                     <ul className="channels">
                         <div className="channels-container">
-                            <div className="channel-header">
-                                    TEXT CHANNELS
-                        
+                            <div className="channels-header">
                                 <div>
+                                    >
+                                </div>
+                                <div className="channels-header-element">
+                                    TEXT CHANNELS
+                                </div>
+                                <div className="channels-header-element">
                                     { this.props.otherForm }
                                 </div>
                             </div>
@@ -67,13 +70,15 @@ class ServerShow extends React.Component {
                         </div>
                     </ul>
 
+                    
+{/* 
                     <ul className="channels">
                         <div className="channels-container">
                             <label className="channel-header">
                                 VOICE CHANNELS
                             </label>
                         </div>
-                    </ul>
+                    </ul> */}
 
                 </div>
                 <button onClick={this.leaveServer}>Leave Server</button>

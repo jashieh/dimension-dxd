@@ -28,7 +28,7 @@ class ServerForm extends React.Component {
                 this.props.history.push(`/home/${payload.server.id}`)
             },
             () => {this.error = "- This field is required"; 
-                document.querySelector('.server-form-name')
+                document.querySelector('.server-form-label')
                     .classList.add('server-form-submit-fail');
                     this.forceUpdate();
             }
@@ -75,7 +75,7 @@ class ServerForm extends React.Component {
                         <div className="server-form-left">
                             <div className="server-name-container">
                                 <div className="server-name-error-container">
-                                    <label className="server-form-name">SERVER NAME</label>
+                                    <label className="server-form-label">SERVER NAME</label>
                                     <div className="server-form-errors">
                                         { this.error }
                                     </div>
@@ -87,7 +87,7 @@ class ServerForm extends React.Component {
                                 </div>
                             </div>
                             <div className="server-region-container">
-                                <label className="server-form-region">SERVER REGION</label>
+                                <label className="server-form-label">SERVER REGION</label>
                                 <div className="server-region-input-container">
                                     server region here
                                 </div>
@@ -101,7 +101,7 @@ class ServerForm extends React.Component {
                         <div className="back-button-container" onClick={this.props.toggleForm}>
                             <div className="back-arrow">←</div>
                             <button onClick={this.props.toggleForm}
-                            className="server-form-back">Back</button>
+                            className="server-form-back">BACK</button>
                         </div>
                         <input onClick={this.handleSubmit} type="submit" value="Create"
                             className="submit-server-button"/>

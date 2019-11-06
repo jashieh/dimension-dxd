@@ -26,39 +26,42 @@ class ChannelForm extends React.Component {
         return(
             <div className="channel-form-container">
                 <form className="channel-form" onSubmit={this.handleSubmit}>
-                    {/* <div className="channel-form-head-container">
-                        <div className="channel-form-head-inner"> */}
+                    <div className="channel-form-head-container">
                             <div className="channel-form-header">
                                 CREATE NEW CHANNEL
                             </div>
                             <div className="channel-form-catagory">
                                 in Catagory /////
                             </div>
-                        {/* </div>
-                    </div> */}
-                    <div className="channel-form-type-container">
-                        <div className="channel-form-type-header">
+                    </div>
+                    <div className="channel-form-field-container">
+                        <div className="channel-form-input-header">
                             CHANNEL TYPE
                         </div>
-                        <div>
-                            <input type="checkbox"/>
-                        </div>
-                        <div>
-                            VOICE
+                        <div className="channel-form-input-container">
+                            <input type="checkbox" className="channel-form-checkbox"/>
+                            <div>
+                                #
+                            </div>
+                            <div>
+                                Text Channel
+                            </div>
                         </div>
                     </div>
-                    <div className="channel-form-input-container">
+                    <div className="channel-form-field-container">
                         <div className="channel-form-input-header">
                             CHANNEL NAME
                         </div>
-                        <div className="channel-form-input-outer">
+                        <div className="channel-form-input-container">
                             <input type="text" className="channel-form-input" onChange={this.update}/>
                         </div>
                     </div>
 
                     <div className="channel-form-footer">
-                        <div className="channel-form-cancel">
-                            Cancel
+                        <div className="channel-form-cancel-container">
+                            <div className="channel-form-cancel" onClick={this.props.closeModal}>
+                                Cancel
+                            </div>
                         </div>
                         <div className="channel-form-submit-container">
                             <button className="channel-form-submit-button">

@@ -1,64 +1,120 @@
 .channel-form-container {
-    background-color: white;
+    background-color: #36393f;
     width: 540px;
-    height: 420px;
+    // height: 420px;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 5px;
+
 }
 
 .channel-form {
-    // width: 100%;
-    // height: 100%;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
-    margin: 20px;
-    box-sizing: border-box;
 }
 
 .channel-form-head-container {
     width: 100%;
     display: block;
-    // padding: 20px;
-    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+
 }
 
-.channel-form-head-inner {
-    display: flex;
-    width: 100%;
-    align-items: flex-start;
-    flex-direction: column;
-    margin: 20px;
-}
 
 .channel-form-header {
-    width: 100%;
-    // margin: 100  px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
 }
 
-.channel-form-type-container {
+.channel-form-catagory {
+    font-size: 14px;
+    color: #b9bbbe;
+}
+
+.channel-form-input-header {
+    font-weight: 600;
+    color: #8e9297;
+    padding-bottom: 10px;
+}
+
+.channel-form-field-container {
     display: flex;
     width: 100%;
     align-items: flex-start;
     flex-direction: column;
-    // padding: 20px;
-    margin: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
 
+.channel-form-input-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 1px solid black;
+    height: 46px;
+    align-items: center;
+    border-radius: 3px;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.channel-form-input {
+    width: 100%;
 }
 
 
 .channel-form-footer {
     display: flex;
     flex-direction: row;
-    position: absolute;
-    bottom: 0;
+    // position: absolute;
+    // bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #2f3136;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.channel-form-cancel-container {
+    padding-right: 25px;
+}
+
+.channel-form-cancel {
+    color: white;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.channel-form-cancel:hover {
+    border-bottom: 1px solid white;
+}
+
+.channel-form-submit-container {
+    padding-right: 30px;
+    // display: flex;
+    // justify-content: center;
+}
+
+.channel-form-submit-button {
+    // padding-right: 30px;
+    background-color: #7289da;
+    border-radius: 3px;
+    width: 130px;
+    height: 38px;
+    text-align: center;
+    color: white;
+}
+
+.channel-form-submit-button:hover {
+    filter: brightness(80%);
 }
 
 

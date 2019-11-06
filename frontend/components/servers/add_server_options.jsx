@@ -17,10 +17,10 @@ export default class AddServerOptions extends React.Component {
 
     }
 
-    // componentDidUpdate() {
-    //     $('.create-server-options-container').on('click', this.handleClick('create'));
-    //     $('.join-server-options-container').on('click', this.handleClick('join'));
-    // }
+    componentDidUpdate() {
+        $('.create-server-options-container').on('click', this.handleClick('create'));
+        $('.join-server-options-container').on('click', this.handleClick('join'));
+    }
 
     handleClick(type) {
         if (type === 'create') {
@@ -53,9 +53,9 @@ export default class AddServerOptions extends React.Component {
                         </header>
                         <div className="add-server-options-actions">
                             <div className="create-server-options-container">
-                                <header className="create-server-options-header">
+                                <div className="create-server-options-header">
                                     CREATE
-                                </header>
+                                </div>
                                 <p className="create-server-options-body">
                                     Create a new server and invite your friends. It's free!
                                 </p>
@@ -71,7 +71,7 @@ export default class AddServerOptions extends React.Component {
                             <div className="join-server-options-container">
                                 <header className="join-server-options-header">
                                     JOIN
-                            </header>
+                                </header>
                                 <p className="join-server-options-body">
                                     Enter an invite and join your friend's server
                                 </p>

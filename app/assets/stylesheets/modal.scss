@@ -12,17 +12,19 @@
 .modal-box {
     z-index: 999;
     position: absolute;
-    background: white;
+    background: #faf7f7;
     border-radius: 5px;
     border: 1px solid black;
     font-size: 20px;
-    width: 540px;
-    height: 420px;
+    // width: 540px;
+    // height: 420px;
+    width: 620px;
+    height: 476px;
     top: 50%;
     left: 50%;
     text-align: center;
     transform: translateX(-50%) translateY(-50%);
-    padding: 28px 40px 28px;
+    // padding: 28px 40px 28px;
 }
 
 .add-server-options-inner {
@@ -41,11 +43,13 @@
 }
 
 .add-server-options-header {
-    padding: 20px;
+    padding-top: 50px;
+    color: #7289da;
+    font-weight: 700;
 }
 
 .create-server-options-container, .join-server-options-container {
-    border: 1px solid green;
+    border: 2px solid rgba(0,0,0,.1);
     border-radius: 3px;
     width: 240px;
     height: 320px;
@@ -54,6 +58,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    background: white;
 }
 
 .create-server-options-container:hover, .join-server-options-container:hover {
@@ -61,16 +66,28 @@
 }
 
 
-.create-server-options-header, .join-server-options-header {
+.join-server-options-header {
     margin: 20px 0px 0px;
+    color: #3ca374;
+    font-weight: 500;
+}
+
+.create-server-options-header {
+    margin: 20px 0px 0px;
+    color: #7289da;
+    font-weight: 500;
 }
 
 .create-server-options-body {
     margin: 16px 0px 16px 0px;
+    color: #99aab5;
+    font-size: 18px;
 }
 
 .join-server-options-body {
     margin: 16px 0px 25px 0px;
+    color: #99aab5;
+    font-size: 18px;
 }
 
 .create-server-options-img {
@@ -92,24 +109,25 @@
     border-radius: 3px;
     width: 196px;
     height: 44px;
+    color: white;
 }
 
 .create-server-options-button {
-    background-color:  lightblue;
+    background-color:  #7289da;
 }
 
 
 .join-server-options-button {
-    background-color: green;
+    background-color: #3ca374;
 }
 
 .create-server-options-container:hover .create-server-options-button {
-    background-color: grey;
+    filter: brightness(70%);
     transition: .3s;
 }
 
 .join-server-options-container:hover .join-server-options-button {
-    background-color: grey;
+    filter: brightness(70%);
     transition: .3s;
 }
 
