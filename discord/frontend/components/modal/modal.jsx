@@ -3,27 +3,56 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import ChannelFormContainer from '../channels/channel_form_container'
 
+// const handleKeyDown = (e, cB) => {
+//   console.log("keydown")
+//   if(e.key === "Escape") {
+//     cB();
+//   }
+// };
 
-function Modal({modal, closeModal}) {
-  if (!modal) {
-    return null;
+class Modal extends React.Component {
+  constructor(props) {
+    super(props);
   }
-  let component;
-  switch (modal) {
-    case 'channel':
-      component = <ChannelFormContainer />
-      break;
-    default:
+
+  componentDidUpdate() {
+    if (this.props.modal) {
+      this.modalDiv.focus();
+    }
+  }
+
+  handleKeyDown (e, cB) {
+    if(e.key === "Escape") {
+      cB();
+    }
+  };
+
+  render() {
+    const { modal, closeModal} = this.props;
+    if (!modal) {
       return null;
-  }
-
-  return (
-    <div className="modal-background" onClick={closeModal}>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
-        { component }
+    }
+    let component;
+    switch (modal) {
+      case 'channel':
+        component = <ChannelFormContainer />
+        break;
+      default:
+        return null;
+    }
+    return (
+      <div className="modal-background" 
+        onClick={closeModal} 
+        onKeyDown={(e) => this.handleKeyDown(e,closeModal)} 
+        tabIndex="0"
+        ref={(modalDiv) => (this.modalDiv = modalDiv)}
+      >
+        <div className="modal-child" onClick={e => e.stopPropagation()}>
+          { component }
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 const mapStateToProps = state => {

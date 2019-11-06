@@ -6,6 +6,8 @@ class ChannelForm extends React.Component {
         super(props);
         this.state = { channel_name: ""};
 
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this);
     }
 
     update(e) {
@@ -13,14 +15,18 @@ class ChannelForm extends React.Component {
     }
 
     handleSubmit(e) {
-        
+        e.preventDefault();
+        console.log(this.props);
+        this.props.createChannel(this.state).then(
+            (payload) => {this.props.closeModal();}
+        )
     }
 
 
     render() {
         return(
             <div className="channel-form-container">
-                <form className="channel-form">
+                <form className="channel-form" onSubmit={this.handleSubmit}>
                     <div className="channel-form-header">
                         CREATE NEW CHANNEL
                     </div>
@@ -43,7 +49,7 @@ class ChannelForm extends React.Component {
                             CHANNEL NAME
                         </div>
                         <div className="channel-form-input-outer">
-                            <input type="text" className="channel-form-input"/>
+                            <input type="text" className="channel-form-input" onChange={this.update}/>
                         </div>
                     </div>
 

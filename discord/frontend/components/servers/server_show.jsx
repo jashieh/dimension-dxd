@@ -44,7 +44,7 @@ export default class ServerShow extends React.Component {
                         <label>VOICE CHANNELS</label>
                     </ul>
 
-                    <ChannelIndexContainer />
+                    <ChannelIndexContainer server={this.props.server}/>
                 </div>
                 { this.props.otherForm }
                 <button onClick={this.leaveServer}>Leave Server</button>

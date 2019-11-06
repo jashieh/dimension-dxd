@@ -17,10 +17,10 @@ export default class AddServerOptions extends React.Component {
 
     }
 
-    componentDidUpdate() {
-        $('.create-server-options-container').on('click', this.handleClick('create'));
-        $('.join-server-options-container').on('click', this.handleClick('join'));
-    }
+    // componentDidUpdate() {
+    //     $('.create-server-options-container').on('click', this.handleClick('create'));
+    //     $('.join-server-options-container').on('click', this.handleClick('join'));
+    // }
 
     handleClick(type) {
         if (type === 'create') {

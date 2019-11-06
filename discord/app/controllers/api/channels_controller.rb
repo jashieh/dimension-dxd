@@ -7,7 +7,6 @@ class Api::ChannelsController < ApplicationController
     
     def create 
         @channel = Channel.new(channel_params)
-
         if(current_user.servers.find_by(id: params[:server_id]))
             @channel.server_id = params[:server_id]
         end
