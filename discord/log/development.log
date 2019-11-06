@@ -54355,3 +54355,52 @@ Completed 200 OK in 22ms (Views: 3.1ms | ActiveRecord: 1.9ms)
 Completed 200 OK in 37ms (Views: 9.1ms | ActiveRecord: 10.1ms)
 
 
+Started GET "/" for ::1 at 2019-11-05 21:25:20 -0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/justin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KvysljqMgKm9yMEJl2Z4CQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+Completed 200 OK in 1146ms (Views: 1141.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/servers" for ::1 at 2019-11-05 21:25:22 -0800
+Started GET "/api/servers/4/channels" for ::1 at 2019-11-05 21:25:22 -0800
+Processing by Api::ServersController#index as JSON
+Started GET "/api/servers/4" for ::1 at 2019-11-05 21:25:22 -0800
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KvysljqMgKm9yMEJl2Z4CQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Processing by Api::ServersController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KvysljqMgKm9yMEJl2Z4CQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Processing by Api::ChannelsController#index as JSON
+  Parameters: {"server_id"=>"4"}
+  Rendering api/servers/index.json.jbuilder
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KvysljqMgKm9yMEJl2Z4CQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mServer Load (1.0ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" WHERE "servers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/channels_controller.rb:5
+  [1m[36mServer Load (5.2ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/servers/index.json.jbuilder:1
+  Rendered api/servers/index.json.jbuilder (40.3ms)
+  [1m[36mServer Load (4.9ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" INNER JOIN "server_memberships" ON "servers"."id" = "server_memberships"."server_id" WHERE "server_memberships"."user_id" = $1 AND "servers"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 166ms (Views: 37.9ms | ActiveRecord: 9.8ms)
+
+
+  Rendering api/channels/index.json.jbuilder
+  ↳ app/controllers/api/servers_controller.rb:21
+  Rendering api/servers/show.json.jbuilder
+  Rendered api/servers/show.json.jbuilder (1.1ms)
+  [1m[36mChannel Load (1.9ms)[0m  [1m[34mSELECT "channels".* FROM "channels" WHERE "channels"."server_id" = $1[0m  [["server_id", 4]]
+Completed 200 OK in 134ms (Views: 5.8ms | ActiveRecord: 9.6ms)
+
+
+  ↳ app/views/api/channels/index.json.jbuilder:1
+  Rendered api/channels/index.json.jbuilder (23.6ms)
+Completed 200 OK in 101ms (Views: 24.4ms | ActiveRecord: 50.6ms)
+
+

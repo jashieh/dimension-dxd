@@ -59,7 +59,14 @@ class ServerShow extends React.Component {
                 <button onClick={this.leaveServer}>Leave Server</button>
                 
                 <div className="footer-util-container">
-                    <button onClick={this.props.logout}>Logout</button>
+                    <div className="user-icon-container">
+                        <div className="user-icon">
+                            user icon 
+                        </div>
+                    </div>
+                    <div>
+                        <button onClick={this.props.logout}>Logout</button>
+                    </div>
                 </div>
             </div>
         );
