@@ -105,7 +105,7 @@
 }
 
 .login-input-container:focus-within {
-    border: 2px solid #7289da !important;
+    border: 2px solid #7289da;
 }
 
 .login-input {
@@ -132,6 +132,10 @@
     font-weight: 600;
 }
 
+.login-button:hover {
+    filter: brightness(80%);
+}
+
 
 .register-box {
     display: flex;
@@ -143,6 +147,11 @@
     color: #8e9297;    
 }
 
+
 .signup-link {
     color: #7289da;
+}
+
+.signup-link:hover {
+    filter: brightness(80%);
 }

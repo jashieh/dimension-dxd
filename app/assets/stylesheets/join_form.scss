@@ -70,6 +70,10 @@
     width: 100%;
 }
 
+.join-form-input:hover, .join-form-input:focus {
+    filter: brightness(90%);
+}
+
 .join-form-input-label {
     align-self: flex-start;
     font-size: 15px;

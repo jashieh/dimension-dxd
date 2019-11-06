@@ -69,6 +69,10 @@
     text-align: left;
 }
 
+.server-form-input:hover {
+    filter: brightness(120%);
+}
+
 .server-region-container {
     display: flex;
     flex-direction: column;

@@ -47,7 +47,14 @@
 .channels-header {
     display: flex;
     flex-direction: row;
+    position: relative;
     // justify-content: space-between;
+}
+
+.channels-header-create-button {
+    position: absolute;
+    right: 0;
+    padding-right: 10px;
 }
 
 .channels-header-element {
