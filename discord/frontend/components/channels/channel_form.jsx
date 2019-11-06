@@ -17,7 +17,7 @@ class ChannelForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         console.log(this.props);
-        this.props.createChannel(this.state).then(
+        this.props.createChannel(this.props.serverId,this.state).then(
             (payload) => {this.props.closeModal();}
         )
     }

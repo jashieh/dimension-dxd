@@ -1,15 +1,21 @@
 import React from 'react';
 import ChannelIndexContainer from '../channels/channel_index_container';
+import Modal from '../modal/modal';
+
+import { withRouter } from 'react-router-dom'
 
 
-export default class ServerShow extends React.Component {
+class ServerShow extends React.Component {
     constructor(props) {
         super(props);
         this.leaveServer = this.leaveServer.bind(this);
     }
 
     componentDidMount() {
-        this.props.fetchServer(this.props.match.params.serverId);
+        this.props.fetchServer(this.props.match.params.serverId)
+            .then(()=>{}, ()=>{
+                this.props.history.push('/home');
+            });
     }
 
     leaveServer() {
@@ -20,15 +26,18 @@ export default class ServerShow extends React.Component {
     render() {
         let serverName = "";
         let inviteUrl = "";
+        let modal = null;
         if (this.props.server) {
             serverName = this.props.server.server_name;
             inviteUrl = this.props.server.invite_url;
+            modal = <Modal serverId={this.props.server.id}/>;
         } else {
             serverName = "Server does not exist";
         }
 
         return(
             <div className="single-server-show">
+                { modal }
                 <div className="single-server-header">
                     <label>{serverName}</label>
                     <br/>
@@ -44,7 +53,7 @@ export default class ServerShow extends React.Component {
                         <label>VOICE CHANNELS</label>
                     </ul>
 
-                    <ChannelIndexContainer server={this.props.server}/>
+                    <ChannelIndexContainer />
                 </div>
                 { this.props.otherForm }
                 <button onClick={this.leaveServer}>Leave Server</button>
@@ -56,3 +65,5 @@ export default class ServerShow extends React.Component {
         );
     }
 }
+
+export default withRouter(ServerShow);

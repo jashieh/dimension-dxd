@@ -6,9 +6,10 @@ class ChannelIndexItem extends React.Component {
     }
 
     render() {
+        console.log(this.props);
         return(
             <li className="channel-nav-li">
-                test
+                { this.props.channel.channel_name }
             </li>
         );
     }

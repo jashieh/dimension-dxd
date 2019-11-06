@@ -9,7 +9,6 @@ class ChannelIndex extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props);
         this.props.fetchServerChannels(this.props.match.params.serverId)
     }
 
@@ -18,7 +17,9 @@ class ChannelIndex extends React.Component {
         if (Object.keys(this.props.channels).length !== 0) {
             channelIndexItems = Object.keys(this.props.channels).map(channelId => {
                 return (
-                    <ChannelIndexItem key={channelId} />
+                    // Refactor with container potentially
+                    <ChannelIndexItem key={channelId} 
+                        channel={this.props.channels[channelId]}/>
                 );
             });
         }

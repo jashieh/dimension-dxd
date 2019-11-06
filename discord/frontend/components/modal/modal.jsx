@@ -3,13 +3,6 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import ChannelFormContainer from '../channels/channel_form_container'
 
-// const handleKeyDown = (e, cB) => {
-//   console.log("keydown")
-//   if(e.key === "Escape") {
-//     cB();
-//   }
-// };
-
 class Modal extends React.Component {
   constructor(props) {
     super(props);
@@ -28,14 +21,14 @@ class Modal extends React.Component {
   };
 
   render() {
-    const { modal, closeModal} = this.props;
+    const { modal, closeModal } = this.props;
     if (!modal) {
       return null;
     }
     let component;
     switch (modal) {
       case 'channel':
-        component = <ChannelFormContainer />
+        component = <ChannelFormContainer serverId={this.props.serverId}/>
         break;
       default:
         return null;

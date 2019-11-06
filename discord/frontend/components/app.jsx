@@ -21,7 +21,7 @@ import Home from "./home/home";
 
 const App = () => (
   <div>
-    <Modal />
+    {/* <Modal /> */}
     {/* <Route exact path="/" component={GreetingContainer} /> */}
     <Route exact path="/" component={SplashContainer} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />
