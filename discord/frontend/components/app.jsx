@@ -15,11 +15,13 @@ import SignupFormContainer from "./session/signup_form_container";
 import SplashContainer from "./splash/splash_container";
 // import ServerContainer from "./servers/server_index_container";
 // import ServerShowContainer from "./servers/server_show_container";
+import Modal from "./modal/modal";
 import Home from "./home/home";
 
 
 const App = () => (
   <div>
+    <Modal />
     {/* <Route exact path="/" component={GreetingContainer} /> */}
     <Route exact path="/" component={SplashContainer} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />

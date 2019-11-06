@@ -45,13 +45,12 @@ export default class ServerShow extends React.Component {
                     </ul>
 
                     <ChannelIndexContainer />
-
                 </div>
+                { this.props.otherForm }
                 <button onClick={this.leaveServer}>Leave Server</button>
                 
                 <div className="footer-util-container">
-                <button onClick={this.props.logout}>Logout</button>
-                    { }
+                    <button onClick={this.props.logout}>Logout</button>
                 </div>
             </div>
         );
