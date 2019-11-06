@@ -1,8 +1,10 @@
 .server-nav-container {
-    background-color: rgba(169,169,169,0.7);
-    width: 72px;
+    background-color: rgba(61, 54, 54, 0.7);
+    width: 78px;
     height: 100vh;
     overflow-y: scroll;
+    display: flex;
+    justify-content: center;
 }
 
 .server-nav-container::-webkit-scrollbar { 
@@ -10,6 +12,7 @@
 }
 
 .server-nav-ul {
+    padding-top: 15px;
     width: 72px;
 }
 
@@ -20,9 +23,6 @@
     padding: 5px;
 }
 
-.server-nav-li {
-    
-}
 
 .server-nav-button {
     background-color: rgba(0,128,0,1);

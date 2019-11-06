@@ -66,6 +66,10 @@
     background-color: rgba(0,0,0,0.1);
 }
 
+.channel-form-input-container:focus-within{
+    border: 1px solid #7289da;
+}
+
 .channel-form-input {
     width: 100%;
 }
@@ -111,6 +115,7 @@
     height: 38px;
     text-align: center;
     color: white;
+    font-family: 'Whitney';
 }
 
 .channel-form-submit-button:hover {

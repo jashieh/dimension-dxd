@@ -72,7 +72,7 @@ class SessionForm extends React.Component {
                     <div className="return-to-splash">
                         <Link to="/" className="splash-link">Discord</Link>
                     </div>
-                    </div>
+                </div>
                 <div className="login-box">
                     <form onSubmit={this.handleSubmit} className="login-signup-form">
                             <div className="form-header">

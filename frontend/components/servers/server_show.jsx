@@ -3,7 +3,6 @@ import ChannelIndexContainer from '../channels/channel_index_container';
 import Modal from '../modal/modal';
 
 import { withRouter } from 'react-router-dom'
-import { openModal } from '../../actions/modal_actions';
 
 
 
@@ -20,9 +19,11 @@ class ServerShow extends React.Component {
         });
         
         let collapse = document.getElementsByClassName('channels-header');
+        let arrow = document.querySelector('.channels-arrow');
         for(let i = 0; i < collapse.length; i++) {
             collapse[i].addEventListener('click', function(e) {
                 this.nextElementSibling.classList.toggle('collapse-item');
+                arrow.classList.toggle('rotated');
             });
         }
     }
@@ -30,6 +31,7 @@ class ServerShow extends React.Component {
     leaveServer() {
         // this.props.leaveServer(this.props.match.params.serverId);
         this.props.leaveServer(this.props.server.id);
+        this.props.history.push('/home');
     }
 
     render() {
@@ -48,21 +50,23 @@ class ServerShow extends React.Component {
             <div className="single-server-show">
                 { modal }
                 <div className="single-server-header-container">
-                    <label className="single-server-header-name">
+                    <div className="single-server-header-name">
                         {serverName}
-                    </label>
+                    </div>
                 </div>
                 <div className="channel-list">
                     <ul className="channels">
                         <div className="channels-container">
                             <div className="channels-header">
-                                <div>
-                                    >
+                                <div className="channels-dropdown">
+                                    <div className="channels-arrow">
+                                        >
+                                    </div>
+                                    <div className="channels-header-element">
+                                        TEXT CHANNELS
+                                    </div>
                                 </div>
-                                <div className="channels-header-element">
-                                    TEXT CHANNELS
-                                </div>
-                                <div className="channels-header-element">
+                                <div className="channels-header-create-button">
                                     { this.props.otherForm }
                                 </div>
                             </div>

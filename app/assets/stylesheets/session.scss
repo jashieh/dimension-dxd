@@ -45,16 +45,36 @@
     flex-direction: column;
     justify-content: center;
     width: 480px;
-    height: 424px;
+    // height: 424px;
     border-radius: 10px;
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.form-header-title {
+    font-size: 26px;
+    color: white;
+}
+
+.form-header-subtitle {
+    color: #72767d;
+    font-size: 18px;
 }
 
 .login-signup-form {
     display: flex;
     flex-direction: column;
     padding: 50px;
-    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
+
 
 .login-field {
     width: 380px;
@@ -65,7 +85,7 @@
 }
 
 .login-input-label {
-    color: grey;
+    color: #8e9297;
     position: absolute;
     top: 0;
 }
@@ -82,6 +102,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.login-input-container:focus-within {
+    border: 2px solid #7289da !important;
 }
 
 .login-input {
@@ -104,20 +128,10 @@
     height: 40px;
     width: 100%;
     border-radius: 5px;
-}
-
-.form-header {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-size: 16px;
-    line-height: 24px;
-}
-
-.form-header-title {
-    font-size: 26px;
     color: white;
+    font-weight: 600;
 }
+
 
 .register-box {
     display: flex;
@@ -126,8 +140,9 @@
 
 .register-text {
     padding-right: 5px; 
+    color: #8e9297;    
 }
 
 .signup-link {
-    color: lightblue;
+    color: #7289da;
 }
