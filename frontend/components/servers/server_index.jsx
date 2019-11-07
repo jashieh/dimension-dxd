@@ -55,10 +55,14 @@ export default class ServerIndex extends React.Component {
                 );
             });
         }
+
+
+
         
         return(
             // <div className="server-content">
             <nav className="server-nav-container">
+
                 <ul className="server-nav-ul">
                     <li className="server-nav-li">
                         <Link to="/" className="server-nav-button">Splash</Link>

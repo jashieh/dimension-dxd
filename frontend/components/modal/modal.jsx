@@ -1,7 +1,8 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import ChannelFormContainer from '../channels/channel_form_container'
+import ChannelFormContainer from '../channels/channel_form_container';
+import AddServerOptions from '../servers/add_server_options';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -30,6 +31,13 @@ class Modal extends React.Component {
       case 'channel':
         component = <ChannelFormContainer serverId={this.props.server.id}/>
         break;
+      // case 'server':
+      //   component = <AddServerOptions 
+      //     createServer={this.props.createServer} 
+      //     joinServer={this.props.joinServer}
+      //     toggleModal={this.toggleModal} 
+      //     className="modal"/>
+      //   break;
       case 'invite': 
         break;
       case 'leave':

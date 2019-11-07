@@ -57,6 +57,17 @@
     filter: brightness(150%);
 }
 
+.logo-icon-container {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.logo-icon {
+    color: lightgrey;
+}
+
 .logo {
     display: flex;
     flex-direction: row;

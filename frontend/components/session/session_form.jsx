@@ -10,7 +10,7 @@ class SessionForm extends React.Component {
             email: "",
             password: "",
         };
-        
+
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoUser = this.demoUser.bind(this);
@@ -20,19 +20,19 @@ class SessionForm extends React.Component {
     componentDidMount() {
         this.props.removeErrors();
     }
-    
+
     update(type) {
         return (e) => this.setState({ [type]: e.target.value });
     }
-    
+
     handleSubmit(e) {
         e.preventDefault();
         this.props.processForm(this.state)
-        .then(() => this.props.history.push(`/home`));
+            .then(() => this.props.history.push(`/home`));
     }
 
     demoUser() {
-        this.setState({ username: 'DemoUser', password: 'demo_user'}, () => {
+        this.setState({ username: 'DemoUser', password: 'demo_user' }, () => {
             this.props.processForm(this.state)
                 .then(() => this.props.history.push(`/home`));
         });
@@ -67,20 +67,20 @@ class SessionForm extends React.Component {
 
         if (this.props.formType === 'signup') {
             emailInput = <div className="login-field">
-                            <label className={this.classError("Username")+" login-input-label"}>
-                                EMAIL
-                                <div className="errors">
-                                    { this.errors("Email") }
-                                </div>
-                            </label>
-                                <div className="login-input-container">
-                                    <input type="text"
-                                        value={this.state.email}
-                                        onChange={this.update('email')}
-                                        className="login-input"
-                                    />
-                                </div>
-                        </div>
+                <label className={this.classError("Username") + " login-input-label"}>
+                    EMAIL
+                    <div className="errors">
+                        {this.errors("Email")}
+                    </div>
+                </label>
+                <div className="login-input-container">
+                    <input type="text"
+                        value={this.state.email}
+                        onChange={this.update('email')}
+                        className="login-input"
+                    />
+                </div>
+            </div>
             submitText = "Continue";
             submitType = "continue-button";
             headerText = "Create an account";
@@ -95,98 +95,98 @@ class SessionForm extends React.Component {
                 <div className="register-text">Need an Account?</div>
                 <Link to="/signup" className="signup-link">Register</Link>
             </div>
-            demo = <div className="demo-user-button"> 
-                <input type="text" className="demo-user" 
+            demo = <div className="demo-user-button">
+                <input type="text" className="demo-user"
                     type="submit" value="Demo"
-                    onClick={this.demoUser}/>
+                    onClick={this.demoUser} />
             </div>
             submitType = "login-button";
         }
 
-        return(
+        return (
             <div className="login-signup-page">
-                  <div className="home-video">
+                <div className="home-video">
                     <video autoPlay={true} loop muted={true} className="login-video">
-                        <source src="/home4.mp4" type="video/mp4"/>
+                        <source src="/home4.mp4" type="video/mp4" />
                     </video>
                 </div>
-                <div className="test">
-                <div className="login-content">
-                    <div className="login-header-container">
+                <div className="login-content-container">
+                    <div className="login-content">
+                        <div className="login-header-container">
 
-                        <div className="return-to-splash">
-                            <Link to="/" className="splash-link">
-                                <div className="splash-link-text">
-                                    Dimension
+                            <div className="return-to-splash">
+                                <Link to="/" className="splash-link">
+                                    <div className="splash-link-text">
+                                        Dimension
                                 </div>
-                                <div className="splash-link-upper">
-                                    2
+                                    <div className="splash-link-upper">
+                                        2
                                 </div>
-                            </Link>
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="login-box">
+                            <form className="login-signup-form" onSubmit={this.handleSubmit}>
+                                <div className="form-header">
+                                    <div className="form-header-title">
+                                        {headerText}
+                                    </div>
+                                    <br />
+                                    <div className="form-header-subtitle">
+                                        {headerText2}
+                                    </div>
+                                </div>
+                                {emailInput}
+                                <br />
+                                <div className="login-field">
+                                    <label className={this.classError("Username") + " login-input-label"}>
+                                        USERNAME
+                                <div className="errors">
+                                            {this.errors("Username")}
+                                        </div>
+                                    </label>
+                                    <div className="login-input-container">
+                                        <input type="text"
+                                            value={this.state.username}
+                                            onChange={this.update('username')}
+                                            className="login-input"
+                                        />
+                                    </div>
+                                </div>
+                                <br />
+                                <div className="login-field">
+                                    <label className={this.classError("Password") + " login-input-label"}>
+                                        PASSWORD
+                                <div className="errors">
+                                            {this.errors("Password")}
+                                        </div>
+                                    </label>
+                                    <div className="login-input-container">
+                                        <input type="password"
+                                            value={this.state.password}
+                                            onChange={this.update('password')}
+                                            className="login-input"
+                                        />
+                                    </div>
+                                </div>
+                                <br />
+                                <div className="login-button-container">
+                                    <div className={submitType}>
+                                        <input className="session-submit" type="submit"
+                                            value={submitText}
+                                        />
+                                    </div>
+                                    {demo}
+                                </div>
+                                {registerBox}
+                            </form>
                         </div>
                     </div>
-                <div className="login-box">
-                    <form className="login-signup-form">
-                            <div className="form-header">
-                                <div className="form-header-title">
-                                    { headerText }
-                                </div>
-                                    <br/>
-                                <div className="form-header-subtitle">
-                                    { headerText2 }
-                                </div>
-                            </div>
-                            { emailInput }
-                            <br/>
-                        <div className="login-field">
-                            <label className={this.classError("Username") + " login-input-label"}>
-                                USERNAME
-                                <div className="errors">
-                                    { this.errors("Username") }
-                                </div>
-                            </label>
-                            <div className="login-input-container">
-                                <input type="text"
-                                    value={this.state.username}
-                                    onChange={this.update('username')}
-                                    className="login-input"
-                                />
-                            </div>
-                        </div>
-                        <br/>
-                        <div className="login-field">
-                            <label className={this.classError("Password") + " login-input-label"}>
-                                PASSWORD
-                                <div className="errors">
-                                    { this.errors("Password") }
-                                </div>
-                            </label>
-                            <div className="login-input-container">
-                                <input type="text"
-                                    value={this.state.password}
-                                    onChange={this.update('password')}
-                                    className="login-input"
-                                />
-                            </div>
-                        </div>
-                        <br/>
-                        <div className="login-button-container">
-                            <div className={submitType}>
-                                <input className="session-submit" type="submit" 
-                                    value={submitText} 
-                                    onClick={this.handleSubmit}/>
-                            </div>
-                            { demo }
-                        </div>
-                        { registerBox }
-                    </form>
                 </div>
-                </div>
-                </div>
-          </div>
+            </div>
         );
     }
-    
+
 }
 
 export default withRouter(SessionForm);

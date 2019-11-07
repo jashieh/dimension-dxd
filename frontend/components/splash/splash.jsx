@@ -57,8 +57,8 @@ export default class Splash extends React.Component {
                     <div className="nav-left">
                         <div className="nav-link">
                             <Link to="/" className="nav-link logo">
-                                <div className="logo-icon">
-
+                                <div className="logo-icon-container">
+                                    <img src="/logo.png" alt="" className="logo-icon"/>
                                 </div>
                                 <div className="logo-text">
                                     Dimension
