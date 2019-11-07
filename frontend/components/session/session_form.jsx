@@ -110,14 +110,21 @@ class SessionForm extends React.Component {
                         <source src="/home4.mp4" type="video/mp4"/>
                     </video>
                 </div>
-
+                <div className="test">
                 <div className="login-content">
                     <div className="login-header-container">
 
-                    <div className="return-to-splash">
-                        <Link to="/" className="splash-link">Discord</Link>
+                        <div className="return-to-splash">
+                            <Link to="/" className="splash-link">
+                                <div className="splash-link-text">
+                                    Dimension
+                                </div>
+                                <div className="splash-link-upper">
+                                    2
+                                </div>
+                            </Link>
+                        </div>
                     </div>
-                </div>
                 <div className="login-box">
                     <form className="login-signup-form">
                             <div className="form-header">
@@ -173,6 +180,7 @@ class SessionForm extends React.Component {
                         </div>
                         { registerBox }
                     </form>
+                </div>
                 </div>
                 </div>
           </div>

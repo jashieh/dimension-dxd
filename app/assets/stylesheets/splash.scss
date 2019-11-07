@@ -37,7 +37,8 @@
 
 .nav-left, .nav-right {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
     min-height: 56px;
     padding-top: 50px;
 }
@@ -54,6 +55,18 @@
 
 .nav-link:hover {
     filter: brightness(150%);
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    text-shadow: 1px 1px 3px #383636;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.logo-text-upper {
+    font-size: 20px;
 }
 
 .login-nav-button {

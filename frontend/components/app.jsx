@@ -20,7 +20,7 @@ import Home from "./home/home";
 
 
 const App = () => (
-  <div>
+  <div className="app">
     {/* <Modal /> */}
     {/* <Route exact path="/" component={GreetingContainer} /> */}
     <Route exact path="/" component={SplashContainer} />

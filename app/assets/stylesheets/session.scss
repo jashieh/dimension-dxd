@@ -3,16 +3,41 @@
     height: 100vh;
     background-color: #252525;
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.test {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.home-video {
+    position: fixed;
+    background-position: top;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .login-video {
-    position: fixed;
+    // background-position: top;
+    // background-attachment: fixed;
     // right: 0;
     // bottom: 0;
     // min-width: 100%; 
     // min-height: 100%;
 }
 
+.login-content {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+
+}
 
 .login-header-container {
     display: flex;
@@ -22,20 +47,19 @@
 .return-to-splash {
     // align-self: flex-start;
     // position: absolute;
-    padding-left: 100px;
+    color:  lightgrey;
+    padding-bottom: 40px;
 }
 
 .splash-link {
-    font-size: 50px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
-.login-content {
-    z-index: 1;
-    width: 100%;
-    height: 100%;
+.splash-link-text {
+    font-size: 50px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 

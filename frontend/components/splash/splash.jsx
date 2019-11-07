@@ -56,7 +56,17 @@ export default class Splash extends React.Component {
                 <nav className="nav-bar">
                     <div className="nav-left">
                         <div className="nav-link">
-                            <Link to="/" className="nav-link">Discord</Link>
+                            <Link to="/" className="nav-link logo">
+                                <div className="logo-icon">
+
+                                </div>
+                                <div className="logo-text">
+                                    Dimension
+                                </div>
+                                <div className="logo-text-upper">
+                                    2
+                                </div>
+                            </Link>
                         </div>
                         <div className="nav-link">
                             <a href="https://github.com/jashieh" target="_blank" >Github</a>
@@ -91,7 +101,7 @@ export default class Splash extends React.Component {
                     </div>
                     <div className="splash-button-item">
                         <Link to="/home" className="splash-right-button">
-                            Open Discord in your browser
+                            Open DxD in your browser
                         </Link>
                     </div>
                 </div>
