@@ -2,11 +2,17 @@ import * as APIUtil from '../util/channels_api_util';
 
 export const RECEIVE_SERVER_CHANNELS = 'RECEIVE_SERVER_CHANNELS';
 export const RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
+// const RECEIVE_SERVER = 'RECEIVE_SERVER';
 
 const receiveServerChannels = (channels) => ({
     type: RECEIVE_SERVER_CHANNELS,
     channels
 });
+
+// const receiveServerChannels = (channels) => ({
+//     type: RECEIVE_SERVER,
+//     channels
+// });
 
 const receiveChannel = (channel) => ({
     type: RECEIVE_CHANNEL,

@@ -9,7 +9,7 @@ class ChannelIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchServerChannels(this.props.match.params.serverId)
+        // this.props.fetchServerChannels(this.props.match.params.serverId)
     }
 
     render() {

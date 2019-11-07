@@ -5,6 +5,7 @@ import { createChannel } from '../../actions/channel_actions';
 import { logout } from '../../actions/session_actions';
 import ServerShow from './server_show';
 import { openModal } from '../../actions/modal_actions';
+import { fetchServerChannels } from '../../actions/channel_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -17,6 +18,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
     fetchServer: id => dispatch(fetchServer(id)),
+    fetchServerChannels: id => dispatch(fetchServerChannels(id)),
     leaveServer: serverId => dispatch(leaveServer(serverId)),
     createChannel: (serverId, channel) => dispatch(createChannel(serverId, channel)),
     logout: () => dispatch(logout()),

@@ -5,6 +5,7 @@ import {
     createServer,
     joinServer 
 } from '../../actions/server_actions';
+// import { fetchServerChannels } 
 
 const mapStateToProps = (state) => ({
     servers: state.entities.servers 

@@ -2,6 +2,7 @@ import React from 'react';
 import ChannelIndexContainer from '../channels/channel_index_container';
 import Modal from '../modal/modal';
 import ServerDropdownContainer from './server_dropdown_container';
+import Description from '../hover/description';
 
 import { withRouter } from 'react-router-dom'
 
@@ -15,7 +16,9 @@ class ServerShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchServer(this.props.match.params.serverId)
-            .then(()=>{}, ()=>{
+            .then(()=>{
+                // this.props.fetchServerChannels(this.props.serverId);
+            }, ()=>{
                 this.props.history.push('/home');
         });
         
@@ -52,6 +55,23 @@ class ServerShow extends React.Component {
         // });
     }
 
+    componentWillReceiveProps(newProps) {
+        if (newProps !== this.props) {
+            this.props.fetchServerChannels(this.props.serverId);
+            this.forceUpdate();
+          }
+    }
+
+    // componentDidUpdate() {
+    //     this.props.fetchServer(this.props.match.params.serverId)
+    //     .then(()=>{
+    //         console.log("test");
+    //         this.props.fetchServerChannels(this.props.serverId);
+    //     }, ()=>{
+    //         this.props.history.push('/home');
+    //     });
+    // }
+
     leaveServer() {
         // this.props.leaveServer(this.props.match.params.serverId);
         this.props.leaveServer(this.props.server.id);
@@ -63,6 +83,7 @@ class ServerShow extends React.Component {
         let inviteUrl = "";
         let modal = null;
         let dropdown = null;
+
         if (this.props.server) {
             serverName = this.props.server.server_name;
             inviteUrl = this.props.server.invite_url;
@@ -101,9 +122,11 @@ class ServerShow extends React.Component {
                                 </div>
                                 <div className="channels-header-create-button">
                                     { this.props.otherForm }
-                                    <div className="description collapse-item fade-in">
+                                    {/* <div className="description collapse-item fade-in">
                                             Create Channel 
-                                    </div>
+                                    </div> */}
+                                    <Description description={"Create Channel"} />
+
                                 </div>
                             </div>
                             <ChannelIndexContainer />

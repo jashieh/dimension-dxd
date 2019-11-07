@@ -1,6 +1,6 @@
 import React from 'react';
 import AddServerOptions from './add_server_options';
-import ServerIndexItem from './server_index_item';
+import ServerIndexItemContainer from './server_index_item_container';
 import { Link } from 'react-router-dom';
 
 export default class ServerIndex extends React.Component {
@@ -13,7 +13,20 @@ export default class ServerIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchAllServers();
+        this.props.fetchAllServers().then(
+            () => {
+                let serverButtons = document.getElementsByClassName('server-nav-button');
+                for(let i = 0; i < serverButtons.length; i++) {
+                    serverButtons[i].addEventListener('mouseover', function(e) {
+                        this.nextElementSibling.classList.toggle('collapse-item');
+                    });
+                    serverButtons[i].addEventListener('mouseout', function(e) {
+                        this.nextElementSibling.classList.toggle('collapse-item');
+                    });
+                }
+            }
+        );
+
     }
 
     toggleModal() {
@@ -51,7 +64,7 @@ export default class ServerIndex extends React.Component {
         if (Object.keys(this.props.servers).length !== 0) {
             display = Object.keys(this.props.servers).map(serverId => {
                 return (
-                    <ServerIndexItem server={this.props.servers[serverId]} key={serverId}/>
+                    <ServerIndexItemContainer server={this.props.servers[serverId]} key={serverId}/>
                 );
             });
         }

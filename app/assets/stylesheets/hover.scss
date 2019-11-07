@@ -1,0 +1,14 @@
+.description {
+    background-color: black;
+    position: absolute;
+    top: -15px;
+    left: 50%; 
+    transform: translate(-55%, -50%);                             
+    white-space: nowrap;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.collapse-item {
+    display: none;
+}
