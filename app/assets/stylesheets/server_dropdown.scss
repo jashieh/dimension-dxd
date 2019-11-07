@@ -1,0 +1,30 @@
+.server-dropdown-container {
+    background-color: #18191c;
+    position: absolute;
+    z-index: 1;
+    align-self: center;
+    top: 55px;
+    width: 90%;
+    border-radius: 3px;
+}
+
+.server-dropdown-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #b9bbbe;
+    padding: 4px 8px;
+    cursor: pointer;
+    min-height: 32px;
+    margin: 2px 4px;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+    border-radius: 2px;
+}
+
+.server-dropdown-item:hover {
+    background-color: #040405;
+    filter: brightness(70%);
+}

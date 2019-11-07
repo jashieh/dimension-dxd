@@ -1,6 +1,7 @@
 import React from 'react';
 import ChannelIndexContainer from '../channels/channel_index_container';
 import Modal from '../modal/modal';
+import ServerDropdownContainer from './server_dropdown_container';
 
 import { withRouter } from 'react-router-dom'
 
@@ -26,6 +27,21 @@ class ServerShow extends React.Component {
                 arrow.classList.toggle('rotated');
             });
         }
+
+        let serverDropdown = document.querySelector('.single-server-header-container');
+        serverDropdown.addEventListener('click', function(e) {
+            this.nextElementSibling.classList.toggle('collapse-item');
+        });
+
+
+        // let homeScreen = document.querySelector('.home-elements-container');
+        // let dropdown = document.querySelector('.server-dropdown-container');
+        // homeScreen.addEventListener('click', function(e) {
+        //     if (dropdown.classList.contains('collapse-item')) {
+        //         console.log("test");
+        //         dropdown.classList.toggle('collapse-item');
+        //     }
+        // });
     }
 
     leaveServer() {
@@ -38,10 +54,15 @@ class ServerShow extends React.Component {
         let serverName = "";
         let inviteUrl = "";
         let modal = null;
+        let dropdown = null;
         if (this.props.server) {
             serverName = this.props.server.server_name;
             inviteUrl = this.props.server.invite_url;
             modal = <Modal serverId={this.props.server.id}/>;
+            dropdown = 
+                <ServerDropdownContainer serverId={this.props.server.id} 
+                    inviteUrl={this.props.server.invite_url} /> 
+
         } else {
             serverName = "Server does not exist";
         }
@@ -53,7 +74,11 @@ class ServerShow extends React.Component {
                     <div className="single-server-header-name">
                         {serverName}
                     </div>
+                    <div className="single-server-header-arrow">
+                        >
+                    </div>
                 </div>
+                { dropdown }
                 <div className="channel-list">
                     <ul className="channels">
                         <div className="channels-container">

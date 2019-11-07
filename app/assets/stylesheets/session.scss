@@ -1,7 +1,7 @@
 .login-signup-page {
     width: 100vw;
     height: 100vh;
-    // background-color: darkslategrey;
+    background-color: #252525;
     display: flex;
 }
 
@@ -48,6 +48,8 @@
     // height: 424px;
     border-radius: 10px;
     font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    box-shadow: 1px 1px 1px;
+
 }
 
 .form-header {
@@ -102,6 +104,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box
+}
+
+.login-input-container:hover {
+    border: 1px solid black;
+    // box-shadow: 1px 1px solid black;
 }
 
 .login-input-container:focus-within {
@@ -114,10 +122,6 @@
     font-size: 1em;
 }
 
-.login-input-container:hover {
-    border: 1px solid black;
-    // box-shadow: 1px 1px solid black;
-}
 
 .login-button {
     display: flex;

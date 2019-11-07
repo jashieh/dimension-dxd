@@ -79,7 +79,7 @@ export default class Splash extends React.Component {
                     </header>
                     <br/>
                     <p className="splash-content-p">
-                        Voice chat for virgin engineers
+                        Voice chat for engineers
                     </p>
                 </div>
 

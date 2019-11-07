@@ -13,24 +13,34 @@
 .single-server-header-container {
     width: 100%;
     height: 48px;
-    // background-color: white;
     background-color:  rgba(0,0,0,0.5);
     color: white;
     border-bottom: 1px solid grey;
     display: flex;
-    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-
+    // font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    justify-content: space-between;
     align-items: center;
+    font-weight: 800;
 }
 
 .single-server-header-container:hover {
     background-color:  rgba(100, 90, 90, 0.5);
+    cursor: pointer;
 }
 
 .single-server-header-name {
     padding-left: 16px;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
+}
+
+.single-server-header-arrow {
+    transform: rotate(90deg); 
+    width: 18px;
+    height: 18px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .channels {
@@ -54,7 +64,13 @@
 .channels-header-create-button {
     position: absolute;
     right: 0;
-    padding-right: 10px;
+    width: 40px;
+    text-align: center;
+}
+
+.add-channel-button {
+    width: 100%;
+    height: 100%;
 }
 
 .channels-header-element {
@@ -69,6 +85,7 @@
 
 .channels-dropdown:hover, .channels-header-create-button:hover {
     color: white;
+    cursor: pointer;
 }
 
 .rotated {
