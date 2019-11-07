@@ -48,15 +48,32 @@
 .channel-form-checkbox {
     margin-left: 20px;
     margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    background-color: #7289da !important;
 }
 
 .checkbox-hash {
     height: 100%;
-    font-size: 30;
+    font-size: 30px;
     display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 10px;
+    width: 30px;
+    color: #b9bbbe;
+    // height: 40px;
+    // padding: 10px;
+}
+
+.checkbox-type-text {
+    font-size: 20px;
+}
+
+.channel-form-checkbox-header {
+    font-weight: 600;
+    color: #8e9297;
+    padding-bottom: 10px;
 }
 
 .channel-form-input-header {
@@ -85,6 +102,12 @@
     align-items: center;
     border-radius: 3px;
     background-color: rgba(0,0,0,0.1);
+}
+
+.channel-form-input-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 .channel-form-input-container:focus-within{

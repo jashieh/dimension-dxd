@@ -99,7 +99,7 @@
 
 .rotated {
     transform: rotate(90deg);
-    transition-duration: 0.2s;
+    transition-duration: 0.5s;
 }
 
 .channel-nav-ul {
@@ -151,7 +151,5 @@
 
 .collapse-item {
     display: none;
-    opacity:0;
-    transition:opacity 1s linear;
 }
 

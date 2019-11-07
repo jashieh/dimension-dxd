@@ -68,7 +68,7 @@ class ServerShow extends React.Component {
         }
 
         return(
-            <div className="single-server-show">
+            <div className="single-server-show fade-in">
                 { modal }
                 <div className="single-server-header-container">
                     <div className="single-server-header-name">
