@@ -13,6 +13,12 @@ class SessionForm extends React.Component {
         
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoUser = this.demoUser.bind(this);
+        this.errors = this.errors.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.removeErrors();
     }
     
     update(type) {
@@ -25,16 +31,48 @@ class SessionForm extends React.Component {
         .then(() => this.props.history.push(`/home`));
     }
 
+    demoUser() {
+        this.setState({ username: 'DemoUser', password: 'demo_user'}, () => {
+            this.props.processForm(this.state)
+                .then(() => this.props.history.push(`/home`));
+        });
+    }
+
+    errors(field) {
+        if (this.props.errors.length > 0) {
+            for (let i = 0; i < this.props.errors.length; i++) {
+                if (this.props.errors[i].includes(field)) {
+                    return " - " + this.props.errors[i];
+                }
+            }
+        }
+    }
+
+    classError(field) {
+        if (this.errors(field)) {
+            return "error";
+        } else {
+            return "";
+        }
+    }
+
     render() {
         let emailInput = null;
         let submitText = "";
         let headerText = "";
         let headerText2 = "";
         let registerBox = null;
+        let demo = null;
+        let submitType = "";
 
         if (this.props.formType === 'signup') {
             emailInput = <div className="login-field">
-                            <label className="login-input-label">EMAIL</label>
+                            <label className={this.classError("Username")+" login-input-label"}>
+                                EMAIL
+                                <div className="errors">
+                                    { this.errors("Email") }
+                                </div>
+                            </label>
                                 <div className="login-input-container">
                                     <input type="text"
                                         value={this.state.email}
@@ -44,6 +82,7 @@ class SessionForm extends React.Component {
                                 </div>
                         </div>
             submitText = "Continue";
+            submitType = "continue-button";
             headerText = "Create an account";
             registerBox = <div className="register-box">
                 <Link to="/login" className="signup-link">Already have an account?</Link>
@@ -56,6 +95,12 @@ class SessionForm extends React.Component {
                 <div className="register-text">Need an Account?</div>
                 <Link to="/signup" className="signup-link">Register</Link>
             </div>
+            demo = <div className="demo-user-button"> 
+                <input type="text" className="demo-user" 
+                    type="submit" value="Demo"
+                    onClick={this.demoUser}/>
+            </div>
+            submitType = "login-button";
         }
 
         return(
@@ -74,7 +119,7 @@ class SessionForm extends React.Component {
                     </div>
                 </div>
                 <div className="login-box">
-                    <form onSubmit={this.handleSubmit} className="login-signup-form">
+                    <form className="login-signup-form">
                             <div className="form-header">
                                 <div className="form-header-title">
                                     { headerText }
@@ -87,7 +132,12 @@ class SessionForm extends React.Component {
                             { emailInput }
                             <br/>
                         <div className="login-field">
-                            <label className="login-input-label">USERNAME</label>
+                            <label className={this.classError("Username") + " login-input-label"}>
+                                USERNAME
+                                <div className="errors">
+                                    { this.errors("Username") }
+                                </div>
+                            </label>
                             <div className="login-input-container">
                                 <input type="text"
                                     value={this.state.username}
@@ -98,9 +148,14 @@ class SessionForm extends React.Component {
                         </div>
                         <br/>
                         <div className="login-field">
-                            <label className="login-input-label">PASSWORD</label>
+                            <label className={this.classError("Password") + " login-input-label"}>
+                                PASSWORD
+                                <div className="errors">
+                                    { this.errors("Password") }
+                                </div>
+                            </label>
                             <div className="login-input-container">
-                                <input type="password"
+                                <input type="text"
                                     value={this.state.password}
                                     onChange={this.update('password')}
                                     className="login-input"
@@ -108,8 +163,13 @@ class SessionForm extends React.Component {
                             </div>
                         </div>
                         <br/>
-                        <div className="login-button">
-                            <input className="session-submit" type="submit" value={submitText}/>
+                        <div className="login-button-container">
+                           { demo }
+                            <div className={submitType}>
+                                <input className="session-submit" type="submit" 
+                                    value={submitText} 
+                                    onClick={this.handleSubmit}/>
+                            </div>
                         </div>
                         { registerBox }
                     </form>
