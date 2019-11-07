@@ -36,10 +36,21 @@ class ServerShow extends React.Component {
             this.nextElementSibling.classList.toggle('collapse-item');
         });
 
+        let home = document.querySelector('.home-elements-container');
+        home.addEventListener('click', function(e) {
+            console.log(e.target);
+            console.log("close");
+            if (!serverDropdown.nextElementSibling.classList.contains('collapse-item')) {
+                serverDropdown.nextElementSibling.classList.add('collapse-item');
+            }
+        });
+        
+
         let addServerButton = document.querySelector('.add-channel-button');
         addServerButton.addEventListener('mouseover', function(e) {
             this.nextElementSibling.classList.toggle('collapse-item');
         });
+
         addServerButton.addEventListener('mouseout', function(e) {
             this.nextElementSibling.classList.toggle('collapse-item');
         });
@@ -94,69 +105,77 @@ class ServerShow extends React.Component {
         }
 
         return(
-            <div className="single-server-show fade-in">
-                { modal }
-                <div className="single-server-header-container">
-                    <div className="single-server-header-name">
-                        {serverName}
+            <div className="server-show-container">
+                <div className="single-server-show fade-in">
+                    { modal }
+                    <div className="single-server-header-container">
+                        <div className="single-server-header-name">
+                            {serverName}
+                        </div>
+                        <div className="single-server-header-arrow">
+                            >
+                        </div>
                     </div>
-                    <div className="single-server-header-arrow">
-                        >
-                    </div>
-                </div>
-                { dropdown }
-                <div className="channel-list">
-                    <ul className="channels">
-                        <div className="channels-container">
-                            <div className="channels-header">
-                                <div className="channels-dropdown">
-                                    <div className="channels-arrow">
-                                        >
+                    { dropdown }
+                    <div className="channel-list">
+                        <ul className="channels">
+                            <div className="channels-container">
+                                <div className="channels-header">
+                                    <div className="channels-dropdown">
+                                        <div className="channels-arrow">
+                                            >
+                                        </div>
+                                        <div className="channels-header-element">
+                                            TEXT CHANNELS
+                                        </div>
                                     </div>
-                                    <div className="channels-header-element">
-                                        TEXT CHANNELS
-                                    </div>
-                                </div>
-                                <div className="channels-header-create-button">
-                                    { this.props.otherForm }
-                    
-                                    <Description description={"Create Channel"} type="channel-hover"/>
+                                    <div className="channels-header-create-button">
+                                        { this.props.otherForm }
+                        
+                                        <Description description={"Create Channel"} type="channel-hover"/>
 
+                                    </div>
                                 </div>
+                                <ChannelIndexContainer />
                             </div>
-                            <ChannelIndexContainer />
-                        </div>
-                    </ul>
+                        </ul>
 
+                        
+    {/* 
+                        <ul className="channels">
+                            <div className="channels-container">
+                                <label className="channel-header">
+                                    VOICE CHANNELS
+                                </label>
+                            </div>
+                        </ul> */}
+
+                    </div>
                     
-{/* 
-                    <ul className="channels">
-                        <div className="channels-container">
-                            <label className="channel-header">
-                                VOICE CHANNELS
-                            </label>
+                    <div className="footer-util-container">
+                        <div className="user-icon-container">
+                            <div className="user-icon">
+                                user icon 
+                            </div>
                         </div>
-                    </ul> */}
-
+                        <div className="footer-user-info">
+                            <div className="footer-user-name">
+                                {this.props.currentUser.username}
+                            </div>
+                            <div className="footer-user-id">
+                                #{this.props.currentUser.id}
+                            </div>
+                        </div>
+                        <div className="footer-button-container">
+                            <button onClick={this.props.logout}>Logout</button>
+                        </div>
+                    </div>
                 </div>
-                
-                <div className="footer-util-container">
-                    <div className="user-icon-container">
-                        <div className="user-icon">
-                            user icon 
-                        </div>
-                    </div>
-                    <div className="footer-user-info">
-                        <div className="footer-user-name">
-                            {this.props.currentUser.username}
-                        </div>
-                        <div className="footer-user-id">
-                            #{this.props.currentUser.id}
-                        </div>
-                    </div>
-                    <div className="footer-button-container">
-                        <button onClick={this.props.logout}>Logout</button>
-                    </div>
+                {/* <div>
+                    CHannels go here
+                </div> */}
+                <div className="server-users-container">
+                    Server Users
                 </div>
             </div>
         );

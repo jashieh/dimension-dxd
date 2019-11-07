@@ -1,3 +1,10 @@
+.server-show-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+}
+
 .single-server-show {
     z-index: 0;
     width: 240px;
