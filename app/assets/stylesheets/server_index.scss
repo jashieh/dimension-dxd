@@ -14,7 +14,8 @@
 
 .server-nav-ul {
     padding-top: 15px;
-    width: 72px;   
+    width: 72px;  
+    overflow-y: scroll; 
 }
 
 .server-nav-ul::-webkit-scrollbar { 

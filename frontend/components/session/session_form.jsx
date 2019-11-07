@@ -115,13 +115,16 @@ class SessionForm extends React.Component {
                         <div className="login-header-container">
 
                             <div className="return-to-splash">
-                                <Link to="/" className="splash-link">
+                                <Link to="/" className="splash-link login-logo">
+                                    <div className="login-logo-icon-container">
+                                        <img src="/logo1.svg" alt="" className="logo-icon"/>
+                                    </div>
                                     <div className="splash-link-text">
                                         Dimension
-                                </div>
+                                    </div>
                                     <div className="splash-link-upper">
                                         2
-                                </div>
+                                    </div>
                                 </Link>
                             </div>
                         </div>

@@ -25,6 +25,12 @@
     border-radius: 2px;
 }
 
+.server-dropdown-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+}
+
 .server-dropdown-item:hover {
     background-color: #040405;
     filter: brightness(70%);

@@ -59,7 +59,15 @@ class ServerShow extends React.Component {
         if (newProps !== this.props) {
             this.props.fetchServerChannels(this.props.serverId);
             this.forceUpdate();
-          }
+        }
+
+        let channelUl = document.querySelector('.channel-nav-ul');
+        let arrow = document.querySelector('.channels-arrow');
+
+        if (!channelUl.classList.contains('collapse-item')) {
+            channelUl.classList.add('collapse-item');
+            arrow.classList.remove('rotated');
+        }
     }
 
     leaveServer() {
