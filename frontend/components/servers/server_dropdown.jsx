@@ -20,7 +20,7 @@ class ServerDropdown extends React.Component {
                         Invite People 
                     </div>
                     <div className="server-dropdown-icon">
-                        <i class="fas fa-user-plus"></i>
+                        <i className="fas fa-user-plus"></i>
                     </div>
                 </div>
                 <div className="server-dropdown-item">
@@ -28,7 +28,7 @@ class ServerDropdown extends React.Component {
                         Server Settings 
                     </div>
                     <div className="server-dropdown-icon">
-                        <i class="fas fa-cog"></i>
+                        <i className="fas fa-cog"></i>
                     </div>
                 </div>
                 <div className="server-dropdown-item" onClick={this.leaveServer}>
@@ -36,7 +36,7 @@ class ServerDropdown extends React.Component {
                         Leave Server
                     </div>
                     <div className="server-dropdown-icon">
-                        <i class="fas fa-sign-out-alt"></i>
+                        <i className="fas fa-sign-out-alt"></i>
                     </div>
                 </div>
             </div>

@@ -38,6 +38,7 @@
 .server-form-main {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     position: relative;
     padding: 0px 40px 0px 40px;
     box-sizing: border-box;
@@ -46,7 +47,7 @@
 .server-form-left {
     display: flex;
     flex-direction: column;
-    width: 360px;
+    width: 300px;
 }
 
 .server-name-container {
@@ -62,11 +63,17 @@
     font-size: 16px;
     color: #87909c;
     font-weight: 700;
+    padding-bottom: 15px;
+}
+
+.server-form-input-wrapper {
+    width: 100%;
 }
 
 .server-form-input {
     border-bottom: 1px solid #99aab5;
     text-align: left;
+    width: 100%;
 }
 
 .server-form-input:hover {
@@ -79,6 +86,89 @@
     align-items: flex-start;
 }
 
+.server-region-input-container {
+    width: 100%;
+    height: 46px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #87909c;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.server-region-input-container:hover {
+    border: 2px solid #7289da;
+}
+
+.server-region-input-container:hover .server-region-button {
+    border-left: 2px solid #7289da;
+    background-color: #7289da;
+    color: white;
+}
+
+.server-form-flag-container {
+    width: 44px;
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.server-region-text {
+    color: #87909c;
+    font-weight: 700;
+}
+
+.server-region-button {
+    height: 100%;
+    border-left: 1px solid #87909c; 
+    position: absolute;
+    right: 0;   
+    font-size: 16px;
+    width: 80px;
+    color: #7289da;
+    box-sizing: border-box;
+    font-weight: 600;
+    background-color: #e7e7ec;
+    border-radius: 5px;
+}
+
+.server-region-button:active {
+    box-shadow: none;
+    transform: none;
+}
+
+.server-form-right {
+    box-sizing: border-box;
+    // background: green;
+    padding-right: 30px;
+}
+
+.server-form-circle {
+    height: 140px;
+    width: 140px;
+    background-color: #7289da;
+    border: 3px solid #e7e7ec;
+    box-shadow: 1px 1px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #7289da;
+    display: flex;
+    align-items: center;
+}
+
+.server-form-circle:hover {
+    filter: brightness(70%);
+    color: white;
+}
+
+.server-form-circle:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
 .server-form-footer {
     display: flex;
     position: absolute;
@@ -88,7 +178,6 @@
     background-color: #f6f6f7;
     padding: 20px 40px 20px 40px;
     border-radius: 5px;
-    
 }
 
 .submit-server-button {
@@ -105,9 +194,6 @@
     filter: brightness(70%);
 }
 
-.server-form-right {
-    box-sizing: border-box;
-}
 
 .back-button-container {
     display: flex;
@@ -144,8 +230,6 @@
     padding-left: 5px;
     font-size: 15px;
     color: red;
-}
+    padding-bottom: 15px;
 
-.server-form-right {
-    background-color: green;
 }

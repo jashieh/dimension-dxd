@@ -69,7 +69,7 @@ class JoinServerForm extends React.Component {
                             The invite will look something like these:
                         </div>
                         <div className="join-url-example">
-                            discord.com/qMyKiJBFnsm-3g
+                            dimension-dxd.com/qMyKiJBFnsm-3g
                         </div>
                     </div>
                     <div className="join-form-main">

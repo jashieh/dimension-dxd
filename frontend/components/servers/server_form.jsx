@@ -75,7 +75,7 @@ class ServerForm extends React.Component {
                         <div className="server-form-left">
                             <div className="server-name-container">
                                 <div className="server-name-error-container">
-                                    <label className="server-form-label">SERVER NAME</label>
+                                    <div className="server-form-label">SERVER NAME</div>
                                     <div className="server-form-errors">
                                         { this.error }
                                     </div>
@@ -87,14 +87,24 @@ class ServerForm extends React.Component {
                                 </div>
                             </div>
                             <div className="server-region-container">
-                                <label className="server-form-label">SERVER REGION</label>
+                                <div className="server-form-label">SERVER REGION</div>
                                 <div className="server-region-input-container">
-                                    server region here
+                                    <div className="server-form-flag-container">
+                                        <img src="/flag.png" alt="flag"/>
+                                    </div>
+                                    <div className="server-region-text">
+                                        US West
+                                    </div>
+                                    <button className="server-region-button">
+                                        Can't Change
+                                    </button>
                                 </div>
                             </div>
                         </div>
                         <div className="server-form-right">
-                            img here
+                            <div className="server-form-circle">
+                                Feature in progress
+                            </div>
                         </div>
                     </div>
                     <div className="server-form-footer">

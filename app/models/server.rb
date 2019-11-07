@@ -40,7 +40,7 @@ class Server < ApplicationRecord
 
     private 
     def ensure_invite_url
-        self.invite_url ||=  "discord.com/" + SecureRandom.urlsafe_base64(10)
+        self.invite_url ||=  "dimension-dxd.com/" + SecureRandom.urlsafe_base64(10)
     end
 
 end

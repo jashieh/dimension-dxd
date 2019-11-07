@@ -32,14 +32,17 @@
 
 
 .server-nav-button {
-    background-color: rgba(0,128,0,1);
+    background-color: rgb(36, 37, 39);
     width: 48px;
     height: 48px;
     border-radius: 50%;
+    box-shadow: 1px 1px 15px rgba(189, 187, 187, 0.7);
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 800;
+    color: #dcddde;
 }
 
 .server-nav-button:hover {
@@ -48,6 +51,8 @@
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
+
 
 
 
