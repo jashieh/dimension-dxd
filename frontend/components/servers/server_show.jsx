@@ -62,18 +62,7 @@ class ServerShow extends React.Component {
           }
     }
 
-    // componentDidUpdate() {
-    //     this.props.fetchServer(this.props.match.params.serverId)
-    //     .then(()=>{
-    //         console.log("test");
-    //         this.props.fetchServerChannels(this.props.serverId);
-    //     }, ()=>{
-    //         this.props.history.push('/home');
-    //     });
-    // }
-
     leaveServer() {
-        // this.props.leaveServer(this.props.match.params.serverId);
         this.props.leaveServer(this.props.server.id);
         this.props.history.push('/home');
     }
@@ -122,10 +111,8 @@ class ServerShow extends React.Component {
                                 </div>
                                 <div className="channels-header-create-button">
                                     { this.props.otherForm }
-                                    {/* <div className="description collapse-item fade-in">
-                                            Create Channel 
-                                    </div> */}
-                                    <Description description={"Create Channel"} />
+                    
+                                    <Description description={"Create Channel"} type="channel-hover"/>
 
                                 </div>
                             </div>

@@ -164,12 +164,12 @@ class SessionForm extends React.Component {
                         </div>
                         <br/>
                         <div className="login-button-container">
-                           { demo }
                             <div className={submitType}>
                                 <input className="session-submit" type="submit" 
                                     value={submitText} 
                                     onClick={this.handleSubmit}/>
                             </div>
+                            { demo }
                         </div>
                         { registerBox }
                     </form>

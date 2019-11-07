@@ -5,6 +5,7 @@
     overflow-y: scroll;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .server-nav-container::-webkit-scrollbar { 
@@ -21,6 +22,7 @@
     justify-content: center;
     align-items: center;
     padding: 5px;
+    position: relative;
 }
 
 

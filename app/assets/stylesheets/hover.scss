@@ -1,4 +1,4 @@
-.description {
+.channel-hover {
     background-color: black;
     position: absolute;
     top: -15px;
@@ -7,6 +7,19 @@
     white-space: nowrap;
     padding: 10px;
     border-radius: 5px;
+}
+
+.server-hover {
+    position: absolute;
+    background-color: black;
+    white-space: nowrap;
+    padding: 10px;
+    border-radius: 5px;
+    left: 20px;
+    // transform: translate(55%, 50%);      
+    color: white; 
+    z-index: 2; 
+    overflow: visible;
 }
 
 .collapse-item {

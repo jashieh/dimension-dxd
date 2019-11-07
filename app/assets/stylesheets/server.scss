@@ -29,9 +29,13 @@
 }
 
 .single-server-header-name {
+    display: flex;
+    align-items: center;
     padding-left: 16px;
     font-weight: 600;
-    font-size: 18px;
+    height: 100%;
+    font-size: 22px;
+    width: 100%;
 }
 
 .single-server-header-arrow {
@@ -106,6 +110,11 @@
 
 .channel-nav-ul {
     padding-left: 20px;
+}
+
+.channel-nav-li {
+    font-size: 18px;
+    margin: 10px;
 }
 
 .footer-util-container {

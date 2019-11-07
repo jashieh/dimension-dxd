@@ -13,20 +13,7 @@ export default class ServerIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchAllServers().then(
-            () => {
-                let serverButtons = document.getElementsByClassName('server-nav-button');
-                for(let i = 0; i < serverButtons.length; i++) {
-                    serverButtons[i].addEventListener('mouseover', function(e) {
-                        this.nextElementSibling.classList.toggle('collapse-item');
-                    });
-                    serverButtons[i].addEventListener('mouseout', function(e) {
-                        this.nextElementSibling.classList.toggle('collapse-item');
-                    });
-                }
-            }
-        );
-
+        this.props.fetchAllServers()
     }
 
     toggleModal() {
