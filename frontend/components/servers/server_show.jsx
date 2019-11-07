@@ -33,6 +33,14 @@ class ServerShow extends React.Component {
             this.nextElementSibling.classList.toggle('collapse-item');
         });
 
+        let addServerButton = document.querySelector('.add-channel-button');
+        addServerButton.addEventListener('mouseover', function(e) {
+            this.nextElementSibling.classList.toggle('collapse-item');
+        });
+        addServerButton.addEventListener('mouseout', function(e) {
+            this.nextElementSibling.classList.toggle('collapse-item');
+        });
+
 
         // let homeScreen = document.querySelector('.home-elements-container');
         // let dropdown = document.querySelector('.server-dropdown-container');
@@ -93,6 +101,9 @@ class ServerShow extends React.Component {
                                 </div>
                                 <div className="channels-header-create-button">
                                     { this.props.otherForm }
+                                    <div className="description collapse-item fade-in">
+                                            Create Channel 
+                                    </div>
                                 </div>
                             </div>
                             <ChannelIndexContainer />

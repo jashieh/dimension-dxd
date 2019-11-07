@@ -30,8 +30,7 @@ class Modal extends React.Component {
       case 'channel':
         component = <ChannelFormContainer serverId={this.props.server.id}/>
         break;
-      case invite: 
-
+      case 'invite': 
         break;
       case 'leave':
         // component
