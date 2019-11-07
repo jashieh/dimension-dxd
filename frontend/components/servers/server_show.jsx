@@ -58,7 +58,7 @@ class ServerShow extends React.Component {
         if (this.props.server) {
             serverName = this.props.server.server_name;
             inviteUrl = this.props.server.invite_url;
-            modal = <Modal serverId={this.props.server.id}/>;
+            modal = <Modal server={this.props.server}/>;
             dropdown = 
                 <ServerDropdownContainer serverId={this.props.server.id} 
                     inviteUrl={this.props.server.invite_url} /> 
@@ -110,7 +110,6 @@ class ServerShow extends React.Component {
                     </ul> */}
 
                 </div>
-                <button onClick={this.leaveServer}>Leave Server</button>
                 
                 <div className="footer-util-container">
                     <div className="user-icon-container">

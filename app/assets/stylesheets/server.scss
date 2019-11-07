@@ -12,7 +12,7 @@
 
 .single-server-header-container {
     width: 100%;
-    height: 48px;
+    height: 55px;
     background-color:  rgba(0,0,0,0.5);
     color: white;
     border-bottom: 1px solid grey;
@@ -57,8 +57,16 @@
 .channels-header {
     display: flex;
     flex-direction: row;
+    align-items: center;
     position: relative;
+    min-height: 40px;
     // justify-content: space-between;
+}
+
+.channels-arrow {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
 }
 
 .channels-header-create-button {
@@ -71,6 +79,7 @@
 .add-channel-button {
     width: 100%;
     height: 100%;
+    font-size: 30px;
 }
 
 .channels-header-element {
@@ -90,6 +99,7 @@
 
 .rotated {
     transform: rotate(90deg);
+    transition-duration: 0.2s;
 }
 
 .channel-nav-ul {
@@ -102,9 +112,11 @@
     // background-color: white;
     background-color:  rgba(0,0,0,0.5);
     width: 100%;
-    height: 52px;
+    height: 55px;
     display: flex;
     align-items: center;
+    color: white;
+
 }
 
 .user-icon-container {
@@ -117,6 +129,7 @@
     position: absolute;
     right: 0;
     padding: 20px;
+    
 }
 
 .footer-user-info {
@@ -138,5 +151,7 @@
 
 .collapse-item {
     display: none;
+    opacity:0;
+    transition:opacity 1s linear;
 }
 

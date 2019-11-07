@@ -14,7 +14,7 @@ class ServerDropdown extends React.Component {
 
     render() {
         return(
-            <div className="server-dropdown-container collapse-item">
+            <div className="server-dropdown-container collapse-item fade-in">
                 <div className="server-dropdown-item">
                     <div className="server-dropdown-label">
                         Invite People 
