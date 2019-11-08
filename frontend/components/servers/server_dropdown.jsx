@@ -34,8 +34,8 @@ class ServerDropdown extends React.Component {
                         <i className="fas fa-cog"></i>
                     </div>
                 </div>
-                <div className="server-dropdown-item" onClick={this.props.leave}>
-                    <div className="server-dropdown-label" >
+                <div className="server-dropdown-item leave-server" onClick={this.props.leave}>
+                    <div className="server-dropdown-label">
                         Leave Server
                     </div>
                     <div className="server-dropdown-icon">

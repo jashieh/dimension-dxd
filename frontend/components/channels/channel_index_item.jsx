@@ -8,7 +8,6 @@ class ChannelIndexItem extends React.Component {
     }
 
     showChannel() {
-        console.log(this.props);
         this.props.history.push(`/home/${this.props.channel.server_id}/channels/${this.props.channel.id}`)
     }
 

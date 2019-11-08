@@ -8,10 +8,6 @@ class ChannelIndex extends React.Component {
 
     }
 
-    componentDidMount() {
-        // this.props.fetchServerChannels(this.props.match.params.serverId)
-    }
-
     render() {
         let channelIndexItems = null;
         if (Object.keys(this.props.channels).length !== 0) {

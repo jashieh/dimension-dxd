@@ -57,12 +57,8 @@ class ServerShow extends React.Component {
         });
     }
 
-    componentWillUpdate(newProps) {
+    componentDidUpdate(newProps) {
         if (this.props.match.params.serverId !== newProps.match.params.serverId) {
-            console.log('Route change!');
-            console.log(this.props.match.params);
-            console.log(newProps.match.params);
-            // this.forceUpdate();
             this.props.fetchServerChannels(this.props.serverId);
         }
 
