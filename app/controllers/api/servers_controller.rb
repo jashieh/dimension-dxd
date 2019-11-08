@@ -23,7 +23,6 @@ class Api::ServersController < ApplicationController
 
     def join
         @server = Server.find_by_url(params[:invite_url])
-
         if @server 
             ServerMembership.create({ user_id: current_user.id, server_id: @server.id})
             render "api/servers/show"

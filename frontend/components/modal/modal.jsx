@@ -3,6 +3,8 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import ChannelFormContainer from '../channels/channel_form_container';
 import AddServerOptions from '../servers/add_server_options';
+import InviteModal from '../servers/invite_modal';
+import LeaveServerModal from '../servers/leave_server_modal';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -39,9 +41,10 @@ class Modal extends React.Component {
       //     className="modal"/>
       //   break;
       case 'invite': 
+        component = <InviteModal inviteUrl={this.props.server.invite_url}/>
         break;
       case 'leave':
-        // component
+        component = <LeaveServerModal {...this.props} />
         break;
       default:
         return null;

@@ -3,7 +3,6 @@ import ChannelIndexContainer from '../channels/channel_index_container';
 import Modal from '../modal/modal';
 import ServerDropdownContainer from './server_dropdown_container';
 import Description from '../hover/description';
-
 import { withRouter } from 'react-router-dom'
 
 
@@ -33,16 +32,15 @@ class ServerShow extends React.Component {
 
         let serverDropdown = document.querySelector('.single-server-header-container');
         serverDropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
             this.nextElementSibling.classList.toggle('collapse-item');
         });
 
         let home = document.querySelector('.home-elements-container');
         home.addEventListener('click', function(e) {
-            console.log(e.target);
-            console.log("close");
             if (!serverDropdown.nextElementSibling.classList.contains('collapse-item')) {
                 serverDropdown.nextElementSibling.classList.add('collapse-item');
-            }
+            }    
         });
         
 
@@ -54,16 +52,6 @@ class ServerShow extends React.Component {
         addServerButton.addEventListener('mouseout', function(e) {
             this.nextElementSibling.classList.toggle('collapse-item');
         });
-
-
-        // let homeScreen = document.querySelector('.home-elements-container');
-        // let dropdown = document.querySelector('.server-dropdown-container');
-        // homeScreen.addEventListener('click', function(e) {
-        //     if (dropdown.classList.contains('collapse-item')) {
-        //         console.log("test");
-        //         dropdown.classList.toggle('collapse-item');
-        //     }
-        // });
     }
 
     componentWillReceiveProps(newProps) {
@@ -95,7 +83,8 @@ class ServerShow extends React.Component {
         if (this.props.server) {
             serverName = this.props.server.server_name;
             inviteUrl = this.props.server.invite_url;
-            modal = <Modal server={this.props.server}/>;
+            modal = <Modal server={this.props.server} 
+                leaveServer={this.props.leaveServer}/>;
             dropdown = 
                 <ServerDropdownContainer serverId={this.props.server.id} 
                     inviteUrl={this.props.server.invite_url} /> 
@@ -171,11 +160,18 @@ class ServerShow extends React.Component {
                         </div>
                     </div>
                 </div>
-                {/* <div>
-                    CHannels go here
-                </div> */}
-                <div className="server-users-container">
-                    Server Users
+                <div className="server-right-side-container">
+                    <div className="server-top-bar-container">
+                        Top bar
+                    </div>
+                    <div className="server-lower-container">
+                        <div>
+                            Channels go here
+                        </div> 
+                        <div className="server-users-container">
+                            Server Users
+                        </div>
+                    </div>
                 </div>
             </div>
         );

@@ -2,12 +2,11 @@
     background-color: #36393f;
     width: 540px;
     // height: 420px;
-    display: flex;
+    // display: flex;
     // justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 5px;
-
 }
 
 .channel-form {
@@ -66,6 +65,8 @@
     // padding: 10px;
 }
 
+
+
 .checkbox-type-text {
     font-size: 20px;
 }
@@ -102,6 +103,10 @@
     align-items: center;
     border-radius: 3px;
     background-color: rgba(0,0,0,0.1);
+}
+
+.checkbox-container {
+    background-color: #7289da;
 }
 
 .channel-form-input-header {

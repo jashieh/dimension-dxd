@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import Modal from '../modal/modal';
 
 class ServerDropdown extends React.Component {
     constructor(props) {
@@ -7,15 +8,17 @@ class ServerDropdown extends React.Component {
         this.leaveServer = this.leaveServer.bind(this);
     }
 
+
     leaveServer() {
         this.props.leaveServer(this.props.serverId);
         this.props.history.push('/home');
     }
 
     render() {
+
         return(
             <div className="server-dropdown-container collapse-item fade-in">
-                <div className="server-dropdown-item">
+                <div className="server-dropdown-item" onClick={this.props.invite}>
                     <div className="server-dropdown-label">
                         Invite People 
                     </div>
@@ -31,7 +34,7 @@ class ServerDropdown extends React.Component {
                         <i className="fas fa-cog"></i>
                     </div>
                 </div>
-                <div className="server-dropdown-item" onClick={this.leaveServer}>
+                <div className="server-dropdown-item" onClick={this.props.leave}>
                     <div className="server-dropdown-label" >
                         Leave Server
                     </div>

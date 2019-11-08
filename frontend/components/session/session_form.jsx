@@ -113,7 +113,6 @@ class SessionForm extends React.Component {
                 <div className="login-content-container">
                     <div className="login-content">
                         <div className="login-header-container">
-
                             <div className="return-to-splash">
                                 <Link to="/" className="splash-link login-logo">
                                     <div className="login-logo-icon-container">

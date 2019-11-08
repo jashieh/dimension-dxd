@@ -1,9 +1,18 @@
 import React from 'react';
 
-class InviteModal extends React.component {
+class InviteModal extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return(
-            { this.props.server}
+            <div className="invite-modal-container">
+                <div>
+                    Use this URL to invite friends 
+                </div>
+                {this.props.inviteUrl}
+            </div>
         );
     }
 }

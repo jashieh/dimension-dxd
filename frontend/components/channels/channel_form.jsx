@@ -44,7 +44,7 @@ class ChannelForm extends React.Component {
                         <div className="channel-form-checkbox-header">
                             CHANNEL TYPE
                         </div>
-                        <div className="channel-form-input-container">
+                        <div className="channel-form-input-container checkbox-container">
                             <input type="checkbox" className="channel-form-checkbox" defaultChecked/>
                             <div className="checkbox-hash">
                                 #
