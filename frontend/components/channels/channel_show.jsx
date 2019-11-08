@@ -15,7 +15,6 @@ class ChannelShow extends React.Component {
             { channel: "ChatChannel" },
             {
                 received: data => {
-                    debugger
                     this.setState({
                         messages: this.state.messages.concat(data.body)
                     });
