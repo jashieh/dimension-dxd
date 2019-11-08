@@ -13,7 +13,7 @@ class InviteModal extends React.Component {
                 </div>
                 <div className="invite-modal-footer">
                     <div className="invite-modal-link-container">
-                        <div>
+                        <div className="invite-link">
                             {this.props.server.invite_url}
                         </div>
                     </div>
