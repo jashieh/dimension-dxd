@@ -1,7 +1,9 @@
 import React from 'react';
 import ChannelIndexContainer from '../channels/channel_index_container';
-import Modal from '../modal/modal';
 import ServerDropdownContainer from './server_dropdown_container';
+import ChannelShowContainer from '../channels/channel_show_container';
+import ServerUsers from './server_users';
+import Modal from '../modal/modal';
 import Description from '../hover/description';
 import { withRouter } from 'react-router-dom'
 
@@ -54,10 +56,10 @@ class ServerShow extends React.Component {
         });
     }
 
-    componentWillReceiveProps(newProps) {
+    componentWillUpdate(newProps) {
         if (newProps !== this.props) {
             this.props.fetchServerChannels(this.props.serverId);
-            this.forceUpdate();
+            // this.forceUpdate();
         }
 
         let channelUl = document.querySelector('.channel-nav-ul');
@@ -69,6 +71,21 @@ class ServerShow extends React.Component {
         }
     }
 
+    // componentWillReceiveProps(newProps) {
+    //     if (newProps !== this.props) {
+    //         this.props.fetchServerChannels(this.props.serverId);
+    //         this.forceUpdate();
+    //     }
+
+    //     let channelUl = document.querySelector('.channel-nav-ul');
+    //     let arrow = document.querySelector('.channels-arrow');
+
+    //     if (!channelUl.classList.contains('collapse-item')) {
+    //         channelUl.classList.add('collapse-item');
+    //         arrow.classList.remove('rotated');
+    //     }
+    // }
+
     leaveServer() {
         this.props.leaveServer(this.props.server.id);
         this.props.history.push('/home');
@@ -79,6 +96,7 @@ class ServerShow extends React.Component {
         let inviteUrl = "";
         let modal = null;
         let dropdown = null;
+        let users;
 
         if (this.props.server) {
             serverName = this.props.server.server_name;
@@ -88,6 +106,7 @@ class ServerShow extends React.Component {
             dropdown = 
                 <ServerDropdownContainer serverId={this.props.server.id} 
                     inviteUrl={this.props.server.invite_url} /> 
+            users = <ServerUsers users={this.props.server.users} />
 
         } else {
             serverName = "Server does not exist";
@@ -165,11 +184,12 @@ class ServerShow extends React.Component {
                         Top bar
                     </div>
                     <div className="server-lower-container">
-                        <div>
-                            Channels go here
+                        <div className="channel-display-container">
+                            <ChannelShowContainer />
                         </div> 
                         <div className="server-users-container">
                             Server Users
+                            { users }
                         </div>
                     </div>
                 </div>

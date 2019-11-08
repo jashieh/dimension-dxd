@@ -173,7 +173,20 @@
     // width: 100%;
     // height: 100%;
     // position: absolute;
-    background-color: green;
+    background-color: rgba(197, 187, 187, 0.3);
+    // background-color: green;
+    flex-grow: 100;
+}
+
+.server-lower-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.channel-display-container {
+    flex-grow:100;
 }
 
 

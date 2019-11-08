@@ -6,7 +6,7 @@ class ChannelShow extends React.Component {
         return(
             <div className="channel-show-container">
                 <div className="channel-message-container">
-
+                    Channel show
                 </div>
             </div>
         );

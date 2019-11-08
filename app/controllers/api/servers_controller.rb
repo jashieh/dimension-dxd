@@ -19,6 +19,10 @@ class Api::ServersController < ApplicationController
 
     def show 
         @server = current_user.servers.find(params[:id])
+
+        if @server
+            @users = @server.users
+        end
     end
 
     def join
