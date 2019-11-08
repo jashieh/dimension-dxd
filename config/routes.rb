@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get 'api/servers/join/:invite_url', to: 'api/servers#join'
   get 'api/servers/leave/:id', to: 'api/servers#leave'
   root "static_pages#root"
+  mount ActionCable.server, at: '/cable'
 end
