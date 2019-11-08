@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import ChannelShow from './channel_show';
 
-const mapStateToProps = (state) => ({
-
+const mapStateToProps = (state, ownProps) => ({
+    channel: state.entities.channels[ownProps.match.params.channelId]
 });
 
 const mapDispatchToProps = (dispatch) => ({

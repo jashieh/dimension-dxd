@@ -41,7 +41,7 @@ class Modal extends React.Component {
       //     className="modal"/>
       //   break;
       case 'invite': 
-        component = <InviteModal inviteUrl={this.props.server.invite_url}/>
+        component = <InviteModal server={this.props.server}/>
         break;
       case 'leave':
         component = <LeaveServerModal {...this.props} />

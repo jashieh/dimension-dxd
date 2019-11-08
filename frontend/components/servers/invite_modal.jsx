@@ -8,10 +8,16 @@ class InviteModal extends React.Component {
     render() {
         return(
             <div className="invite-modal-container">
-                <div>
-                    Use this URL to invite friends 
+                <div className="invite-modal-header">
+                    INVITE FRIENDS TO {this.props.server.server_name.toUpperCase()} 
                 </div>
-                {this.props.inviteUrl}
+                <div className="invite-modal-footer">
+                    <div className="invite-modal-link-container">
+                        <div>
+                            {this.props.server.invite_url}
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

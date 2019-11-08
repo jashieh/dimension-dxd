@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
     const serverId = parseInt(ownProps.match.params.serverId);
     const server = state.entities.servers[serverId];
     const currentUser = state.entities.users[state.session.id];
-    return { serverId, server, currentUser };
+    // const channels = state.entities.channels;
+    return { serverId, server, currentUser};
 };
 
 

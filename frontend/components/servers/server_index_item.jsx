@@ -27,7 +27,7 @@ class ServerIndexItem extends React.Component {
     
     handleClick() {
         (this.props.fetchServer(this.props.server.id));
-        this.props.history.push(`/home/${this.props.server.id}`);
+        this.props.history.push(`/home/${this.props.server.id}/channels`);
     }
     
     render() {

@@ -4,4 +4,16 @@
     width: 240px;
     height: 100%;
     background-color: rgba(0,0,0,0.5);
+    color: white;
+    // display: none;
+}
+
+.server-users-header {
+    padding: 24px 8px 0 16px;
+}
+
+.server-users-ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 16px;
 }

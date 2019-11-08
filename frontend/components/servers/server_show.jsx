@@ -6,28 +6,29 @@ import ServerUsers from './server_users';
 import Modal from '../modal/modal';
 import Description from '../hover/description';
 import { withRouter } from 'react-router-dom'
-
-
+import { ProtectedRoute } from "../../util/route_util";
 
 class ServerShow extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { currentChannel: null}
         this.leaveServer = this.leaveServer.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchServer(this.props.match.params.serverId)
             .then(()=>{
-                // this.props.fetchServerChannels(this.props.serverId);
+                this.props.fetchServerChannels(this.props.serverId);
             }, ()=>{
                 this.props.history.push('/home');
         });
         
-        let collapse = document.getElementsByClassName('channels-header');
+        let collapse = document.getElementsByClassName('channels-dropdown');
         let arrow = document.querySelector('.channels-arrow');
+        let channelUl = document.querySelector('.channel-nav-ul');
         for(let i = 0; i < collapse.length; i++) {
             collapse[i].addEventListener('click', function(e) {
-                this.nextElementSibling.classList.toggle('collapse-item');
+                channelUl.classList.toggle('collapse-item');
                 arrow.classList.toggle('rotated');
             });
         }
@@ -57,24 +58,30 @@ class ServerShow extends React.Component {
     }
 
     componentWillUpdate(newProps) {
-        if (newProps !== this.props) {
-            this.props.fetchServerChannels(this.props.serverId);
+        if (this.props.match.params.serverId !== newProps.match.params.serverId) {
+            console.log('Route change!');
+            console.log(this.props.match.params);
+            console.log(newProps.match.params);
             // this.forceUpdate();
+            this.props.fetchServerChannels(this.props.serverId);
         }
 
-        let channelUl = document.querySelector('.channel-nav-ul');
-        let arrow = document.querySelector('.channels-arrow');
+        // let channelUl = document.querySelector('.channel-nav-ul');
+        // let arrow = document.querySelector('.channels-arrow');
 
-        if (!channelUl.classList.contains('collapse-item')) {
-            channelUl.classList.add('collapse-item');
-            arrow.classList.remove('rotated');
-        }
+        // if (!channelUl.classList.contains('collapse-item')) {
+        //     channelUl.classList.add('collapse-item');
+        //     arrow.classList.remove('rotated');
+        // }
     }
 
-    // componentWillReceiveProps(newProps) {
-    //     if (newProps !== this.props) {
+    // componentWillReceiveProps(prevProps) {
+    //     if (this.props.match.params.serverId !== prevProps.match.params.serverId) {
+    //         console.log('Route change!');
     //         this.props.fetchServerChannels(this.props.serverId);
-    //         this.forceUpdate();
+    //     }
+    //     if (newProps !== this.props) {
+    //         // this.forceUpdate();
     //     }
 
     //     let channelUl = document.querySelector('.channel-nav-ul');
@@ -90,6 +97,7 @@ class ServerShow extends React.Component {
         this.props.leaveServer(this.props.server.id);
         this.props.history.push('/home');
     }
+
 
     render() {
         let serverName = "";
@@ -144,6 +152,8 @@ class ServerShow extends React.Component {
 
                                     </div>
                                 </div>
+                                {/* <ProtectedRoute exact path="/home/:serverId/channels" component={ChannelIndexContainer} /> */}
+
                                 <ChannelIndexContainer />
                             </div>
                         </ul>
@@ -163,7 +173,7 @@ class ServerShow extends React.Component {
                     <div className="footer-util-container">
                         <div className="user-icon-container">
                             <div className="user-icon">
-                                user icon 
+                                <img src="/discord_user.png" alt=""/>
                             </div>
                         </div>
                         <div className="footer-user-info">
@@ -185,10 +195,9 @@ class ServerShow extends React.Component {
                     </div>
                     <div className="server-lower-container">
                         <div className="channel-display-container">
-                            <ChannelShowContainer />
+                            <ProtectedRoute exact path="/home/:serverId/channels/:channelId" component={ChannelShowContainer} />
                         </div> 
                         <div className="server-users-container">
-                            Server Users
                             { users }
                         </div>
                     </div>
