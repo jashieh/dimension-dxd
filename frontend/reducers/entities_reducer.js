@@ -9,5 +9,5 @@ export default combineReducers({
     users: usersReducer,
     servers: serversReducer,
     channels: channelsReducer,
-    messsages: messagesReducer
+    messages: messagesReducer
 });

@@ -1,6 +1,7 @@
 import React from 'react';
 import MessageForm from '../messages/message_form';
 import MessageFormContainer from '../messages/message_form_container';
+import MessageIndexContainer from '../messages/message_index_container';
 
 class ChannelShow extends React.Component {
 
@@ -34,6 +35,7 @@ class ChannelShow extends React.Component {
     render() {
         let test = null;
         let messageForm = null;
+        let messageIndex = null;
         const messageList = this.state.messages.map(message => {
             return (
                 <li>
@@ -46,12 +48,14 @@ class ChannelShow extends React.Component {
         if(this.props.channel) {
             test = this.props.channel.id;
             messageForm = <MessageFormContainer channelId={this.props.channel.id} />;
+            messageIndex = <MessageIndexContainer channelId={this.props.channel.id}/>;
         }
         return(
             <div className="channel-show-container">
                 <div className="channel-message-container">
                     {/* { test } */}
-                    <div>{messageList}</div>
+                    { messageIndex }
+                    {messageList}
                     { messageForm }
                     {/* <MessageForm channelId={this.props.channel.id} currentUserId={}/> */}
                 </div>
