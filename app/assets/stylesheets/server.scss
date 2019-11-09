@@ -7,7 +7,7 @@
 
 .single-server-show {
     z-index: 0;
-    width: 240px;
+    min-width: 240px;
     height: 100vh;
     background-color: rgba(0,0,0,0.5);
     display: flex;
