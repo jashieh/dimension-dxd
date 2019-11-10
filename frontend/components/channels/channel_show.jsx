@@ -21,7 +21,7 @@ class ChannelShow extends React.Component {
         let messageIndex = null;
 
         if(this.props.channel) {
-            messageForm = <MessageFormContainer channelId={this.props.channel.id} />;
+            messageForm = <MessageFormContainer channel={this.props.channel} />;
             messageIndex = <MessageIndexContainer channelId={this.props.channel.id} />;
         }
 
@@ -29,6 +29,7 @@ class ChannelShow extends React.Component {
             // <div className="channel-show-container">
                 <div className="channel-message-container">
                     { messageIndex }
+                    {/* <div>tesasdasdasdasd    t</div> */}
                     { messageForm }
                 </div>
             // </div>

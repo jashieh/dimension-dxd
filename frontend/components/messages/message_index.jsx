@@ -45,16 +45,17 @@ class MessageIndex extends React.Component {
             });
         }
 
-        console.log(messages);
 
         const messageList = this.state.messages.map(message => {
-            return (
-                <li className="message-li-container" key={message.id}>
-                    {/* { console.log(message)} */}
-                    { message.body }
-                    {/* <div ref={this.bottom} /> */}
-                </li>
-            );
+            if (message.body.length > 0) {
+                return (
+                    <li className="message-li-container" key={message.id}>
+                        {/* { console.log(message)} */}
+                        { message.body }
+                        {/* <div ref={this.bottom} /> */}
+                    </li>
+                );
+            }
         });
 
         return(
