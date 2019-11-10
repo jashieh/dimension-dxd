@@ -1,0 +1,65 @@
+.channel-message-container {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll; 
+    // margin: 0;
+    // padding: 0;
+    padding-left: 30px; 
+    padding-right: 30px; 
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #36393f; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.message-li-container {
+    display: flex;
+    border: 2px solid black;
+    align-items: center;
+    // margin-left: 20px;
+    // margin-right: 20px;    
+    background-color: green;
+}
+
+.message-right-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-user-icon-container {
+    width: 42px;
+    height: 42px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.message-info-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.message-author {
+    margin-right: 20px;
+}
+
+.message-body {
+    display: inline-block;
+    word-break: break-all;
+}
+
