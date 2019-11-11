@@ -1,24 +1,29 @@
 .channel-hover {
     background-color: black;
-    position: absolute;
-    top: -15px;
-    left: 50%; 
-    transform: translate(-55%, -50%);                             
+    position: fixed;
+    z-index: 100;
+    // top: -15px;
+    // top: 5p;
+    // left: 22%;
+    // left: 50%; 
+    // margin-bottom: 100px;
+    transform: translate(-35%, -200%);                             
     white-space: nowrap;
     padding: 10px;
     border-radius: 5px;
 }
 
 .server-hover {
-    position: absolute;
+    position: fixed;
     background-color: black;
+    z-index: 100;
     white-space: nowrap;
     padding: 10px;
     border-radius: 5px;
-    left: 20px;
-    // transform: translate(55%, 50%);      
+    left: 70px;
+    // transform: translate(150%, 0%);      
     color: white; 
-    overflow: visible;
+    // overflow: visible;
 }
 
 .collapse-item {

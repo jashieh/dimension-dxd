@@ -1,7 +1,8 @@
 .channels {
     padding: 10px;
     color: #8E9275;
-    overflow-y: scroll;
+    // overflow-y: scroll;
+    overflow: auto;
     height: 90%;
 }
 
@@ -13,6 +14,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    position: relative;
 }
 
 .channels-header {
@@ -22,7 +24,7 @@
     position: relative;
     min-height: 40px;
     font-weight: 600;
-    // justify-content: space-between;
+    justify-content: space-between;
 }
 
 .channels-arrow {
@@ -32,7 +34,7 @@
 }
 
 .channels-header-create-button {
-    position: absolute;
+    position: relative;
     right: 0;
     width: 40px;
     text-align: center;

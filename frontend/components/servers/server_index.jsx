@@ -1,6 +1,7 @@
 import React from 'react';
 import AddServerOptions from './add_server_options';
 import ServerIndexItemContainer from './server_index_item_container';
+import LeftNavItem from './left_nav_item';
 import { Link } from 'react-router-dom';
 
 export default class ServerIndex extends React.Component {
@@ -62,20 +63,26 @@ export default class ServerIndex extends React.Component {
             <nav className="server-nav-container">
 
                 <ul className="server-nav-ul">
-                    <li className="server-nav-li">
+                    {/* <li className="server-nav-li">
                         <Link to="/" className="server-nav-button">Splash</Link>
                     </li>
 
                     <li className="server-nav-li">
                         <Link to="/home" className="server-nav-button">Home</Link>
-                    </li>
+                    </li> */}
+
+                    <LeftNavItem path={"/"} name={"XD"} description={"Return to splash"} type={"link"}/>
+                    <LeftNavItem path={"/home"} name={"Home"} description={"Home"} type={"link"}/>
+
                     { display }
-                    <li className="server-nav-li">
+                    {/* <li className="server-nav-li">
                         <button onClick={this.handleAddServer}
                             className="server-nav-button">
                             +
                         </button>
-                    </li>
+                    </li> */}
+                    <LeftNavItem name={"+"} description={"Add a Server"} type={"addServer"}
+                        action={this.handleAddServer}/>
                 </ul>
                 { this.state.modal }
             </nav>

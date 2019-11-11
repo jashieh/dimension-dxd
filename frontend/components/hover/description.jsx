@@ -15,6 +15,7 @@ class Description extends React.Component {
     render() {
         return(
             <div className={ this.type() }>
+                { console.log("d")}
                 { this.props.description }
             </div>
         );

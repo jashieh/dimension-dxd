@@ -4,8 +4,9 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    position: relative;
     overflow: visible;
+    // overflow: auto; 
+
 }
 
 .server-nav-container::-webkit-scrollbar { 
@@ -15,7 +16,9 @@
 .server-nav-ul {
     padding-top: 15px;
     width: 72px;  
-    overflow-y: scroll; 
+    // overflow-y: scroll;
+    overflow: auto; 
+    position: relative;
 }
 
 .server-nav-ul::-webkit-scrollbar { 
@@ -27,7 +30,7 @@
     justify-content: center;
     align-items: center;
     padding: 5px;
-    position: relative;
+    // position: relative;
 }
 
 
@@ -43,13 +46,14 @@
     align-items: center;
     font-weight: 800;
     color: #dcddde;
+    // position: relative;
 }
 
 .server-nav-button:hover {
     transition: .2s;
     border-radius: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    // margin-top: 5px;
+    // margin-bottom: 5px;
     // background-color: #7289da;
     filter: brightness(200%);
 }
