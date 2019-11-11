@@ -2,6 +2,7 @@ import React from 'react';
 import ChannelIndexContainer from '../channels/channel_index_container';
 import ServerDropdownContainer from './server_dropdown_container';
 import ChannelShowContainer from '../channels/channel_show_container';
+import TopBarContainer from '../channels/top_bar_container';
 import ServerUsers from './server_users';
 import Modal from '../modal/modal';
 import Description from '../hover/description';
@@ -59,7 +60,7 @@ class ServerShow extends React.Component {
 
     componentDidUpdate(newProps) {
         if (this.props.match.params.serverId !== newProps.match.params.serverId) {
-            this.props.fetchServerChannels(this.props.serverId);
+            // this.props.fetchServerChannels(this.props.serverId);
         }
 
         // let channelUl = document.querySelector('.channel-nav-ul');
@@ -70,24 +71,6 @@ class ServerShow extends React.Component {
         //     arrow.classList.remove('rotated');
         // }
     }
-
-    // componentWillReceiveProps(prevProps) {
-    //     if (this.props.match.params.serverId !== prevProps.match.params.serverId) {
-    //         console.log('Route change!');
-    //         this.props.fetchServerChannels(this.props.serverId);
-    //     }
-    //     if (newProps !== this.props) {
-    //         // this.forceUpdate();
-    //     }
-
-    //     let channelUl = document.querySelector('.channel-nav-ul');
-    //     let arrow = document.querySelector('.channels-arrow');
-
-    //     if (!channelUl.classList.contains('collapse-item')) {
-    //         channelUl.classList.add('collapse-item');
-    //         arrow.classList.remove('rotated');
-    //     }
-    // }
 
     leaveServer() {
         this.props.leaveServer(this.props.server.id);
@@ -187,7 +170,7 @@ class ServerShow extends React.Component {
                 </div>
                 <div className="server-right-side-container">
                     <div className="server-top-bar-container">
-                        Top bar
+                        <ProtectedRoute exact path="/home/:serverId/channels/:channelId" component={TopBarContainer} /> 
                     </div>
                     <div className="server-lower-container">
                         <div className="channel-display-container">

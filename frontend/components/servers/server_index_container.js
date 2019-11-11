@@ -5,6 +5,7 @@ import {
     createServer,
     joinServer 
 } from '../../actions/server_actions';
+import { createChannel } from '../../actions/channel_actions';
 // import { openModal } from '../../actions/modal_actions';
 // import React from 'react';
 
@@ -17,6 +18,7 @@ const mapDispatchToProps = (dispatch) => ({
     fetchAllServers: servers => dispatch(fetchAllServers(servers)),
     createServer: server => dispatch(createServer(server)),
     joinServer: inviteURL => dispatch(joinServer(inviteURL)),
+    createChannel: (serverId, channel) => dispatch(createChannel(serverId, channel))
     // otherForm: (
     //     <button className="add-channel-button" onClick={(e) => { dispatch(openModal('server'))}}>
     //     +

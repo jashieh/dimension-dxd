@@ -26,6 +26,7 @@ export default class AddServerOptions extends React.Component {
         if (type === 'create') {
             return e => this.setState({
                 currentForm: <ServerForm createServer={this.props.createServer}
+                    createChannel={this.props.createChannel}
                     toggleForm={this.toggleForm} toggleModal={this.props.toggleModal}
                 />
             });

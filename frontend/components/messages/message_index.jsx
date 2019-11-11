@@ -13,7 +13,6 @@ class MessageIndex extends React.Component {
     componentDidMount() {
         this.props.fetchChannelMessages(this.props.channel.id);
         this.props.fetchUsers(this.props.channel.server_id);
-        console.log(this.props)
 
         App.cable.subscriptions.create(
             { channel: "ChatChannel" },

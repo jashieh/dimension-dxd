@@ -25,7 +25,12 @@ class ServerForm extends React.Component {
         e.preventDefault();
         this.props.createServer(this.state).then(
             (payload) => {this.props.toggleModal();
-                this.props.history.push(`/home/${payload.server.id}`)
+                let channel = { channel_name: "general"};
+                this.props.createChannel(payload.server.id, channel).then(
+                    (payload2) => {
+                        this.props.history.push(`/home/${payload.server.id}/channels/${payload2.channel.id}`)
+                    }
+                )
             },
             () => {this.error = "- This field is required"; 
                 document.querySelector('.server-form-label')
@@ -38,7 +43,12 @@ class ServerForm extends React.Component {
     hitEnter() {
         this.props.createServer(this.state).then(
             (payload) => {this.props.toggleModal();
-                this.props.history.push(`/home/${payload.server.id}`);
+                let channel = { channel_name: "general"};
+                this.props.createChannel(payload.server.id, channel).then(
+                    (payload2) => {
+                        this.props.history.push(`/home/${payload.server.id}/channels/${payload2.channel.id}`)
+                    }
+                )
                 $(document).off("keydown", this.enterEvent);
             },
             () => {this.error = "- This field is required"; 

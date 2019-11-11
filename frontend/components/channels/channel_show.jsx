@@ -12,7 +12,6 @@ class ChannelShow extends React.Component {
 
     componentDidUpdate() {
         // this.bottom.current.scrollIntoView();
-
     }
     
     

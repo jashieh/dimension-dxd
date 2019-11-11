@@ -39,6 +39,7 @@ export default class ServerIndex extends React.Component {
             createServer={this.props.createServer} 
             joinServer={this.props.joinServer}
             toggleModal={this.toggleModal} 
+            createChannel={this.props.createChannel}
             className="modal"/>}, () => {
                 doc.on("keydown", escEvent);
             }
@@ -56,9 +57,6 @@ export default class ServerIndex extends React.Component {
             });
         }
 
-
-
-        
         return(
             // <div className="server-content">
             <nav className="server-nav-container">
