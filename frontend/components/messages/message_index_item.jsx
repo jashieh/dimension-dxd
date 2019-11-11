@@ -14,7 +14,6 @@ class MessageIndexItem extends React.Component {
                 <div className="message-right-container">
                     <div className="message-info-header">
                         <div className="message-author">
-                            {console.log(this.props)}
                             { username }
                         </div>
                         <div className="message-date">
