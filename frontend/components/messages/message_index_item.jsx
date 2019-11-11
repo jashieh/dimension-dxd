@@ -2,6 +2,10 @@ import React from 'react';
 
 class MessageIndexItem extends React.Component {
     render() {
+        let username;
+        if(this.props.author) {
+            username = this.props.author.username;
+        }
         return(
             <li className="message-li-container">
                 <div className="message-user-icon-container">
@@ -10,7 +14,8 @@ class MessageIndexItem extends React.Component {
                 <div className="message-right-container">
                     <div className="message-info-header">
                         <div className="message-author">
-                            { this.props.author.username }
+                            {console.log(this.props)}
+                            { username }
                         </div>
                         <div className="message-date">
                             { this.props.message.created_at }

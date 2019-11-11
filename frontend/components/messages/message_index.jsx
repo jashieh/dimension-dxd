@@ -11,7 +11,10 @@ class MessageIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchChannelMessages(this.props.channelId);
+        this.props.fetchChannelMessages(this.props.channel.id);
+        this.props.fetchUsers(this.props.channel.server_id);
+        console.log(this.props)
+
         App.cable.subscriptions.create(
             { channel: "ChatChannel" },
             {
@@ -29,7 +32,8 @@ class MessageIndex extends React.Component {
 
     componentDidUpdate(newProps) {
         if (this.props.match.params.channelId !== newProps.match.params.channelId) {
-            this.props.fetchChannelMessages(this.props.channelId);
+            this.props.fetchChannelMessages(this.props.channel.id);
+            this.props.fetchUsers(this.props.channel.server_id);
         }
         $(".message-ul-container").animate({ scrollTop: $(".message-ul-container")[0].scrollHeight }, "slow");
     }
@@ -63,7 +67,7 @@ class MessageIndex extends React.Component {
         });
 
         return(
-            <ul className="message-ul-container">
+            <ul className="message-ul-container ">
                 { messages }
                 { messageList }
             </ul>

@@ -1,4 +1,8 @@
 class Api::UsersController < ApplicationController
+    def index 
+        @users = Server.find_by(id: params[:server_id]).users
+    end
+
     def create
         @user = User.new(user_params)
         

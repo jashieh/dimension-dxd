@@ -22,7 +22,7 @@ class ChannelShow extends React.Component {
 
         if(this.props.channel) {
             messageForm = <MessageFormContainer channel={this.props.channel} />;
-            messageIndex = <MessageIndexContainer channelId={this.props.channel.id} />;
+            messageIndex = <MessageIndexContainer channel={this.props.channel} />;
         }
 
         return(
