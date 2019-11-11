@@ -16,7 +16,6 @@ class LeftNavItem extends React.Component {
     }
     
     toggleHoverState(state) {
-        console.log(state.isHovering);
         return {
             isHovering: !state.isHovering,
         };

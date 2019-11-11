@@ -119,7 +119,7 @@ class ServerShow extends React.Component {
                             <div className="channels-container">
                                 <div className="channels-header">
                                     <div className="channels-dropdown">
-                                        <div className="channels-arrow">
+                                        <div className="channels-arrow rotated">
                                             >
                                         </div>
                                         <div className="channels-header-element">

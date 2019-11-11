@@ -23,7 +23,7 @@ class ChannelIndex extends React.Component {
 
         return(
             // <nav className="channel-nav-container">
-                <ul className="channel-nav-ul collapse-item fade-in">
+                <ul className="channel-nav-ul fade-in">
                     { channelIndexItems }
                 </ul>
             // </nav>
