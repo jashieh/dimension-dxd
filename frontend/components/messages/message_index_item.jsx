@@ -5,7 +5,7 @@ class MessageIndexItem extends React.Component {
         return(
             <li className="message-li-container">
                 <div className="message-user-icon-container">
-                    <img src="/discord_user.png" alt=""/>
+                    <img src="/discord_user.png" alt="" className="message-user-icon"/>
                 </div>
                 <div className="message-right-container">
                     <div className="message-info-header">

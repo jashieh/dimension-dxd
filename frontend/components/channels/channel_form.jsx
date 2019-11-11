@@ -37,7 +37,7 @@ class ChannelForm extends React.Component {
                                 CREATE NEW CHANNEL
                             </div>
                             <div className="channel-form-catagory">
-                                in Catagory /////
+                                in Text Channels
                             </div>
                     </div>
                     <div className="channel-form-field-container">

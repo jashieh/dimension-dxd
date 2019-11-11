@@ -21,11 +21,12 @@ class MessageForm extends React.Component {
     render() {
         return(
             <div className="message-form-container">
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className="message-form">
                     <input type="text" 
                         value={this.state.body}
                         onChange={this.update("body")}
                         placeholder={`Message #${this.props.channel.channel_name}`}
+                        className="message-form-field"
                     />
                     <input type="submit" />
                 </form>
