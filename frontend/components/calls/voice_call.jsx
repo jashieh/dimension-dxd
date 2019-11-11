@@ -13,7 +13,7 @@ class VoiceCall extends React.Component {
     componentDidMount(){
         this.remoteVideoContainer = 
         document.getElementById("remote-video-container")
-        navigator.mediaDevices.getUserMedia({audio: true, video: true})
+        navigator.mediaDevices.getUserMedia({audio: true, video: false})
         .then(stream => {
             this.localStream = stream;
             document.getElementById("local-video").srcObject = stream;
