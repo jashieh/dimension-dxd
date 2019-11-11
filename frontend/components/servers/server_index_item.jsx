@@ -22,7 +22,7 @@ class ServerIndexItem extends React.Component {
     
     MouseHover() {
         this.setState(this.toggleHoverState);
-        this.setState({ display: "none"});
+        this.setState({ display: "none" });
     }
     
     handleClick() {

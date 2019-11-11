@@ -3,9 +3,20 @@ import React from 'react';
 class MessageIndexItem extends React.Component {
     render() {
         let username;
+        let createdAt;
+
         if(this.props.author) {
             username = this.props.author.username;
         }
+
+        if(this.props.message.created_at) {
+            let time = new Date(this.props.message.created_at);
+            createdAt = time.getMonth() + "/" + time.getDate() + "/" + time.getFullYear();
+        } else {
+            let time = new Date();
+            createdAt = time.getMonth() + "/" + time.getDate() + "/" + time.getFullYear();
+        }
+
         return(
             <li className="message-li-container">
                 <div className="message-user-icon-container">
@@ -17,7 +28,7 @@ class MessageIndexItem extends React.Component {
                             { username }
                         </div>
                         <div className="message-date">
-                            { this.props.message.created_at }
+                            { createdAt }
                         </div>
                     </div>
                     <div className="message-body">

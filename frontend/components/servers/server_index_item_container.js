@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import ServerIndexItem from './server_index_item';
 import { fetchServer } from '../../actions/server_actions';
 import { fetchServerChannels } from '../../actions/channel_actions';
+import { fetchUsers } from '../../actions/user_actions';
 
 
 const mapStateToProps = (state) => ({
@@ -10,7 +11,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     fetchServer: serverId => dispatch(fetchServer(serverId)),
-    fetchServerChannels: serverId => dispatch(fetchServerChannels(serverId))
+    fetchServerChannels: serverId => dispatch(fetchServerChannels(serverId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ServerIndexItem);

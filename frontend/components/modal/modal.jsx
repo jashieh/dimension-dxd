@@ -13,7 +13,7 @@ class Modal extends React.Component {
 
   componentDidUpdate() {
     if (this.props.modal) {
-      this.modalDiv.focus();
+      // this.modalDiv.focus();
     }
   }
 

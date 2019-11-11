@@ -64,6 +64,7 @@ class SessionForm extends React.Component {
         let registerBox = null;
         let demo = null;
         let submitType = "";
+        let userFocus = false;
 
         if (this.props.formType === 'signup') {
             emailInput = <div className="login-field">
@@ -78,6 +79,7 @@ class SessionForm extends React.Component {
                         value={this.state.email}
                         onChange={this.update('email')}
                         className="login-input"
+                        autoFocus
                     />
                 </div>
             </div>
@@ -101,6 +103,7 @@ class SessionForm extends React.Component {
                     onClick={this.demoUser} />
             </div>
             submitType = "login-button";
+            userFocus = true;
         }
 
         return (
@@ -116,7 +119,7 @@ class SessionForm extends React.Component {
                             <div className="return-to-splash">
                                 <Link to="/" className="splash-link login-logo">
                                     <div className="login-logo-icon-container">
-                                        <img src="/logo.svg" alt="" className="logo-icon"/>
+                                        <img src="/logo.svg" alt="" className="logo-icon" />
                                     </div>
                                     <div className="splash-link-text">
                                         Dimension
@@ -152,6 +155,7 @@ class SessionForm extends React.Component {
                                             value={this.state.username}
                                             onChange={this.update('username')}
                                             className="login-input"
+                                            autoFocus={userFocus}
                                         />
                                     </div>
                                 </div>

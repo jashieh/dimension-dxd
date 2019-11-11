@@ -12,48 +12,49 @@ import { ProtectedRoute } from "../../util/route_util";
 class ServerShow extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { currentChannel: null}
+        this.state = { currentChannel: null }
         this.leaveServer = this.leaveServer.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchServer(this.props.match.params.serverId)
-            .then(()=>{
+            .then(() => {
                 this.props.fetchServerChannels(this.props.serverId);
-            }, ()=>{
+                this.props.fetchUsers(this.props.serverId);
+            }, () => {
                 this.props.history.push('/home');
-        });
-        
+            });
+
         let collapse = document.getElementsByClassName('channels-dropdown');
         let arrow = document.querySelector('.channels-arrow');
         let channelUl = document.querySelector('.channel-nav-ul');
-        for(let i = 0; i < collapse.length; i++) {
-            collapse[i].addEventListener('click', function(e) {
+        for (let i = 0; i < collapse.length; i++) {
+            collapse[i].addEventListener('click', function (e) {
                 channelUl.classList.toggle('collapse-item');
                 arrow.classList.toggle('rotated');
             });
         }
 
         let serverDropdown = document.querySelector('.single-server-header-container');
-        serverDropdown.addEventListener('click', function(e) {
+        serverDropdown.addEventListener('click', function (e) {
             e.stopPropagation();
             this.nextElementSibling.classList.toggle('collapse-item');
         });
 
         let home = document.querySelector('.home-elements-container');
-        home.addEventListener('click', function(e) {
+        home.addEventListener('click', function (e) {
             if (!serverDropdown.nextElementSibling.classList.contains('collapse-item')) {
                 serverDropdown.nextElementSibling.classList.add('collapse-item');
-            }    
+            }
         });
-        
+
 
         let addServerButton = document.querySelector('.add-channel-button');
-        addServerButton.addEventListener('mouseover', function(e) {
+        addServerButton.addEventListener('mouseover', function (e) {
             this.nextElementSibling.classList.toggle('collapse-item');
         });
 
-        addServerButton.addEventListener('mouseout', function(e) {
+        addServerButton.addEventListener('mouseout', function (e) {
             this.nextElementSibling.classList.toggle('collapse-item');
         });
     }
@@ -61,6 +62,7 @@ class ServerShow extends React.Component {
     componentDidUpdate(newProps) {
         if (this.props.match.params.serverId !== newProps.match.params.serverId) {
             // this.props.fetchServerChannels(this.props.serverId);
+            this.props.fetchUsers(this.props.serverId);
         }
 
         // let channelUl = document.querySelector('.channel-nav-ul');
@@ -88,21 +90,21 @@ class ServerShow extends React.Component {
         if (this.props.server) {
             serverName = this.props.server.server_name;
             inviteUrl = this.props.server.invite_url;
-            modal = <Modal server={this.props.server} 
-                leaveServer={this.props.leaveServer}/>;
-            dropdown = 
-                <ServerDropdownContainer serverId={this.props.server.id} 
-                    inviteUrl={this.props.server.invite_url} /> 
+            modal = <Modal server={this.props.server}
+                leaveServer={this.props.leaveServer} />;
+            dropdown =
+                <ServerDropdownContainer serverId={this.props.server.id}
+                    inviteUrl={this.props.server.invite_url} />
             users = <ServerUsers users={this.props.server.users} />
 
         } else {
             serverName = "Server does not exist";
         }
 
-        return(
+        return (
             <div className="server-show-container">
                 <div className="single-server-show fade-in">
-                    { modal }
+                    {modal}
                     <div className="single-server-header-container">
                         <div className="single-server-header-name">
                             {serverName}
@@ -111,7 +113,7 @@ class ServerShow extends React.Component {
                             >
                         </div>
                     </div>
-                    { dropdown }
+                    {dropdown}
                     <div className="channel-list">
                         <ul className="channels">
                             <div className="channels-container">
@@ -125,9 +127,9 @@ class ServerShow extends React.Component {
                                         </div>
                                     </div>
                                     <div className="channels-header-create-button">
-                                        { this.props.otherForm }
-                        
-                                        <Description description={"Create Channel"} type="channel-hover"/>
+                                        {this.props.otherForm}
+
+                                        <Description description={"Create Channel"} type="channel-hover" />
 
                                     </div>
                                 </div>
@@ -137,8 +139,8 @@ class ServerShow extends React.Component {
                             </div>
                         </ul>
 
-                        
-    {/* 
+
+                        {/* 
                         <ul className="channels">
                             <div className="channels-container">
                                 <label className="channel-header">
@@ -148,11 +150,11 @@ class ServerShow extends React.Component {
                         </ul> */}
 
                     </div>
-                    
+
                     <div className="footer-util-container">
                         <div className="user-icon-container">
                             <div className="user-icon">
-                                <img src="/discord_user.png" alt=""/>
+                                <img src="/discord_user.png" alt="" />
                             </div>
                         </div>
                         <div className="footer-user-info">
@@ -170,14 +172,14 @@ class ServerShow extends React.Component {
                 </div>
                 <div className="server-right-side-container">
                     <div className="server-top-bar-container">
-                        <ProtectedRoute exact path="/home/:serverId/channels/:channelId" component={TopBarContainer} /> 
+                        <ProtectedRoute exact path="/home/:serverId/channels/:channelId" component={TopBarContainer} />
                     </div>
                     <div className="server-lower-container">
                         <div className="channel-display-container">
                             <ProtectedRoute exact path="/home/:serverId/channels/:channelId" component={ChannelShowContainer} />
-                        </div> 
+                        </div>
                         <div className="server-users-container">
-                            { users }
+                            {users}
                         </div>
                     </div>
                 </div>

@@ -9,7 +9,14 @@ class TopBar extends React.Component {
         }
         return(
             <div className="top-bar">
-                { channelName }
+                <div className="top-bar-channel-info-container">
+                    <div className="top-bar-channel-icon">
+                        <i className="fas fa-hashtag"></i>
+                    </div>
+                    <div>
+                        { channelName }
+                    </div>
+                </div>
             </div>
         );
     }

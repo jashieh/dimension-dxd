@@ -1,6 +1,12 @@
 .channels {
     padding: 10px;
     color: #8E9275;
+    overflow-y: scroll;
+    height: 90%;
+}
+
+.channels::-webkit-scrollbar { 
+    display: none; 
 }
 
 .channels-container {

@@ -1,6 +1,6 @@
 .server-top-bar-container {
     // flex-grow: 100;
-    height: 59px;
+    height: 58px;
     // background-color: blue;
     background-color: rgba(189, 184, 184, 0.5);
     background-color: rgba(0,0,0,0.7);
@@ -10,4 +10,14 @@
     align-items: center;
     font-size: 18px;
     font-weight: 600;
+}
+
+.top-bar-channel-info-container {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.top-bar-channel-icon {
+    margin-right: 5px;
 }

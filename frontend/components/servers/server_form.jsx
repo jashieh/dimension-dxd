@@ -93,7 +93,8 @@ class ServerForm extends React.Component {
                                 <div className="server-form-input-wrapper">
                                     <input onChange={this.update} type="text" 
                                         className="server-form-input"
-                                        placeholder="Enter a server name"/>
+                                        placeholder="Enter a server name"
+                                        autoFocus/>
                                 </div>
                             </div>
                             <div className="server-region-container">

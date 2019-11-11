@@ -75,7 +75,8 @@ class JoinServerForm extends React.Component {
                     <div className="join-form-main">
                         <div className="join-url-container">
                             <input type="text" className="join-form-input"
-                                onChange={this.update}/>
+                                onChange={this.update}
+                                autoFocus/>
                             <div className="join-error-container">
                                 <label className="join-form-input-label">Enter an invite url</label>
                                 <div className="join-form-errors">

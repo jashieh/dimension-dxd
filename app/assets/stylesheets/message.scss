@@ -111,12 +111,32 @@
     height: 60px;
     width: 90%;
     display: flex;
-    justify-content: center;
-    border-radius: 5px;
+    // justify-content: center;
+    border-radius: 8px;
+    align-items: center;
+    position: relative;
 }
 
 .message-form-field {
     height: 100%;
+    width: 80%;
+    margin-left: 20px;
+    font-size: 1.25em;
+}
+
+.message-form-plus-container {
+    height: 100%;
+    border-right: 2px solid white;
+    display: flex;
+    align-items: center;
+    // position: absolute;
+    // left: 0;
+    margin-left: 10px;
+}
+
+.message-form-plus-button {
+    padding-right: 10px;
+
 }
 
 

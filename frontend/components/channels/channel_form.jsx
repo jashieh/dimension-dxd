@@ -18,7 +18,10 @@ class ChannelForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createChannel(this.props.serverId, this.state).then(
-            (payload) => {this.props.closeModal()},
+            (payload) => {this.props.closeModal();
+                this.props.history.push(`/home/${this.props.serverId}/channels/${payload.channel.id}`);
+                console.log(this.props)
+            },
             () => {this.error = "- This field is required"; 
                 document.querySelector('.channel-form-input-header')
                 .classList.add('server-form-submit-fail');
@@ -63,7 +66,8 @@ class ChannelForm extends React.Component {
                             </div>
                         </div>
                         <div className="channel-form-input-container">
-                            <input type="text" className="channel-form-input" onChange={this.update}/>
+                            <input type="text" className="channel-form-input" onChange={this.update}
+                            autoFocus/>
                         </div>
                     </div>
 
