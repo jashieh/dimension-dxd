@@ -5,8 +5,13 @@ class MessageForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = { body: "" };
-
+        this.toggleChatbot = true;
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidUpdate() {
+        let message = "Chatbot is active. Type /chatbot to toggle bot";
+        // App.cable.subscriptions.subscriptions[0].speak({ body: message, author_id: 1, channel_id: this.props.channel.id});
     }
 
     update(field) {
@@ -16,7 +21,21 @@ class MessageForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         App.cable.subscriptions.subscriptions[0].speak({ body: this.state.body, author_id: this.props.currentUser.id, channel_id: this.props.channel.id});
-        this.chatBot(this.state.body);
+        if (this.toggleChatbot && this.state.body !== "/chatbot") {
+            this.chatBot(this.state.body);
+        }
+
+        if(this.state.body === "/chatbot") {
+            this.toggleChatbot = !this.toggleChatbot;
+            let msg = "";
+            if (this.toggleChatbot) {
+                msg = "Chatbot Activated";
+            } else {
+                msg = "Chatbot Deactivated";
+            }
+            App.cable.subscriptions.subscriptions[0].speak({ body: msg, author_id: this.props.chatBot.id, channel_id: this.props.channel.id});
+        }
+
         this.setState({ body: "" });
     }
 

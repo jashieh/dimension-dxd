@@ -50,17 +50,15 @@ class MessageIndex extends React.Component {
 
 
         const messageList = this.state.messages.map(message => {
+            console.log(message);
             if (message.body.length > 0) {
                 let author = this.props.users[message.author_id];
-                return (
-                    // <li className="message-li-container" key={message.id}>
-                    //     {/* { console.log(message)} */}
-                    //     { message.body }
-                    //     {/* <div ref={this.bottom} /> */}
-                    // </li>
-                    <MessageIndexItem message={message} key={message.id} 
-                    author={author} />
-                );
+                if( message.channel_id === this.props.channel.id) {
+                    return (
+                        <MessageIndexItem message={message} key={message.id} 
+                        author={author} />
+                    );
+                }
             }
         });
 
