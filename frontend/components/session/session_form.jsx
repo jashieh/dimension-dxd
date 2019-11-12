@@ -28,13 +28,23 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.processForm(this.state)
-            .then(() => this.props.history.push(`/home`));
+            .then(() => {
+                this.props.history.push('/loading');
+                setTimeout(() => {
+                    this.props.history.push(`/home`);
+                }, 2000)
+            });
     }
 
     demoUser() {
         this.setState({ username: 'DemoUser', password: 'demo_user' }, () => {
             this.props.processForm(this.state)
-                .then(() => this.props.history.push(`/home`));
+                .then(() => {
+                    this.props.history.push('/loading');
+                    setTimeout(() => {
+                        this.props.history.push(`/home`);
+                    }, 2000)
+                });
         });
     }
 
@@ -65,6 +75,7 @@ class SessionForm extends React.Component {
         let demo = null;
         let submitType = "";
         let userFocus = false;
+
 
         if (this.props.formType === 'signup') {
             emailInput = <div className="login-field">

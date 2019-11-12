@@ -16,12 +16,14 @@ import SplashContainer from "./splash/splash_container";
 // import ServerContainer from "./servers/server_index_container";
 // import ServerShowContainer from "./servers/server_show_container";
 import Home from "./home/home";
+import Loading from "./session/loading";
 import VoiceCall from "./calls/voice_call";
 
 
 const App = () => (
   <div className="app">
     {/* <Route exact path="/" component={GreetingContainer} /> */}
+    <Route path='/loading' component={Loading}/>
     <Route path='/call' component={VoiceCall}/>
     <Route exact path="/" component={SplashContainer} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />
