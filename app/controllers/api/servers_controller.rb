@@ -8,9 +8,12 @@ class Api::ServersController < ApplicationController
     def create 
         @server = Server.new(server_params)
         @server.admin_id = current_user.id
-
+        
         if @server.save 
+            chat_bot = User.find_by_credentials("ChatBot","chat_bot")
             ServerMembership.create({ user_id: current_user.id, server_id: @server.id})
+            ServerMembership.create({ user_id: chat_bot.id, server_id: @server.id})
+
             render "api/servers/show"
         else
             render json: @server.errors.full_messages, status: 422

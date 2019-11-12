@@ -1,6 +1,8 @@
 class Api::UsersController < ApplicationController
     def index 
         @users = Server.find_by(id: params[:server_id]).users
+        chat_bot = User.find_by_credentials("ChatBot","chat_bot")
+        @users.merge([chat_bot])
     end
 
     def create

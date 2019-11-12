@@ -21,10 +21,9 @@ class MessageForm extends React.Component {
     }
 
     chatBot(msg) {
-        getResponse(msg, 1).then(
+        getResponse(msg, this.props.chatBot.id).then(
             (res) => {
-                console.log(res);
-                App.cable.subscriptions.subscriptions[0].speak({ body: res.cnt, author_id: this.props.currentUser.id, channel_id: this.props.channel.id});
+                App.cable.subscriptions.subscriptions[0].speak({ body: res.cnt, author_id: this.props.chatBot.id, channel_id: this.props.channel.id});
             }
         )
     }
