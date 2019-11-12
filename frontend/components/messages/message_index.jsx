@@ -33,7 +33,8 @@ class MessageIndex extends React.Component {
             this.props.fetchChannelMessages(this.props.channel.id);
             // this.props.fetchUsers(this.props.channel.server_id);
         }
-        $(".message-ul-container").animate({ scrollTop: $(".message-ul-container")[0].scrollHeight }, "slow");
+        $('.message-ul-container').scrollTop($('.message-ul-container')[0].scrollHeight);
+        // $(".message-ul-container").animate({ scrollTop: $(".message-ul-container")[0].scrollHeight }, "slow");
     }
 
     
