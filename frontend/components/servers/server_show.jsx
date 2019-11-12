@@ -62,6 +62,7 @@ class ServerShow extends React.Component {
     componentDidUpdate(newProps) {
         if (this.props.match.params.serverId !== newProps.match.params.serverId) {
             // this.props.fetchServerChannels(this.props.serverId);
+            this.props.fetchServerChannels(this.props.serverId);
             this.props.fetchUsers(this.props.serverId);
         }
 

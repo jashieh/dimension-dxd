@@ -25,6 +25,31 @@ class Api::ServersController < ApplicationController
         end
     end
 
+    def update
+        @server = current_user.servers.find(params[:id])
+
+        if @server && @server.admin_id == current_user.id 
+            if @server.update_attributes(server_params)
+                render "api/servers/show"
+            else
+                render json: @server.errors.full_messages, status: 422
+            end
+        else
+            render json: ["must be admin to edit"], status: 422
+        end
+    end
+
+    def destroy
+        @server = current_user.servers.find(params[:id])
+
+        if @server && @server.admin_id == current_user.id 
+           @server.destroy
+           render json: ["server deleted"], status: 200
+        else
+            render json: ["must be admin to delete"], status: 422
+        end
+    end
+
     def join
         @server = Server.find_by_url(params[:invite_url])
         if @server 

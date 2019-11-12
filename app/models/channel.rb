@@ -1,5 +1,5 @@
 class Channel < ApplicationRecord
-    validates :channel_name, length: { maximum: 20 }, presence: true 
+    validates :channel_name, length: { maximum: 12 }, presence: true 
 
     belongs_to :server,
     foreign_key: :server_id,
@@ -7,5 +7,6 @@ class Channel < ApplicationRecord
 
     has_many :messages,
     foreign_key: :channel_id,
-    class_name: :Message
+    class_name: :Message,
+    dependent: :destroy
 end

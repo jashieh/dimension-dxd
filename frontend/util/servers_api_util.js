@@ -20,6 +20,21 @@ export const fetchServer = id => {
     });
 };
 
+export const updateServer = server => {
+    return $.ajax({
+        url: `api/servers/${server.id}`,
+        method: 'PATCH',
+        data: { server }
+    });
+};
+
+export const deleteServer = serverId => {
+    return $.ajax({
+        url: `api/servers/${serverId}`,
+        method: 'DELETE'
+    });
+};
+
 export const joinServer = inviteURL => {
     return $.ajax({
         url: `api/servers/join/${inviteURL}`,

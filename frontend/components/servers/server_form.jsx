@@ -15,6 +15,7 @@ class ServerForm extends React.Component {
 
     componentDidMount() {
         this.eventListen();
+        this.inputField = document.querySelector('.server-form-input');
     }
 
     update(e) {
@@ -26,13 +27,26 @@ class ServerForm extends React.Component {
         this.props.createServer(this.state).then(
             (payload) => {this.props.toggleModal();
                 let channel = { channel_name: "general"};
+                let serverButtons = document.getElementsByClassName('server-nav-button');
+
+                for(let i = 0; i < serverButtons.length; i++) {
+                    serverButtons[i].classList.remove('server-nav-button-selected');
+                }
+                
+                serverButtons[serverButtons.length-2].classList.add('server-nav-button-selected');
+
                 this.props.createChannel(payload.server.id, channel).then(
                     (payload2) => {
                         this.props.history.push(`/home/${payload.server.id}/channels/${payload2.channel.id}`)
                     }
                 )
             },
-            () => {this.error = "- This field is required"; 
+            () => {
+                if(this.inputField.value.length <= 0) {
+                    this.error = "- This field is required"; 
+                } else {
+                    this.error = "- max length 12 characters"; 
+                }
                 document.querySelector('.server-form-label')
                     .classList.add('server-form-submit-fail');
                     this.forceUpdate();
@@ -51,8 +65,13 @@ class ServerForm extends React.Component {
                 )
                 $(document).off("keydown", this.enterEvent);
             },
-            () => {this.error = "- This field is required"; 
-                document.querySelector('.server-form-name')
+            () => {
+                if(this.inputField.value.length <= 0) {
+                    this.error = "- This field is required"; 
+                } else {
+                    this.error = "- max length 12 characters"; 
+                } 
+                document.querySelector('.server-form-label')
                     .classList.add('server-form-submit-fail');
                 this.forceUpdate();
             }

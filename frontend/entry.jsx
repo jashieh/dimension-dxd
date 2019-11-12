@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import {joinServer} from './actions/server_actions';
+import {joinServer, updateServer } from './actions/server_actions';
 import { createChannel, fetchServerChannels } from './actions/channel_actions';
 import { fetchChannelMessages } from './actions/message_actions';
 
@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.createChannel = createChannel;
     window.fetchServerChannels = fetchServerChannels;
     window.fetchChannelMessages = fetchChannelMessages;
+    window.updateServer = updateServer;
     window.dispatch = store.dispatch;
 
     ReactDOM.render(<Root store={store}/>, root);

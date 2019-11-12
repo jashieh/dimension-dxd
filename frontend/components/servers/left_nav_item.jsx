@@ -26,9 +26,16 @@ class LeftNavItem extends React.Component {
         this.setState({ display: "none" });
     }
 
-    handleClick() {
+    handleClick(e) {
         if (this.props.type === "addServer") {
             this.props.action();
+        } else if (this.props.type === "home") {
+            let serverButtons = document.getElementsByClassName('server-nav-button');
+
+            for(let i = 0; i < serverButtons.length; i++) {
+                serverButtons[i].classList.remove('server-nav-button-selected');
+            }
+            serverButtons[1].classList.add('server-nav-button-selected');
         }
     }
 

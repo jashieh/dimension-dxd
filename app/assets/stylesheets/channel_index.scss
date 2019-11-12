@@ -4,6 +4,7 @@
     // overflow-y: scroll;
     overflow: auto;
     height: 90%;
+    box-sizing: border-box;
 }
 
 .channels::-webkit-scrollbar { 
@@ -24,6 +25,7 @@
     position: relative;
     min-height: 40px;
     font-weight: 600;
+    font-size: 18px;
     justify-content: space-between;
 }
 
@@ -65,10 +67,12 @@
 
 .channel-nav-li {
     font-size: 18px;
+    font-weight: 600;
     display: flex;
     flex-direction: row;
     align-items: center;
     cursor: pointer;
+    // padding-top: 10px;
 }
 
 

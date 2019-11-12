@@ -16,7 +16,6 @@ class InviteModal extends React.Component {
     render() {
         return(
             <div className="leave-modal-container">
-                { console.log(this.props)}
                 <div className="leave-modal-text-container">
                     <div className="leave-modal-header">
                         LEAVE '{this.props.server.server_name.toUpperCase()}'

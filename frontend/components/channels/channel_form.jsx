@@ -20,9 +20,15 @@ class ChannelForm extends React.Component {
         this.props.createChannel(this.props.serverId, this.state).then(
             (payload) => {this.props.closeModal();
                 this.props.history.push(`/home/${this.props.serverId}/channels/${payload.channel.id}`);
-                console.log(this.props)
             },
-            () => {this.error = "- This field is required"; 
+            () => {
+                let inputField = document.querySelector('.channel-form-input');
+
+                if(inputField.value.length <= 0) {
+                    this.error = "- This field is required"; 
+                } else {
+                    this.error = "- max length 12 characters"; 
+                } 
                 document.querySelector('.channel-form-input-header')
                 .classList.add('server-form-submit-fail');
                 this.forceUpdate();
@@ -60,9 +66,8 @@ class ChannelForm extends React.Component {
                     <div className="channel-form-field-container">
                         <div className="channel-form-input-header">
                             CHANNEL NAME
-                            <div className="server-form-errors">
+                            <div className="channel-form-errors">
                                 { this.error }
-
                             </div>
                         </div>
                         <div className="channel-form-input-container">

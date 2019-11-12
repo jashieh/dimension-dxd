@@ -25,7 +25,15 @@ class ServerIndexItem extends React.Component {
         this.setState({ display: "none" });
     }
     
-    handleClick() {
+    handleClick(e) {
+        let serverButtons = document.getElementsByClassName('server-nav-button');
+
+        for(let i = 0; i < serverButtons.length; i++) {
+            serverButtons[i].classList.remove('server-nav-button-selected');
+        }
+
+        e.target.classList.add('server-nav-button-selected');
+
         this.props.fetchServer(this.props.server.id)
             .then(
                 () => {

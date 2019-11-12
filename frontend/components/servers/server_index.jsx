@@ -2,7 +2,6 @@ import React from 'react';
 import AddServerOptions from './add_server_options';
 import ServerIndexItemContainer from './server_index_item_container';
 import LeftNavItem from './left_nav_item';
-import { Link } from 'react-router-dom';
 
 export default class ServerIndex extends React.Component {
     constructor(props) {
@@ -64,7 +63,7 @@ export default class ServerIndex extends React.Component {
 
                 <ul className="server-nav-ul">
                     <LeftNavItem path={"/"} name={<i className="fas fa-arrow-left"></i>} description={"Return to splash"} type={"link"}/>
-                    <LeftNavItem path={"/home"} name={<img src="/discord_user.png" alt="" className="message-user-icon"/>} description={"Home"} type={"link"}/>
+                    <LeftNavItem path={"/home"} name={<img src="/discord_user.png" alt="" className="message-user-icon"/>} description={"Home"} type={"home"}/>
                     { display }
                     <LeftNavItem name={"+"} description={"Add a Server"} type={"addServer"}
                         action={this.handleAddServer}/>
