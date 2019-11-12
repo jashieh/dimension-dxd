@@ -82,6 +82,21 @@
     margin-right: 20px;
 }
 
+.message-date {
+    position: relative;
+}
+
+.message-hover {
+    position: absolute;
+    z-index: 100;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    left: 105px;
+    top: -12px;
+    white-space: nowrap;
+}
+
 .message-body {
     display: inline-block;
     word-break: break-all;

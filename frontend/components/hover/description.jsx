@@ -7,7 +7,7 @@ class Description extends React.Component {
     }
 
     type() {
-        if (this.props.type === "server-hover")
+        if (this.props.type === "server-hover" || this.props.type === "message-hover" )
             return this.props.type + " fade-in";
         return this.props.type + " collapse-item fade-in";
     }
