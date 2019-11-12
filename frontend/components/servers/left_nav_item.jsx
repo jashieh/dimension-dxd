@@ -56,7 +56,7 @@ class LeftNavItem extends React.Component {
         }
 
         return(
-            <li className="server-nav-li" 
+            <li className={`server-nav-li ${this.props.class}`}
                 onMouseEnter={this.MouseHover} 
                 onMouseLeave={this.MouseHover}
                 onClick={this.handleClick}>

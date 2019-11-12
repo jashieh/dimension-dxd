@@ -8,8 +8,6 @@ import { openModal } from '../../actions/modal_actions';
 import { fetchServerChannels } from '../../actions/channel_actions';
 import { fetchUsers } from '../../actions/user_actions';
 
-
-
 const mapStateToProps = (state, ownProps) => {
     const serverId = parseInt(ownProps.match.params.serverId);
     const server = state.entities.servers[serverId];

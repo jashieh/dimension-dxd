@@ -26,7 +26,7 @@ class ServerForm extends React.Component {
         e.preventDefault();
         this.props.createServer(this.state).then(
             (payload) => {this.props.toggleModal();
-                let channel = { channel_name: "general"};
+                let channel = { channel_name: "general" };
                 let serverButtons = document.getElementsByClassName('server-nav-button');
 
                 for(let i = 0; i < serverButtons.length; i++) {
@@ -57,6 +57,13 @@ class ServerForm extends React.Component {
     hitEnter() {
         this.props.createServer(this.state).then(
             (payload) => {this.props.toggleModal();
+                let serverButtons = document.getElementsByClassName('server-nav-button');
+
+                for(let i = 0; i < serverButtons.length; i++) {
+                    serverButtons[i].classList.remove('server-nav-button-selected');
+                }
+                
+                serverButtons[serverButtons.length-2].classList.add('server-nav-button-selected');
                 let channel = { channel_name: "general"};
                 this.props.createChannel(payload.server.id, channel).then(
                     (payload2) => {

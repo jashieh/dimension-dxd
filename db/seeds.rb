@@ -8,5 +8,6 @@
 User.destroy_all
 Server.destroy_all
 Channel.destroy_all
+ServerMembership.destroy_all
 
 demo_user = User.create(email: 'demo_user@gmail.com', username: 'DemoUser', password: 'demo_user' )

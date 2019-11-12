@@ -62,11 +62,13 @@ export default class ServerIndex extends React.Component {
             <nav className="server-nav-container">
 
                 <ul className="server-nav-ul">
-                    <LeftNavItem path={"/"} name={<i className="fas fa-arrow-left"></i>} description={"Return to splash"} type={"link"}/>
-                    <LeftNavItem path={"/home"} name={<img src="/discord_user.png" alt="" className="message-user-icon"/>} description={"Home"} type={"home"}/>
+                    <LeftNavItem path={"/"} name={<i className="fas fa-arrow-left"></i>} description={"Return to splash"} type={"link"}
+                        class={""}/>
+                    <LeftNavItem path={"/home"} name={<img src="/discord_user.png" alt="" className="message-user-icon"/>} description={"Home"} 
+                        type={"home"} class={"home-button"}/>
                     { display }
                     <LeftNavItem name={"+"} description={"Add a Server"} type={"addServer"}
-                        action={this.handleAddServer}/>
+                        action={this.handleAddServer} class={""}/>
                 </ul>
                 { this.state.modal }
             </nav>
