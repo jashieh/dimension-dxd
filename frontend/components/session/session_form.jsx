@@ -37,7 +37,24 @@ class SessionForm extends React.Component {
     }
 
     demoUser() {
-        this.setState({ username: 'DemoUser', password: 'demo_user' }, () => {
+        let user = 'DemoUser';
+        let that = this;
+        for (let i = 0; i < user.length; i++) {
+            setTimeout(function() {
+                that.setState({username: that.state.username + user[i]}); 
+                console.log(user[i]);
+            }, i * 50, i);
+        }
+
+        let pass = 'demo_user';
+        for (let i = 0; i < pass.length; i++) {
+            setTimeout(function() {
+                that.setState({password: that.state.password + pass[i]}); 
+                console.log(user[i]);
+            }, i * 50 + 400, i);
+        }
+
+        setTimeout(()=>{
             this.props.processForm(this.state)
                 .then(() => {
                     this.props.history.push('/loading');
@@ -45,7 +62,7 @@ class SessionForm extends React.Component {
                         this.props.history.push(`/home`);
                     }, 2000)
                 });
-        });
+        }, 900);
     }
 
     errors(field) {
@@ -142,7 +159,7 @@ class SessionForm extends React.Component {
                             </div>
                         </div>
                         <div className="login-box">
-                            <form className="login-signup-form" onSubmit={this.handleSubmit}>
+                            <form className="login-signup-form">
                                 <div className="form-header">
                                     <div className="form-header-title">
                                         {headerText}
@@ -190,7 +207,7 @@ class SessionForm extends React.Component {
                                 <div className="login-button-container">
                                     <div className={submitType}>
                                         <input className="session-submit" type="submit"
-                                            value={submitText}
+                                            value={submitText} onClick={this.handleSubmit}
                                         />
                                     </div>
                                     {demo}

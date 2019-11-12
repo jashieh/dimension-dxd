@@ -3,7 +3,7 @@
     overflow: hidden;
     width: 100vw;
     height: 100vh;
-    background-color: #292826;
+    background-color: black;
 }
 
 .home-elements-container {
@@ -15,6 +15,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    animation: fade 1s linear;
     // background-attachment: fixed;
 }
 
