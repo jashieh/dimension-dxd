@@ -5,6 +5,8 @@ import Root from './components/root';
 import {joinServer, updateServer, deleteServer } from './actions/server_actions';
 import { createChannel, fetchServerChannels } from './actions/channel_actions';
 import { fetchChannelMessages } from './actions/message_actions';
+import { getResponse } from './util/chatbot_api_util';
+import { get } from 'http';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -31,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchChannelMessages = fetchChannelMessages;
     window.updateServer = updateServer;
     window.deleteServer = deleteServer;
+    window.getResponse = getResponse;
     window.dispatch = store.dispatch;
 
     ReactDOM.render(<Root store={store}/>, root);

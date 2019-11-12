@@ -1,4 +1,5 @@
 import React from 'react';
+import { getResponse } from '../../util/chatbot_api_util';
 
 class MessageForm extends React.Component {
     constructor(props) {
@@ -15,7 +16,17 @@ class MessageForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         App.cable.subscriptions.subscriptions[0].speak({ body: this.state.body, author_id: this.props.currentUser.id, channel_id: this.props.channel.id});
+        this.chatBot(this.state.body);
         this.setState({ body: "" });
+    }
+
+    chatBot(msg) {
+        getResponse(msg, 1).then(
+            (res) => {
+                console.log(res);
+                App.cable.subscriptions.subscriptions[0].speak({ body: res.cnt, author_id: this.props.currentUser.id, channel_id: this.props.channel.id});
+            }
+        )
     }
 
     render() {
