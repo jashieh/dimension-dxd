@@ -4,6 +4,11 @@ export const RECEIVE_ALL_SERVERS = 'RECEIVE_ALL_SERVERS';
 export const RECEIVE_SERVER = 'RECEIVE_SERVER';
 export const LEAVE_SERVER = 'LEAVE_SERVER';
 export const REMOVE_SERVER = 'REMOVE_SERVER';
+export const REMOVE_ERRORS = 'REMOVE_ERRORS';
+
+export const removeErrors = () => ({
+    type: REMOVE_ERRORS
+}); 
 
 const receiveAllServers = (servers) => ({
     type: RECEIVE_ALL_SERVERS,
@@ -23,6 +28,11 @@ const removeServer = (serverId) => ({
 const removeServerMembership = (server) => ({
     type: LEAVE_SERVER,
     serverId: server.id
+});
+
+export const receiveErrors = errors => ({
+    type: RECEIVE_SESSION_ERRORS,
+    errors
 });
 
 export const fetchAllServers = () => dispatch => (APIUtil.fetchAllServers()

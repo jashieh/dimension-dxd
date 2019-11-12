@@ -26,7 +26,7 @@ class ServerDropdown extends React.Component {
                         <i className="fas fa-user-plus"></i>
                     </div>
                 </div>
-                <div className="server-dropdown-item">
+                <div className="server-dropdown-item" onClick={this.props.settings}>
                     <div className="server-dropdown-label">
                         Server Settings 
                     </div>

@@ -5,6 +5,7 @@ import ChannelFormContainer from '../channels/channel_form_container';
 import AddServerOptions from '../servers/add_server_options';
 import InviteModal from '../servers/invite_modal';
 import LeaveServerModal from '../servers/leave_server_modal';
+import ServerSettings from '../servers/server_settings';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -45,6 +46,9 @@ class Modal extends React.Component {
         break;
       case 'leave':
         component = <LeaveServerModal {...this.props} />
+        break;
+      case 'serverSettings':
+        component = <ServerSettings server={this.props.server}/> 
         break;
       default:
         return null;
