@@ -50,7 +50,7 @@ export default class AddServerOptions extends React.Component {
                 (<div className="modal-box" onClick={e => e.stopPropagation()}>
                     <div className="add-server-options-inner">
                         <header className="add-server-options-header">
-                            OH, ANOTHER SERVER HUH? 
+                            OH, ANOTHER SERVER HUH?
                         </header>
                         <div className="add-server-options-actions">
                             <div className="create-server-options-container">
@@ -61,7 +61,7 @@ export default class AddServerOptions extends React.Component {
                                     Create a new server and invite your friends. It's free!
                                 </p>
                                 <div className="create-server-options-img">
-                                    <img src="/create_server.png" alt=""/>
+                                    <img src="/create_server.png" alt="" />
                                 </div>
                                 <button className="create-server-options-button"
                                     onClick={this.handleClick('create')}>
@@ -77,7 +77,7 @@ export default class AddServerOptions extends React.Component {
                                     Enter an invite and join your friend's server
                                 </p>
                                 <div className="join-server-options-img">
-                                    <img src="/join_server.png" alt=""/>
+                                    <img src="/join_server.png" alt="" />
                                 </div>
                                 <button className="join-server-options-button"
                                     onClick={this.handleClick('join')}>

@@ -6,7 +6,7 @@ import LeftNavItem from './left_nav_item';
 export default class ServerIndex extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { modal: null};
+        this.state = { modal: null };
 
         this.handleAddServer = this.handleAddServer.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
@@ -17,7 +17,11 @@ export default class ServerIndex extends React.Component {
     }
 
     toggleModal() {
-        this.setState({ modal: null});
+        let modalBox = document.querySelector('.modal-box');
+        modalBox.classList.add('box-out');
+        setTimeout(()=>{
+            this.setState({ modal: null });
+        }, 400)
     }
 
     handleAddServer(e) {

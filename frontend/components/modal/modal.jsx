@@ -56,7 +56,7 @@ class Modal extends React.Component {
     return (
       <div className="modal-background" 
         onClick={closeModal} 
-        onKeyDown={(e) => this.handleKeyDown(e,closeModal)} 
+        onKeyDown={(e) => this.handleKeyDown(e, closeModal)} 
         tabIndex="0"
         ref={(modalDiv) => (this.modalDiv = modalDiv)}
       >
@@ -76,7 +76,13 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => {
+      let modalBox = document.querySelector('.modal-child');
+      modalBox.classList.add('box-out2');
+      setTimeout(()=>{
+        dispatch(closeModal());
+      }, 400);
+    }
   };
 };
 
