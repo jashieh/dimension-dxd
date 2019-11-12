@@ -51,10 +51,9 @@ class ServerIndexItem extends React.Component {
     render() {
         return(
             <li className="server-nav-li" 
-                onMouseEnter={this.MouseHover} 
-                onMouseLeave={this.MouseHover}
                 onClick={this.handleClick}>
-                <div className="server-nav-button">
+                <div className="server-nav-button" onMouseEnter={this.MouseHover} 
+                onMouseLeave={this.MouseHover}>
                     {this.props.server.server_name[0].toUpperCase()}
                 </div>
                 { this.state.isHovering && <Description description={this.props.server.server_name} type={"server-hover"}/> }

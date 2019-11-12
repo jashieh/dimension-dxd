@@ -45,20 +45,20 @@ class LeftNavItem extends React.Component {
 
         if(this.props.type === "addServer") {
             display = 
-                <div className="server-nav-button">
+                <div className="server-nav-button" onMouseEnter={this.MouseHover} 
+                onMouseLeave={this.MouseHover}>
                     {this.props.name}
                 </div>
             description = this.state.isHovering && <Description description={this.props.description} type={"server-hover"}/>;
         } else {
             display = 
-                <Link to={this.props.path} className="server-nav-button">{this.props.name}</Link>;
+                <Link to={this.props.path} className="server-nav-button" onMouseEnter={this.MouseHover} 
+                onMouseLeave={this.MouseHover}>{this.props.name}</Link>;
             description = this.state.isHovering && <Description description={this.props.description} type={"server-hover"}/>; 
         }
 
         return(
             <li className={`server-nav-li ${this.props.class}`}
-                onMouseEnter={this.MouseHover} 
-                onMouseLeave={this.MouseHover}
                 onClick={this.handleClick}>
                 { display }
                 { description }

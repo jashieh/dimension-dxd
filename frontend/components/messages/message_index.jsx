@@ -51,7 +51,6 @@ class MessageIndex extends React.Component {
 
 
         const messageList = this.state.messages.map(message => {
-            console.log(message);
             if (message.body.length > 0) {
                 let author = this.props.users[message.author_id];
                 if( message.channel_id === this.props.channel.id) {

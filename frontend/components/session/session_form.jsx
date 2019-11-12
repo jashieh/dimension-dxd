@@ -42,7 +42,6 @@ class SessionForm extends React.Component {
         for (let i = 0; i < user.length; i++) {
             setTimeout(function() {
                 that.setState({username: that.state.username + user[i]}); 
-                console.log(user[i]);
             }, i * 50, i);
         }
 
@@ -50,7 +49,6 @@ class SessionForm extends React.Component {
         for (let i = 0; i < pass.length; i++) {
             setTimeout(function() {
                 that.setState({password: that.state.password + pass[i]}); 
-                console.log(user[i]);
             }, i * 50 + 400, i);
         }
 
