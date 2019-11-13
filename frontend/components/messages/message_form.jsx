@@ -33,7 +33,10 @@ class MessageForm extends React.Component {
             } else {
                 msg = "Chatbot Deactivated";
             }
-            App.cable.subscriptions.subscriptions[0].speak({ body: msg, author_id: this.props.chatBot.id, channel_id: this.props.channel.id});
+            
+            setTimeout(() => {
+                App.cable.subscriptions.subscriptions[0].speak({ body: msg, author_id: this.props.chatBot.id, channel_id: this.props.channel.id});
+            }, 250);
         }
 
         this.setState({ body: "" });

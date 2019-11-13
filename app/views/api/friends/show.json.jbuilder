@@ -1,0 +1,1 @@
+json.extract! @friendship, :requester_id, :receiver_id, :pending

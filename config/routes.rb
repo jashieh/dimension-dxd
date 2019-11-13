@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :channels, only: [:create, :index, :show]
     end
     resources :messages, only: [:index]
+    resources :friends, only: [:index, :create, :pending]
     resource :session, only: [:create, :destroy]
   end
   resources :calls, only: [:create]
