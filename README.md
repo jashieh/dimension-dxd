@@ -12,5 +12,8 @@ Dimension x Dimension is an all-in-one voice, video and text chatting applicatio
 * **WebRTC:** Rail's implementation of webRTC was used to enable video/voice chat between users by estabilishing a peer-to-peer online connection.
 
 ## Key Features
-* User Authentification
-    User are able to create accounts and keep their information behind a secure authentification system.
+* **User Authentification** <br/>
+User are able to create accounts and keep their information and messages behind a secure authentification system. A demo user account is also pre-created for anyone who wants to quickly preview the site without having to create their own account.
+<br/>
+* **Servers/Channels** <br/>
+
