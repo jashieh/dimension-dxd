@@ -25,10 +25,12 @@ Each channel contains a live message chat, meaning any other users on the server
 
 ```ruby
 class ChatChannel < ApplicationCable::Channel
+  # subscribe to chat when user enters channel
   def subscribed
     stream_for 'chat_channel'
   end
 
+  # invoke speak to broadcast message when message is sent from frontend
   def speak(data)
     message = Message.create(body: data['body'], author_id: data['author_id'], 
       channel_id: data['channel_id'])
@@ -41,6 +43,7 @@ end
 ```
 
 ```javascript
+// Send message across the ActionCable Subscription when user hits submit
 sendMessage(e) {
   App.cable.subscriptions.subscriptions[0].speak({ body: this.state.body, 
   author_id: this.props.currentUser.id, channel_id: this.props.channel.id});
@@ -56,17 +59,22 @@ Within each server, there is also one video and voice chat channel. When users j
 call(data){
   let pc;
   
+  // Check if user is already connected to the call
   if(this.pcPeers[data.from]){
     pc = this.pcPeers[data.from];
   } else {
     pc = this.createPC(data.from, false);
   }
   
+  // Check if PC is a valid candidate to be added to the ICE (Interactive Connectivity Establishment)
   if (data.candidate){
     let candidate = JSON.parse(data.candidate)
     pc.addIceCandidate(new RTCIceCandidate(candidate))
   }
   
+  // Check if SDP (Session Description Protoco), which is used to construct offers/answers for
+  // describing (media and non-media) streams, is appropriate for recipients of a session description 
+  // to participate in the session.
   if(data.sdp){
     const sdp = JSON.parse(data.sdp);
     if(sdp && !sdp.candidate){
